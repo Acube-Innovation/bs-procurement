@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-03 12:53:45.235451",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_oykd",
+  "amended_from",
+  "tender_enquiry__no",
+  "due__date",
+  "due_date_extended_upto",
+  "column_break_sufk",
+  "description",
+  "section_break_izcn",
+  "table_bcra",
+  "section_break_ooob",
+  "estimate_attached",
+  "section_break_szfa",
+  "tender_opening_committee",
+  "tender_opening_committee_2_section",
+  "table_laar"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_oykd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tender  Opening",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "tender_enquiry__no",
+   "fieldtype": "Data",
+   "label": "Tender Enquiry  No"
+  },
+  {
+   "fieldname": "due__date",
+   "fieldtype": "Date",
+   "label": "Due  Date"
+  },
+  {
+   "fieldname": "due_date_extended_upto",
+   "fieldtype": "Date",
+   "label": "Due date extended upto"
+  },
+  {
+   "fieldname": "column_break_sufk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_izcn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_bcra",
+   "fieldtype": "Table",
+   "options": "Tender Opening Details"
+  },
+  {
+   "fieldname": "section_break_ooob",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "estimate_attached",
+   "fieldtype": "Check",
+   "label": "Estimate Attached"
+  },
+  {
+   "fieldname": "section_break_szfa",
+   "fieldtype": "Section Break",
+   "label": "Tender Opening Committee 1"
+  },
+  {
+   "fieldname": "tender_opening_committee",
+   "fieldtype": "Table",
+   "options": "Tender Opening Commitee"
+  },
+  {
+   "fieldname": "tender_opening_committee_2_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Opening Committee 2"
+  },
+  {
+   "fieldname": "table_laar",
+   "fieldtype": "Table",
+   "options": "Tender Opening Commitee"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-03 13:15:11.360461",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Tender  Opening",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
