@@ -5,31 +5,72 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_nm2b",
+  "purchaser_details_section",
   "case_file",
-  "indentor",
   "department",
   "project",
-  "item_description",
-  "quantity",
+  "column_break_lbtv",
+  "date",
+  "indentor",
+  "section_break_nm2b",
   "type_of_purchase",
+  "quantity",
+  "column_break_bfae",
+  "item_description",
+  "party_details_section",
   "no_of_parties_contactedquoted",
   "partyparties_recommended",
   "whether_the_recomemendedparties_offer_is_lowest_or_not",
-  "if_not_lowest_reason_for_rejection_of_lower_offers",
   "payment_terms",
-  "delivery_date",
-  "need_date",
+  "column_break_oatw",
+  "status_of_partyparties_recommended",
+  "if_not_lowest_reason_for_rejection_of_lower_offers",
+  "date_and_cost_detail_section",
   "estimated_cost_of_tender",
-  "value_of_order",
+  "last_purchased_date",
+  "delivery_date",
+  "column_break_mveo",
   "rate",
   "last_purchased_rate",
-  "last_purchased_date"
+  "need_date",
+  "column_break_cfju",
+  "value_of_order",
+  "section_break_ffrs",
+  "purchase_procedure",
+  "column_break_xjzp",
+  "status",
+  "column_break_ouot",
+  "approved_from_cmm",
+  "section_break_catz",
+  "consented_by_indentor",
+  "column_break_zwcz",
+  "status1",
+  "column_break_qxne",
+  "approved_from_department_head",
+  "section_break_chtb",
+  "financial_concurrence_from_accounts_department",
+  "column_break_vtxe",
+  "status2",
+  "column_break_tilg",
+  "approved_from_cfo",
+  "section_break_heem",
+  "recommendation_by_gm",
+  "column_break_zeeo",
+  "status3",
+  "column_break_wfud",
+  "approved_fr0m_gm",
+  "section_break_agnt",
+  "recommendation_by_md",
+  "column_break_pihs",
+  "status4",
+  "column_break_rywy",
+  "approved_from_md"
  ],
  "fields": [
   {
    "fieldname": "section_break_nm2b",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Purchase Details"
   },
   {
    "fieldname": "case_file",
@@ -86,7 +127,7 @@
   },
   {
    "fieldname": "if_not_lowest_reason_for_rejection_of_lower_offers",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "If not lowest, reason for rejection of lower offers"
   },
   {
@@ -128,12 +169,207 @@
    "fieldname": "last_purchased_date",
    "fieldtype": "Date",
    "label": "Last purchased date"
+  },
+  {
+   "fieldname": "column_break_lbtv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "purchaser_details_section",
+   "fieldtype": "Section Break",
+   "label": "Purchaser Details"
+  },
+  {
+   "fieldname": "column_break_bfae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "party_details_section",
+   "fieldtype": "Section Break",
+   "label": "Party Details"
+  },
+  {
+   "fieldname": "column_break_oatw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status_of_partyparties_recommended",
+   "fieldtype": "Select",
+   "label": "Status of party/parties Recommended",
+   "options": "\nPending\nApproved\nNew"
+  },
+  {
+   "fieldname": "date_and_cost_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Date and Cost Detail"
+  },
+  {
+   "fieldname": "column_break_mveo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cfju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ffrs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase_procedure",
+   "fieldtype": "Check",
+   "label": "This purchase has been done as per the indentor's requirements and fulfilling thr purchase procedures"
+  },
+  {
+   "fieldname": "column_break_xjzp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_from_cmm",
+   "fieldtype": "Link",
+   "label": "Approved from CMM",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "consented_by_indentor",
+   "fieldtype": "Check",
+   "label": "Consented by indentor/Department head(Applicable only for Repeat Order)   "
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nApproved\nRejected"
+  },
+  {
+   "fieldname": "column_break_ouot",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status1",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nApproved\nRejected"
+  },
+  {
+   "fieldname": "approved_from_cfo",
+   "fieldtype": "Link",
+   "label": "Approved from CFO",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "financial_concurrence_from_accounts_department",
+   "fieldtype": "Check",
+   "label": "Financial concurrence from accounts department"
+  },
+  {
+   "fieldname": "status2",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nApproved\nRejected"
+  },
+  {
+   "fieldname": "approved_from_department_head",
+   "fieldtype": "Link",
+   "label": "Approved from Department head",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "recommendation_by_gm",
+   "fieldtype": "Check",
+   "label": "Recommendation by GM "
+  },
+  {
+   "fieldname": "status3",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nApproved\nRejected"
+  },
+  {
+   "default": "0",
+   "fieldname": "recommendation_by_md",
+   "fieldtype": "Check",
+   "label": "Recommendation by MD"
+  },
+  {
+   "fieldname": "status4",
+   "fieldtype": "Select",
+   "label": "Status"
+  },
+  {
+   "fieldname": "approved_fr0m_gm",
+   "fieldtype": "Link",
+   "label": "Approved from GM",
+   "options": "User"
+  },
+  {
+   "fieldname": "approved_from_md",
+   "fieldtype": "Link",
+   "label": "Approved from MD",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_catz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zwcz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qxne",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_chtb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_vtxe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tilg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_heem",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zeeo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wfud",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_agnt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pihs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rywy",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-02 13:56:42.602941",
+ "modified": "2025-07-03 12:44:24.527721",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval",
