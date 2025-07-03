@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-03 17:29:50.561851",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_4zyg",
+  "amended_from",
+  "type",
+  "table_lilx",
+  "section_break_aohl",
+  "case_file_no",
+  "indenting_officer",
+  "irc_no",
+  "column_break_rkuo",
+  "dated",
+  "indenting_dept",
+  "irc_date",
+  "recommendation_of_the_pnc_section",
+  "indentor",
+  "project",
+  "total_no_of_items",
+  "item",
+  "section_break_ccbl",
+  "source_recommended",
+  "value_wo_tax",
+  "value_including_tax",
+  "corresponding_l2",
+  "value_including_tax1",
+  "estimated_costa",
+  "actual_costb",
+  "ab",
+  "special_points_if__any"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_4zyg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Purchase  and Negotiation Committee",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "table_lilx",
+   "fieldtype": "Table",
+   "options": "PNC  Detail"
+  },
+  {
+   "fieldname": "section_break_aohl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "case_file_no",
+   "fieldtype": "Data",
+   "label": "Case file No"
+  },
+  {
+   "fieldname": "column_break_rkuo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dated",
+   "fieldtype": "Date",
+   "label": "Dated"
+  },
+  {
+   "fieldname": "indenting_officer",
+   "fieldtype": "Link",
+   "label": "Indenting Officer",
+   "options": "User"
+  },
+  {
+   "fieldname": "indenting_dept",
+   "fieldtype": "Link",
+   "label": "Indenting Dept",
+   "options": "Department"
+  },
+  {
+   "fieldname": "irc_no",
+   "fieldtype": "Data",
+   "label": "IRC No."
+  },
+  {
+   "fieldname": "irc_date",
+   "fieldtype": "Date",
+   "label": "IRC Date"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nLevel 1\nLevel 2\nLevel 3"
+  },
+  {
+   "fieldname": "recommendation_of_the_pnc_section",
+   "fieldtype": "Section Break",
+   "label": "Recommendation of the PNC "
+  },
+  {
+   "fieldname": "indentor",
+   "fieldtype": "Link",
+   "label": "Indentor",
+   "options": "User"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "total_no_of_items",
+   "fieldtype": "Float",
+   "label": "Total No of Items"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "section_break_ccbl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "source_recommended",
+   "fieldtype": "Data",
+   "label": "Source Recommended"
+  },
+  {
+   "fieldname": "value_wo_tax",
+   "fieldtype": "Float",
+   "label": "Value w/o Tax"
+  },
+  {
+   "fieldname": "value_including_tax",
+   "fieldtype": "Float",
+   "label": "Value including Tax"
+  },
+  {
+   "fieldname": "corresponding_l2",
+   "fieldtype": "Data",
+   "label": "Corresponding L2"
+  },
+  {
+   "fieldname": "value_including_tax1",
+   "fieldtype": "Float",
+   "label": "Value Including Tax"
+  },
+  {
+   "fieldname": "estimated_costa",
+   "fieldtype": "Float",
+   "label": "Estimated Cost(A)"
+  },
+  {
+   "fieldname": "actual_costb",
+   "fieldtype": "Float",
+   "label": "Actual Cost(B)"
+  },
+  {
+   "fieldname": "ab",
+   "fieldtype": "Float",
+   "label": "A-B"
+  },
+  {
+   "fieldname": "special_points_if__any",
+   "fieldtype": "Small Text",
+   "label": "Special points if  any"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-03 18:22:40.190601",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Purchase  and Negotiation Committee",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

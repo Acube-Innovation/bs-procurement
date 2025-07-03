@@ -1,0 +1,257 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-03 15:40:10.929498",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_acxv",
+  "enquiry_no",
+  "due_on",
+  "column_break_mzbc",
+  "no_of_parties_contacted",
+  "no_of_quotation_received",
+  "amended_from",
+  "section_break_obqv",
+  "table_qfpf",
+  "packing_section",
+  "packing_and_forwarding",
+  "column_break_dfpp",
+  "freight",
+  "tax_and_charges_section",
+  "customs",
+  "total",
+  "column_break_alms",
+  "gst",
+  "section_break_kkum",
+  "price_basis",
+  "payment_terms_template",
+  "payment_schedule",
+  "section_break_wfwp",
+  "validity",
+  "delivery",
+  "terms_and_condition_section",
+  "terms",
+  "text_editor_bgkf",
+  "section_break_bbyz",
+  "prepared_by",
+  "column_break_cpuq",
+  "checked_by",
+  "column_break_yrzf",
+  "verified_by",
+  "column_break_oowc",
+  "date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_acxv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "enquiry_no",
+   "fieldtype": "Data",
+   "label": "Enquiry No"
+  },
+  {
+   "fieldname": "due_on",
+   "fieldtype": "Date",
+   "label": "Due On"
+  },
+  {
+   "fieldname": "column_break_mzbc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_parties_contacted",
+   "fieldtype": "Int",
+   "label": "No. of Parties Contacted"
+  },
+  {
+   "fieldname": "no_of_quotation_received",
+   "fieldtype": "Int",
+   "label": "No. of Quotation Received"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Comparative Statement",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_obqv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_qfpf",
+   "fieldtype": "Table",
+   "options": "Comparative Statement  Details"
+  },
+  {
+   "fieldname": "packing_section",
+   "fieldtype": "Section Break",
+   "label": "Packing"
+  },
+  {
+   "fieldname": "packing_and_forwarding",
+   "fieldtype": "Currency",
+   "label": "Packing and Forwarding"
+  },
+  {
+   "fieldname": "column_break_dfpp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "freight",
+   "fieldtype": "Currency",
+   "label": "Freight"
+  },
+  {
+   "fieldname": "tax_and_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Tax and Charges"
+  },
+  {
+   "fieldname": "customs",
+   "fieldtype": "Percent",
+   "label": "Customs"
+  },
+  {
+   "fieldname": "column_break_alms",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Percent",
+   "label": "GST"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "section_break_kkum",
+   "fieldtype": "Section Break",
+   "label": "Terms"
+  },
+  {
+   "fieldname": "price_basis",
+   "fieldtype": "Select",
+   "label": "Price Basis",
+   "options": "\nFOR\nEx-works\nFOB\nCIF"
+  },
+  {
+   "fieldname": "payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "payment_schedule",
+   "fieldtype": "Table",
+   "label": "Payment Schedule",
+   "options": "Payment Schedule"
+  },
+  {
+   "fieldname": "section_break_wfwp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "validity",
+   "fieldtype": "Date",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "delivery",
+   "fieldtype": "Date",
+   "label": "Delivery"
+  },
+  {
+   "fieldname": "terms_and_condition_section",
+   "fieldtype": "Section Break",
+   "label": "Terms and Condition"
+  },
+  {
+   "fieldname": "terms",
+   "fieldtype": "Link",
+   "label": "Terms",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fetch_from": "terms.terms",
+   "fieldname": "text_editor_bgkf",
+   "fieldtype": "Text Editor"
+  },
+  {
+   "fieldname": "section_break_bbyz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_cpuq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "checked_by",
+   "fieldtype": "Link",
+   "label": "Checked By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_yrzf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Link",
+   "label": "Verified By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_oowc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-03 17:10:13.522340",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Comparative Statement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
