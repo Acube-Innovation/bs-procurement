@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-02 11:57:12.347727",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nm2b",
+  "case_file",
+  "indentor",
+  "department",
+  "project",
+  "item_description",
+  "quantity",
+  "type_of_purchase",
+  "no_of_parties_contactedquoted",
+  "partyparties_recommended",
+  "whether_the_recomemendedparties_offer_is_lowest_or_not",
+  "if_not_lowest_reason_for_rejection_of_lower_offers",
+  "payment_terms",
+  "delivery_date",
+  "need_date",
+  "estimated_cost_of_tender",
+  "value_of_order",
+  "rate",
+  "last_purchased_rate",
+  "last_purchased_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_nm2b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "case_file",
+   "fieldtype": "Data",
+   "label": "Case File"
+  },
+  {
+   "fieldname": "indentor",
+   "fieldtype": "Link",
+   "label": "Indentor",
+   "options": "User"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "item_description",
+   "fieldtype": "Small Text",
+   "label": "Item Description"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Data",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "type_of_purchase",
+   "fieldtype": "Data",
+   "label": "Type of Purchase"
+  },
+  {
+   "fieldname": "no_of_parties_contactedquoted",
+   "fieldtype": "Data",
+   "label": "No. of parties contacted/quoted"
+  },
+  {
+   "fieldname": "partyparties_recommended",
+   "fieldtype": "Data",
+   "label": "Party/parties recommended"
+  },
+  {
+   "fieldname": "whether_the_recomemendedparties_offer_is_lowest_or_not",
+   "fieldtype": "Data",
+   "label": "Whether the recomemended/parties offer is lowest or not"
+  },
+  {
+   "fieldname": "if_not_lowest_reason_for_rejection_of_lower_offers",
+   "fieldtype": "Data",
+   "label": "If not lowest, reason for rejection of lower offers"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Data",
+   "label": "Payment terms"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery date"
+  },
+  {
+   "fieldname": "need_date",
+   "fieldtype": "Date",
+   "label": "Need date"
+  },
+  {
+   "fieldname": "estimated_cost_of_tender",
+   "fieldtype": "Currency",
+   "label": "Estimated cost of tender"
+  },
+  {
+   "fieldname": "value_of_order",
+   "fieldtype": "Data",
+   "label": "Value of order"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "last_purchased_rate",
+   "fieldtype": "Currency",
+   "label": "Last purchased rate"
+  },
+  {
+   "fieldname": "last_purchased_date",
+   "fieldtype": "Date",
+   "label": "Last purchased date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-02 13:56:42.602941",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Purchase Approval",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
