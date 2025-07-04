@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{DPEP}-{######}",
+ "creation": "2025-07-03 17:00:11.426305",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_pame",
+  "po_no",
+  "nomenclature",
+  "supplier",
+  "edc_as_per_po",
+  "column_break_hmhn",
+  "date",
+  "department",
+  "indenter",
+  "revised_edc_required",
+  "justification_for_delay_in_delivery_by_vendor_section",
+  "enclosed",
+  "column_break_aocf",
+  "not_enclosed",
+  "section_break_3o7b",
+  "attach",
+  "recommendation_by_indenter"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_pame",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "po_no",
+   "fieldtype": "Link",
+   "label": "PO No",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "nomenclature",
+   "fieldtype": "Data",
+   "label": "Nomenclature"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "indenter",
+   "fieldtype": "Link",
+   "label": "Indenter",
+   "options": "User"
+  },
+  {
+   "fieldname": "edc_as_per_po",
+   "fieldtype": "Data",
+   "label": "EDC as per PO"
+  },
+  {
+   "fieldname": "revised_edc_required",
+   "fieldtype": "Data",
+   "label": "Revised EDC Required"
+  },
+  {
+   "fieldname": "justification_for_delay_in_delivery_by_vendor_section",
+   "fieldtype": "Section Break",
+   "label": "Justification for Delay in delivery by Vendor"
+  },
+  {
+   "default": "0",
+   "fieldname": "enclosed",
+   "fieldtype": "Check",
+   "label": "Enclosed"
+  },
+  {
+   "default": "0",
+   "fieldname": "not_enclosed",
+   "fieldtype": "Check",
+   "label": "Not Enclosed"
+  },
+  {
+   "fieldname": "section_break_3o7b",
+   "fieldtype": "Section Break",
+   "label": "Recommendation by Indenter(If required additional sheet to be attached)"
+  },
+  {
+   "fieldname": "recommendation_by_indenter",
+   "fieldtype": "Small Text",
+   "label": "Recommendation by Indenter"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "Attach"
+  },
+  {
+   "fieldname": "column_break_hmhn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aocf",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-03 17:30:08.773176",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "DP Extension Proforma",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
