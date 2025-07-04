@@ -6,7 +6,6 @@ frappe.ui.form.on("Comparative Statement", {
 
 	// }
     payment_terms_template: function(frm) {
-        // Triggering the server-side method when payment_terms field is changed
        frappe.call({
 				method: "erpnext.controllers.accounts_controller.get_payment_terms",
 				args: {
