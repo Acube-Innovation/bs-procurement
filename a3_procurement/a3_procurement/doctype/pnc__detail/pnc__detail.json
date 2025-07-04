@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-03 17:34:49.415508",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "members",
+  "verified_and_signed",
+  "invitees",
+  "verified_and_signed1"
+ ],
+ "fields": [
+  {
+   "fieldname": "members",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Members",
+   "options": "Designation"
+  },
+  {
+   "default": "0",
+   "fieldname": "verified_and_signed",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Verified and signed"
+  },
+  {
+   "fieldname": "invitees",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Invitees"
+  },
+  {
+   "default": "0",
+   "fieldname": "verified_and_signed1",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Verified and Signed"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-03 17:45:00.264367",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "PNC  Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
