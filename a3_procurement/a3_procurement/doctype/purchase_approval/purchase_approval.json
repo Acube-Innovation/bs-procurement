@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{PA}-{######}",
  "creation": "2025-07-02 11:57:12.347727",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -21,7 +22,6 @@
   "no_of_parties_contactedquoted",
   "partyparties_recommended",
   "whether_the_recomemendedparties_offer_is_lowest_or_not",
-  "payment_terms",
   "column_break_oatw",
   "status_of_partyparties_recommended",
   "if_not_lowest_reason_for_rejection_of_lower_offers",
@@ -35,6 +35,9 @@
   "need_date",
   "column_break_cfju",
   "value_of_order",
+  "terms_section",
+  "payment_terms_template",
+  "payment_schedule",
   "section_break_ffrs",
   "purchase_procedure",
   "column_break_xjzp",
@@ -64,7 +67,8 @@
   "column_break_pihs",
   "status4",
   "column_break_rywy",
-  "approved_from_md"
+  "approved_from_md",
+  "amended_from"
  ],
  "fields": [
   {
@@ -129,11 +133,6 @@
    "fieldname": "if_not_lowest_reason_for_rejection_of_lower_offers",
    "fieldtype": "Small Text",
    "label": "If not lowest, reason for rejection of lower offers"
-  },
-  {
-   "fieldname": "payment_terms",
-   "fieldtype": "Data",
-   "label": "Payment terms"
   },
   {
    "fieldname": "delivery_date",
@@ -364,15 +363,44 @@
   {
    "fieldname": "column_break_rywy",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "terms_section",
+   "fieldtype": "Section Break",
+   "label": "Terms"
+  },
+  {
+   "fieldname": "payment_schedule",
+   "fieldtype": "Table",
+   "label": "Payment Schedule",
+   "options": "Payment Schedule"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Purchase Approval",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-07-03 12:44:24.527721",
+ "modified": "2025-07-04 15:37:09.917428",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

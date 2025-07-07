@@ -6,13 +6,14 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "indent_type",
   "cost_range",
   "purchase_indent_number",
-  "department_requisition_number",
   "store_category",
   "column_break_dqnu",
   "indent_date",
   "departmentsection",
+  "department_requisition_number",
   "date_of_requisition",
   "column_break_0sa4",
   "reference_wo_no",
@@ -51,11 +52,11 @@
   "amended_from",
   "history_card_tab",
   "specification_as_per_last_indent",
-  "stock_position_as_in_dept_register",
   "column_break_gvui",
-  "month_of_last_procurement",
+  "stock_position_as_in_dept_register",
   "average_consumption",
-  "column_break_cwnn",
+  "column_break_dv6c",
+  "month_of_last_procurement",
   "requirement_planned_for",
   "check_list_section",
   "specifications",
@@ -67,11 +68,11 @@
   "cost_estimate_in_sealed_envelope",
   "indent_review_information_tab",
   "indentor_specification",
-  "stock_position_in_stores",
   "column_break_cqz1",
+  "stock_position_in_stores",
   "date_of_last_procurement",
-  "last_procurement_rate",
   "column_break_qaty",
+  "last_procurement_rate",
   "current_procurement_rate",
   "probable_suppliers_section",
   "supplier_1",
@@ -146,6 +147,7 @@
    "options": "Yes\nNo"
   },
   {
+   "depends_on": "eval:doc.indent_type==\"Capex\"",
    "fieldname": "in_principle_request",
    "fieldtype": "Link",
    "label": "Capex In-Principle Reference",
@@ -319,7 +321,7 @@
   },
   {
    "fieldname": "specification_as_per_last_indent",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Specification as per last Indent"
   },
   {
@@ -333,8 +335,9 @@
   },
   {
    "fieldname": "month_of_last_procurement",
-   "fieldtype": "Data",
-   "label": "Month of last procurement"
+   "fieldtype": "Select",
+   "label": "Month of last procurement",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
   },
   {
    "fieldname": "average_consumption",
@@ -343,12 +346,8 @@
    "options": "\nMonthly\nYearly"
   },
   {
-   "fieldname": "column_break_cwnn",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "requirement_planned_for",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Requirement planned for"
   },
   {
@@ -401,7 +400,7 @@
   },
   {
    "fieldname": "indentor_specification",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Indentor specification"
   },
   {
@@ -480,13 +479,23 @@
   {
    "fieldname": "column_break_kroy",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "indent_type",
+   "fieldtype": "Select",
+   "label": "Indent Type",
+   "options": "\nCapex\nRevenue"
+  },
+  {
+   "fieldname": "column_break_dv6c",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-02 12:18:05.584971",
+ "modified": "2025-07-04 15:03:33.041806",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

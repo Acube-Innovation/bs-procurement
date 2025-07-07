@@ -18,11 +18,12 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item",
-   "options": "Material Request"
+   "options": "Item"
   },
   {
+   "fetch_from": "item.description",
    "fieldname": "description",
-   "fieldtype": "Small Text",
+   "fieldtype": "Text Editor",
    "in_list_view": 1,
    "label": "Description"
   },
@@ -50,7 +51,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-02 12:19:07.279574",
+ "modified": "2025-07-04 15:22:13.416501",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent Details",

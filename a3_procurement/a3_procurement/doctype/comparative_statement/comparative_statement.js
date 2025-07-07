@@ -22,3 +22,25 @@ frappe.ui.form.on("Comparative Statement", {
 			})
     }
 });
+
+frappe.ui.form.on('Comparative Statement  Details', {
+    // Trigger the total calculation whenever qty or rate changes
+    qty_no: function(frm, cdt, cdn) {
+        let child = locals[cdt][cdn];  // Get the current child row data
+        if (child.qty_no && child.rate) {
+            child.amount = child.qty_no * child.rate;  // Calculate total
+        } else {
+            child.amount = 0;  // If no qty or rate, set total to 0
+        }
+        frm.refresh_field('table_qfpf');  // Refresh the child table to reflect the changes
+    },
+    rate: function(frm, cdt, cdn) {
+        let child = locals[cdt][cdn];  // Get the current child row data
+        if (child.qty_no && child.rate) {
+            child.amount = child.qty_no * child.rate;  // Calculate total
+        } else {
+            child.amount = 0;  // If no qty or rate, set total to 0
+        }
+        frm.refresh_field('table_qfpf');  // Refresh the child table to reflect the changes
+    }
+});
