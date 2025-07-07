@@ -173,55 +173,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Indent Management",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "In-Principle Approval for CAPEX ",
-   "link_count": 0,
-   "link_to": "In-Principle Request",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Indent",
-   "link_count": 0,
-   "link_to": "Indent",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Approval",
-   "link_count": 0,
-   "link_to": "Purchase Approval",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Recommendation",
-   "link_count": 0,
-   "link_to": "Purchase Recommendation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Tender Management",
    "link_count": 4,
    "link_type": "DocType",
@@ -267,9 +218,88 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Indent Management",
+   "link_count": 7,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "In-Principle Approval for CAPEX ",
+   "link_count": 0,
+   "link_to": "In-Principle Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Indent",
+   "link_count": 0,
+   "link_to": "Indent",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tender",
+   "link_count": 0,
+   "link_to": "Tender  Opening",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Comparative Statement",
+   "link_count": 0,
+   "link_to": "Comparative Statement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Recommendation",
+   "link_count": 0,
+   "link_to": "Purchase Recommendation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Approval",
+   "link_count": 0,
+   "link_to": "Purchase Approval",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase  and Negotiation Committee",
+   "link_count": 0,
+   "link_to": "Purchase  and Negotiation Committee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-07-03 13:17:29.864762",
+ "modified": "2025-07-04 13:40:56.592076",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Procurement",

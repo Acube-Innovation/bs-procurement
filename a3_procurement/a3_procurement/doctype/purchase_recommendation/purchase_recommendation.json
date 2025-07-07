@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{PR}-{######}",
  "creation": "2025-07-03 11:49:53.785258",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -46,12 +47,12 @@
   },
   {
    "fieldname": "purchase_reference_no",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "Purchase Reference No"
   },
   {
    "fieldname": "file_no",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "File No"
   },
   {
@@ -65,7 +66,8 @@
   },
   {
    "fieldname": "section_break_njjt",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Purchase Details"
   },
   {
    "fieldname": "table_lylr",
@@ -118,10 +120,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-03 12:49:12.789307",
+ "modified": "2025-07-04 14:57:37.969381",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

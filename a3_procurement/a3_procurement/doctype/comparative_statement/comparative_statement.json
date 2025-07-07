@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{CS}-{######}",
  "creation": "2025-07-03 15:40:10.929498",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -230,10 +231,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-03 17:10:13.522340",
+ "modified": "2025-07-04 13:37:30.429267",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
