@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-09 11:38:00.490820",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tender_reference",
+  "status",
+  "column_break_rwrw",
+  "vendor",
+  "response_date",
+  "section_break_kalb",
+  "remarks",
+  "section_break_dhik",
+  "technical_documents",
+  "column_break_ljga",
+  "product_catalogue",
+  "section_break_idlm",
+  "technical_specs",
+  "section_break_ausm",
+  "commercial_documents",
+  "items",
+  "payment_terms",
+  "payment_schedule"
+ ],
+ "fields": [
+  {
+   "fieldname": "tender_reference",
+   "fieldtype": "Link",
+   "label": "Tender Reference",
+   "options": "Tender"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "response_date",
+   "fieldtype": "Date",
+   "label": "Response Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nDraft\nSubmitted\nUnder Evaluation\nApproved\nRejected"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "section_break_dhik",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "technical_documents",
+   "fieldtype": "Attach",
+   "label": "Technical Documents"
+  },
+  {
+   "fieldname": "technical_specs",
+   "fieldtype": "Small Text",
+   "label": "Technical Specs"
+  },
+  {
+   "fieldname": "product_catalogue",
+   "fieldtype": "Attach",
+   "label": "Product Catalogue"
+  },
+  {
+   "fieldname": "section_break_ausm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "commercial_documents",
+   "fieldtype": "Attach",
+   "label": "Commercial Documents "
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Tender Details"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms",
+   "options": "Payment Term"
+  },
+  {
+   "fieldname": "column_break_rwrw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kalb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ljga",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_idlm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_schedule",
+   "fieldtype": "Table",
+   "label": "Payment Schedule",
+   "options": "Payment Schedule"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-09 12:06:22.582059",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Tender Response",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

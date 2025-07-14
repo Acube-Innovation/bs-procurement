@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class InPrincipleRequest(Document):
+class TenderDetails(Document):
 	pass

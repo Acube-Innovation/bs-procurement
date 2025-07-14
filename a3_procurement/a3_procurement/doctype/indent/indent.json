@@ -6,21 +6,30 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "indent_type",
-  "cost_range",
+  "basic_details_section",
   "purchase_indent_number",
   "store_category",
-  "column_break_dqnu",
+  "column_break_yxpi",
   "indent_date",
+  "cost_range",
+  "column_break_xtaq",
+  "indent_type",
+  "budget_approval_document",
+  "departmentsection_details_section",
   "departmentsection",
+  "indentor",
+  "column_break_frtn",
   "department_requisition_number",
+  "indentor_designation",
+  "column_break_uvkm",
   "date_of_requisition",
-  "column_break_0sa4",
+  "work_order_details_section",
   "reference_wo_no",
+  "column_break_dqnu",
   "c_form_applicable",
+  "column_break_0sa4",
   "in_principle_request",
   "section_break_l4r0",
-  "material_request",
   "items",
   "justification",
   "section_break_tz6n",
@@ -31,10 +40,13 @@
   "source_tab",
   "test",
   "source_1",
+  "address_1",
   "column_break_9kar",
   "source_2",
+  "address_2",
   "column_break_sztu",
   "source_3",
+  "address_3",
   "cost_estimate_section",
   "budgetary_qoute",
   "column_break_wlbu",
@@ -76,19 +88,77 @@
   "current_procurement_rate",
   "probable_suppliers_section",
   "supplier_1",
+  "address_4",
   "column_break_evv7",
   "supplier_2",
+  "address_5",
   "column_break_ntvz",
   "supplier_3",
-  "section_break_aitk",
-  "prepared_by",
-  "column_break_boft",
-  "column_break_kroy"
+  "address_6",
+  "approvals_tab",
+  "indent_prepared_by_section",
+  "indentor_user_id",
+  "indentor_name",
+  "column_break_fwzm",
+  "verification_status",
+  "submitted_date",
+  "column_break_zqcp",
+  "remarks_1",
+  "indent_recommended_by_section",
+  "recommended_user_id",
+  "recommended_user_name",
+  "column_break_gnaz",
+  "recommendation_status",
+  "recommended_date",
+  "column_break_vies",
+  "remarks_2",
+  "indent_reviewd_by_section",
+  "reviewer_user_id",
+  "reviewer_user_name",
+  "column_break_uzro",
+  "review_status",
+  "reviewed_date",
+  "column_break_gdtz",
+  "remarks_3",
+  "indent_review_information_prepared__by_section",
+  "prepared_by_user_id",
+  "prepared_by_user_name",
+  "column_break_vafd",
+  "verification_status_1",
+  "prepared_date",
+  "column_break_ogvw",
+  "remarks_4",
+  "indent_review_information_checked_by_section",
+  "checked_by_user_id",
+  "checked_by_user_name",
+  "column_break_meoo",
+  "check_status",
+  "checked_dated",
+  "column_break_stfh",
+  "remarks_5",
+  "indent_review_information_verified_by_section",
+  "verified_by_user_id",
+  "verified_by_user_name",
+  "column_break_bruo",
+  "verification_satutus_2",
+  "verified_date",
+  "column_break_eony",
+  "remarks_6",
+  "gm_approval_section",
+  "gm_user_id",
+  "gm_user_name",
+  "column_break_qkns",
+  "approval_status",
+  "approved_date",
+  "column_break_lccc",
+  "remarks_7"
  ],
  "fields": [
   {
    "fieldname": "cost_range",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Cost Range",
    "options": "\nLess than Rs. 5000/-\nBetween Rs. 5000/- and Rs. 25000/-\nBetween Rs. 25000/- and Rs. 50000/-\nBetween Rs. 50000/- and Rs. 2 lakhs\nRs 2 lakh and Rs 20 lakh\nAbove Rs. 20 lakhs"
   },
@@ -96,6 +166,7 @@
    "fieldname": "purchase_indent_number",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Purchase Indent Number",
    "reqd": 1,
    "unique": 1
@@ -109,7 +180,7 @@
    "fieldname": "store_category",
    "fieldtype": "Select",
    "label": "Store Category",
-   "options": "Bonded\nGeneral"
+   "options": "\nBonded\nGeneral"
   },
   {
    "fieldname": "column_break_dqnu",
@@ -118,11 +189,14 @@
   {
    "fieldname": "indent_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Indent Date"
   },
   {
    "fieldname": "departmentsection",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Department/Section",
    "options": "Department"
   },
@@ -144,25 +218,19 @@
    "fieldname": "c_form_applicable",
    "fieldtype": "Select",
    "label": "C-Form Applicable",
-   "options": "Yes\nNo"
+   "options": "\nYes\nNo"
   },
   {
-   "depends_on": "eval:doc.indent_type==\"Capex\"",
+   "depends_on": "eval:doc.indent_type==\"Capital Purchase\"",
    "fieldname": "in_principle_request",
    "fieldtype": "Link",
    "label": "Capex In-Principle Reference",
-   "options": "In-Principle Request"
+   "options": "In-Principle Approval for CAPEX"
   },
   {
    "fieldname": "section_break_l4r0",
    "fieldtype": "Tab Break",
    "label": "Particulars"
-  },
-  {
-   "fieldname": "material_request",
-   "fieldtype": "Link",
-   "label": "Material Request",
-   "options": "Material Request"
   },
   {
    "fieldname": "items",
@@ -302,7 +370,7 @@
    "fieldname": "type_of_bid",
    "fieldtype": "Select",
    "label": "Type of Bid",
-   "options": "Single\nTwo"
+   "options": "\nSingle\nTwo"
   },
   {
    "fieldname": "amended_from",
@@ -463,39 +531,392 @@
    "options": "Supplier"
   },
   {
-   "fieldname": "section_break_aitk",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "prepared_by",
-   "fieldtype": "Link",
-   "label": "Prepared by",
-   "options": "User"
-  },
-  {
-   "fieldname": "column_break_boft",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_kroy",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "indent_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Indent Type",
-   "options": "\nCapex\nRevenue"
+   "options": "\nRaw Material\nCapital Purchase\nConsumable\nSub-contract"
   },
   {
    "fieldname": "column_break_dv6c",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_yxpi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xtaq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "budget_approval_document",
+   "fieldtype": "Link",
+   "label": "Budget Approval Document",
+   "options": "Budget"
+  },
+  {
+   "fieldname": "departmentsection_details_section",
+   "fieldtype": "Section Break",
+   "label": "Department/Section Details"
+  },
+  {
+   "fieldname": "column_break_frtn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uvkm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_order_details_section",
+   "fieldtype": "Section Break",
+   "label": "Work Order Details"
+  },
+  {
+   "fieldname": "indentor",
+   "fieldtype": "Link",
+   "label": "Indentor",
+   "options": "User"
+  },
+  {
+   "fieldname": "indentor_designation",
+   "fieldtype": "Link",
+   "label": "Indentor Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "address_1",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_2",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_3",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "approvals_tab",
+   "fieldtype": "Tab Break",
+   "label": "Approvals"
+  },
+  {
+   "fieldname": "indent_prepared_by_section",
+   "fieldtype": "Section Break",
+   "label": "Indent Prepared by"
+  },
+  {
+   "fieldname": "indentor_user_id",
+   "fieldtype": "Link",
+   "label": "Indentor User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "indentor_name",
+   "fieldtype": "Data",
+   "label": "Indentor Name"
+  },
+  {
+   "fieldname": "column_break_fwzm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verification_status",
+   "fieldtype": "Select",
+   "label": "Verification Status",
+   "options": "\nVerified\nPending"
+  },
+  {
+   "fieldname": "submitted_date",
+   "fieldtype": "Date",
+   "label": "Submitted Date"
+  },
+  {
+   "fieldname": "column_break_zqcp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_1",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "indent_recommended_by_section",
+   "fieldtype": "Section Break",
+   "label": "Indent Recommended by"
+  },
+  {
+   "fieldname": "recommended_user_id",
+   "fieldtype": "Link",
+   "label": "Recommended User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "recommended_user_name",
+   "fieldtype": "Data",
+   "label": "Recommended User Name"
+  },
+  {
+   "fieldname": "column_break_gnaz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recommendation_status",
+   "fieldtype": "Select",
+   "label": "Recommendation Status",
+   "options": "\nVerified\nPending"
+  },
+  {
+   "fieldname": "recommended_date",
+   "fieldtype": "Date",
+   "label": "Recommended Date"
+  },
+  {
+   "fieldname": "column_break_vies",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_2",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "indent_reviewd_by_section",
+   "fieldtype": "Section Break",
+   "label": "Indent Reviewed by"
+  },
+  {
+   "fieldname": "reviewer_user_id",
+   "fieldtype": "Link",
+   "label": "Reviewer User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "reviewer_user_name",
+   "fieldtype": "Data",
+   "label": "Reviewer User Name"
+  },
+  {
+   "fieldname": "column_break_uzro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "review_status",
+   "fieldtype": "Select",
+   "label": "Review Status",
+   "options": "\nVerified\nPending"
+  },
+  {
+   "fieldname": "reviewed_date",
+   "fieldtype": "Date",
+   "label": "Reviewed Date"
+  },
+  {
+   "fieldname": "column_break_gdtz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_3",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "indent_review_information_prepared__by_section",
+   "fieldtype": "Section Break",
+   "label": "Indent Review Information Prepared  by"
+  },
+  {
+   "fieldname": "prepared_by_user_id",
+   "fieldtype": "Link",
+   "label": "Prepared by User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "prepared_by_user_name",
+   "fieldtype": "Data",
+   "label": "Prepared by User Name"
+  },
+  {
+   "fieldname": "column_break_vafd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verification_status_1",
+   "fieldtype": "Select",
+   "label": "Verification Status",
+   "options": "\nVerified\nPending"
+  },
+  {
+   "fieldname": "prepared_date",
+   "fieldtype": "Date",
+   "label": "Prepared Date"
+  },
+  {
+   "fieldname": "column_break_ogvw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_4",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "indent_review_information_checked_by_section",
+   "fieldtype": "Section Break",
+   "label": "Indent Review Information Checked by"
+  },
+  {
+   "fieldname": "checked_by_user_id",
+   "fieldtype": "Link",
+   "label": "Checked by User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "checked_by_user_name",
+   "fieldtype": "Data",
+   "label": "Checked by User Name"
+  },
+  {
+   "fieldname": "column_break_meoo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "check_status",
+   "fieldtype": "Select",
+   "label": "Check Status",
+   "options": "\nVerified\nPending"
+  },
+  {
+   "fieldname": "checked_dated",
+   "fieldtype": "Date",
+   "label": "Checked Dated"
+  },
+  {
+   "fieldname": "column_break_stfh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_5",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "indent_review_information_verified_by_section",
+   "fieldtype": "Section Break",
+   "label": "Indent Review Information Verified by"
+  },
+  {
+   "fieldname": "verified_by_user_id",
+   "fieldtype": "Link",
+   "label": "Verified by User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "verified_by_user_name",
+   "fieldtype": "Data",
+   "label": "Verified by User Name"
+  },
+  {
+   "fieldname": "column_break_bruo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verification_satutus_2",
+   "fieldtype": "Select",
+   "label": "Verification Status",
+   "options": "\nVerified\nPending"
+  },
+  {
+   "fieldname": "verified_date",
+   "fieldtype": "Date",
+   "label": "Verified Date"
+  },
+  {
+   "fieldname": "column_break_eony",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_6",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "gm_approval_section",
+   "fieldtype": "Section Break",
+   "label": "GM Approval"
+  },
+  {
+   "fieldname": "gm_user_id",
+   "fieldtype": "Link",
+   "label": "GM User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "gm_user_name",
+   "fieldtype": "Data",
+   "label": "GM User Name"
+  },
+  {
+   "fieldname": "column_break_qkns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "\nApproved\nPending"
+  },
+  {
+   "fieldname": "approved_date",
+   "fieldtype": "Date",
+   "label": "Approved Date"
+  },
+  {
+   "fieldname": "column_break_lccc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_7",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "address_4",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_5",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_6",
+   "fieldtype": "Small Text",
+   "label": "Address"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-07-04 15:03:33.041806",
+ "links": [
+  {
+   "link_doctype": "Tender",
+   "link_fieldname": "purchase_indent_reference"
+  }
+ ],
+ "modified": "2025-07-10 01:07:03.367692",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

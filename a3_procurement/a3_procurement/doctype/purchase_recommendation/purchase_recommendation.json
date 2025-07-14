@@ -7,12 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_m0qv",
-  "amended_from",
   "file_no",
   "department",
-  "column_break_gzzh",
-  "date",
   "purchase_reference_no",
+  "column_break_gzzh",
+  "comparative_statement",
+  "date",
+  "amended_from",
   "section_break_njjt",
   "table_lylr",
   "section_break_knid",
@@ -42,17 +43,23 @@
   {
    "fieldname": "department",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Department",
    "options": "Department"
   },
   {
    "fieldname": "purchase_reference_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Purchase Reference No"
   },
   {
    "fieldname": "file_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "File No"
   },
   {
@@ -62,6 +69,7 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Date"
   },
   {
@@ -114,13 +122,28 @@
    "fieldtype": "Link",
    "label": "Approved  By",
    "options": "User"
+  },
+  {
+   "fieldname": "comparative_statement",
+   "fieldtype": "Link",
+   "label": "Comparative Statement",
+   "options": "Comparative Statement"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-07-04 14:57:37.969381",
+ "links": [
+  {
+   "link_doctype": "Purchase Approval",
+   "link_fieldname": "purchase_recommendation"
+  },
+  {
+   "link_doctype": "Purchase  and Negotiation Committee",
+   "link_fieldname": "comparative_statement"
+  }
+ ],
+ "modified": "2025-07-09 12:27:37.450484",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",

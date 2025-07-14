@@ -1,21 +1,26 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{TO}-{######}",
  "creation": "2025-07-03 12:53:45.235451",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_oykd",
   "amended_from",
+  "tender",
   "tender_enquiry__no",
-  "due__date",
   "due_date_extended_upto",
   "column_break_sufk",
+  "purchase_indent",
+  "due__date",
+  "section_break_qbmh",
   "description",
   "section_break_izcn",
   "table_bcra",
   "section_break_ooob",
   "estimate_attached",
+  "tender_opening_date",
   "section_break_szfa",
   "tender_opening_committee",
   "tender_opening_committee_2_section",
@@ -39,16 +44,19 @@
   {
    "fieldname": "tender_enquiry__no",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Tender Enquiry  No"
   },
   {
    "fieldname": "due__date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Due  Date"
   },
   {
    "fieldname": "due_date_extended_upto",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Due date extended upto"
   },
   {
@@ -98,16 +106,38 @@
    "fieldname": "table_laar",
    "fieldtype": "Table",
    "options": "Tender Opening Commitee"
+  },
+  {
+   "fieldname": "tender_opening_date",
+   "fieldtype": "Date",
+   "label": "Tender Opening Date"
+  },
+  {
+   "fieldname": "purchase_indent",
+   "fieldtype": "Link",
+   "label": "Purchase Indent",
+   "options": "Indent"
+  },
+  {
+   "fieldname": "section_break_qbmh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tender",
+   "fieldtype": "Link",
+   "label": "Tender",
+   "options": "Tender"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-03 13:15:11.360461",
+ "modified": "2025-07-09 11:29:12.221773",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender  Opening",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

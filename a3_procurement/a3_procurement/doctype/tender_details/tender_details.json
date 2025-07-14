@@ -1,17 +1,16 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-06-24 12:54:03.943619",
+ "creation": "2025-07-09 10:29:24.606517",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "item",
   "description",
-  "qty",
+  "quantity",
   "unit",
-  "estimated_cost",
-  "required_date"
+  "delivery_period"
  ],
  "fields": [
   {
@@ -29,10 +28,10 @@
    "label": "Description"
   },
   {
-   "fieldname": "qty",
+   "fieldname": "quantity",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Qty"
+   "label": "Quantity"
   },
   {
    "fieldname": "unit",
@@ -42,26 +41,20 @@
    "options": "UOM"
   },
   {
-   "fieldname": "estimated_cost",
-   "fieldtype": "Currency",
+   "fieldname": "delivery_period",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Estimated Cost"
-  },
-  {
-   "fieldname": "required_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Required Date"
+   "label": "Delivery Period"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-07 17:13:14.680218",
+ "modified": "2025-07-09 14:21:40.086646",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "In-Principle Items",
+ "name": "Tender Details",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

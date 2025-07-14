@@ -21,8 +21,10 @@
   "recommendation_of_the_pnc_section",
   "indentor",
   "project",
-  "total_no_of_items",
+  "comparative_statement",
+  "column_break_vaxv",
   "item",
+  "total_no_of_items",
   "section_break_ccbl",
   "source_recommended",
   "value_wo_tax",
@@ -61,6 +63,8 @@
   {
    "fieldname": "case_file_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Case file No"
   },
   {
@@ -81,6 +85,8 @@
   {
    "fieldname": "indenting_dept",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Indenting Dept",
    "options": "Department"
   },
@@ -97,6 +103,8 @@
   {
    "fieldname": "type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Type",
    "options": "\nLevel 1\nLevel 2\nLevel 3"
   },
@@ -176,13 +184,28 @@
    "fieldname": "special_points_if__any",
    "fieldtype": "Small Text",
    "label": "Special points if  any"
+  },
+  {
+   "fieldname": "comparative_statement",
+   "fieldtype": "Link",
+   "label": "Comparative Statement",
+   "options": "Comparative Statement"
+  },
+  {
+   "fieldname": "column_break_vaxv",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-07-04 13:21:50.013557",
+ "links": [
+  {
+   "link_doctype": "Purchase Order",
+   "link_fieldname": "custom_purchase__and_negotiation_committee_reference"
+  }
+ ],
+ "modified": "2025-07-09 12:34:55.757628",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase  and Negotiation Committee",
