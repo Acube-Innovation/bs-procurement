@@ -242,3 +242,49 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+{
+    "dt": "Workflow",
+    "filters": [
+        ["name", "in", 
+        [
+            'Purchase  and Negotiation Committee Workflow',
+            'Purchase Approval Workflow',
+            'Comparative Statement Workflow',
+            'Purchase Recommendation Workflow',
+            'Indent Workflow',
+            'In-Principle Approval Workflow'
+         ]]
+    ]
+},
+{
+    "dt": "Workflow State",
+    "filters": [
+        ["name", "in", 
+        [
+            'Pending HOD Approval',
+            'Pending CS Approval',
+            'Pending CFO Approval',
+            'Pending GM Approval',
+            'Pending MD Approval',
+            'Pending CMM Approval',
+            'Pending Indenter Approval'
+         ]]
+    ]
+},
+{
+    "dt": "Role",
+    "filters": [
+        ["name", "in", 
+        [
+            'Head of Department',
+            'Company Secretary',
+            'Chief Finance Officer',
+            'General Manager',
+            'Managing Director',
+            'Indenter',
+            'CMM'
+         ]]
+    ]
+}
+]
