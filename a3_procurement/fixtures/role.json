@@ -1,0 +1,93 @@
+[
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-06-23 14:25:18.390232",
+  "name": "Head of Department",
+  "restrict_to_domain": null,
+  "role_name": "Head of Department",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-06-23 14:27:47.437773",
+  "name": "Company Secretary",
+  "restrict_to_domain": null,
+  "role_name": "Company Secretary",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-06-23 14:28:20.358400",
+  "name": "Chief Finance Officer",
+  "restrict_to_domain": null,
+  "role_name": "Chief Finance Officer",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-06-23 14:28:50.852347",
+  "name": "General Manager",
+  "restrict_to_domain": null,
+  "role_name": "General Manager",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-06-23 14:29:22.372386",
+  "name": "Managing Director",
+  "restrict_to_domain": null,
+  "role_name": "Managing Director",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-06-23 14:30:00.779056",
+  "name": "Indenter",
+  "restrict_to_domain": null,
+  "role_name": "Indenter",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-06-24 11:40:20.830650",
+  "name": "CMM",
+  "restrict_to_domain": null,
+  "role_name": "CMM",
+  "two_factor_auth": 0
+ }
+]
