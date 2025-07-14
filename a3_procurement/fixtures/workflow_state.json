@@ -1,0 +1,65 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:25:32.706562",
+  "name": "Pending CS Approval",
+  "style": "",
+  "workflow_state_name": "Pending CS Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-04 12:26:09.990767",
+  "name": "Pending Indenter Approval",
+  "style": "",
+  "workflow_state_name": "Pending Indenter Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:28:39.099937",
+  "name": "Pending GM Approval",
+  "style": "",
+  "workflow_state_name": "Pending GM Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-24 11:40:08.601257",
+  "name": "Pending CMM Approval",
+  "style": "",
+  "workflow_state_name": "Pending CMM Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:28:05.876798",
+  "name": "Pending CFO Approval",
+  "style": "",
+  "workflow_state_name": "Pending CFO Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:29:06.618861",
+  "name": "Pending MD Approval",
+  "style": "",
+  "workflow_state_name": "Pending MD Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:24:26.017180",
+  "name": "Pending HOD Approval",
+  "style": "",
+  "workflow_state_name": "Pending HOD Approval"
+ }
+]
