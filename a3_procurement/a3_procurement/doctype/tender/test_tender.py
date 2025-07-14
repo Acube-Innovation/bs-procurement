@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestInPrincipleRequest(FrappeTestCase):
+class TestTender(FrappeTestCase):
 	pass

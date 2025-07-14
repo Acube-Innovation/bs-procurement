@@ -30,7 +30,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "In-Principle Request",
+   "options": "In-Principle Approval for CAPEX",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -75,6 +75,7 @@
   {
    "fieldname": "in_principle_request_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "In-Principle Request Date"
   },
   {
@@ -101,10 +102,10 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-02 12:18:42.472559",
+ "modified": "2025-07-08 15:45:30.088830",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "In-Principle Request",
+ "name": "In-Principle Approval for CAPEX",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
