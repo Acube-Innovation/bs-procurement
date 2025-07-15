@@ -1,0 +1,189 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:RRL-{customer}-{######}",
+ "creation": "2025-07-15 15:10:20.571167",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_uzhe",
+  "customer",
+  "work_order",
+  "invoice_no",
+  "date",
+  "amount_due",
+  "rt_no",
+  "testing_charges",
+  "column_break_ksbd",
+  "advance__adjusted",
+  "pending_amount",
+  "interest_of_advance",
+  "other_deductions",
+  "net_amount_received",
+  "pending_amountnot_due",
+  "column_break_fdxr",
+  "it",
+  "ld",
+  "tds_on_igst",
+  "tds_on_sgst",
+  "tds_on_cgst",
+  "gst_recovery"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "label": "Work Order",
+   "options": "Work Order"
+  },
+  {
+   "fieldname": "invoice_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Invoice No",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "amount_due",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount due"
+  },
+  {
+   "fieldname": "advance__adjusted",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Advance  Adjusted "
+  },
+  {
+   "fieldname": "pending_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Pending Amount"
+  },
+  {
+   "fieldname": "column_break_fdxr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "it",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "IT"
+  },
+  {
+   "fieldname": "ld",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "LD"
+  },
+  {
+   "fieldname": "tds_on_igst",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "TDS ON IGST"
+  },
+  {
+   "fieldname": "tds_on_sgst",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "TDS ON SGST"
+  },
+  {
+   "fieldname": "tds_on_cgst",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "TDS ON CGST"
+  },
+  {
+   "fieldname": "gst_recovery",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "GST Recovery"
+  },
+  {
+   "fieldname": "testing_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Testing Charges"
+  },
+  {
+   "fieldname": "interest_of_advance",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Interest of Advance"
+  },
+  {
+   "fieldname": "other_deductions",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Other deductions"
+  },
+  {
+   "fieldname": "pending_amountnot_due",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Pending Amount(Not Due)"
+  },
+  {
+   "fieldname": "net_amount_received",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Amount Received"
+  },
+  {
+   "fieldname": "rt_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "RT NO."
+  },
+  {
+   "fieldname": "column_break_ksbd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uzhe",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-15 15:31:05.033127",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Receipt Register Log",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
