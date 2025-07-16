@@ -10,7 +10,7 @@ frappe.ui.form.on('In-Principle Approval for CAPEX', {
 
                     indent.indent_type = 'Capex';
                     indent.in_principle_request = frm.doc.name;
-                    indent.department_requisition_number = frm.doc.department_requisition_no;
+                    indent.department_requisition_number = frm.doc.capex_requisition_number;
                     indent.reference_wo_no = frm.doc.customer_orderwo_reference;
                     indent.departmentsection = frm.doc.departmentsection;
 

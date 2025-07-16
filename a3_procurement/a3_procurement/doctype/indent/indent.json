@@ -1,28 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:purchase_indent_number",
+ "autoname": "format:{PI}-{######}",
  "creation": "2025-06-24 14:19:12.447771",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "basic_details_section",
   "purchase_indent_number",
-  "store_category",
   "column_break_yxpi",
   "indent_date",
-  "cost_range",
   "column_break_xtaq",
-  "indent_type",
-  "budget_approval_document",
+  "store_category",
   "departmentsection_details_section",
   "departmentsection",
   "indentor",
-  "column_break_frtn",
-  "department_requisition_number",
   "indentor_designation",
-  "column_break_uvkm",
+  "column_break_frtn",
   "date_of_requisition",
+  "department_requisition_number",
+  "budget_approval_document",
+  "column_break_uvkm",
+  "cost_range",
+  "indent_type",
+  "capex_requisition_number",
   "work_order_details_section",
   "reference_wo_no",
   "column_break_dqnu",
@@ -39,14 +40,7 @@
   "special_instructions",
   "source_tab",
   "test",
-  "source_1",
-  "address_1",
-  "column_break_9kar",
-  "source_2",
-  "address_2",
-  "column_break_sztu",
-  "source_3",
-  "address_3",
+  "table_ophz",
   "cost_estimate_section",
   "budgetary_qoute",
   "column_break_wlbu",
@@ -79,6 +73,7 @@
   "column_break_eddg",
   "cost_estimate_in_sealed_envelope",
   "indent_review_information_tab",
+  "to_be_filled_by_cmm_section",
   "indentor_specification",
   "column_break_cqz1",
   "stock_position_in_stores",
@@ -87,14 +82,7 @@
   "last_procurement_rate",
   "current_procurement_rate",
   "probable_suppliers_section",
-  "supplier_1",
-  "address_4",
-  "column_break_evv7",
-  "supplier_2",
-  "address_5",
-  "column_break_ntvz",
-  "supplier_3",
-  "address_6",
+  "table_pson",
   "approvals_tab",
   "indent_prepared_by_section",
   "indentor_user_id",
@@ -163,20 +151,16 @@
    "options": "\nLess than Rs. 5000/-\nBetween Rs. 5000/- and Rs. 25000/-\nBetween Rs. 25000/- and Rs. 50000/-\nBetween Rs. 50000/- and Rs. 2 lakhs\nRs 2 lakh and Rs 20 lakh\nAbove Rs. 20 lakhs"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "purchase_indent_number",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Purchase Indent Number",
-   "reqd": 1,
    "unique": 1
   },
   {
-   "fieldname": "department_requisition_number",
-   "fieldtype": "Data",
-   "label": "Department Requisition Number"
-  },
-  {
+   "allow_on_submit": 1,
    "fieldname": "store_category",
    "fieldtype": "Select",
    "label": "Store Category",
@@ -187,10 +171,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "indent_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Indent Date"
+   "label": "Purchase Indent Date"
   },
   {
    "fieldname": "departmentsection",
@@ -210,11 +195,14 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "reference_wo_no",
    "fieldtype": "Data",
    "label": "Reference WO No"
   },
   {
+   "allow_on_submit": 1,
+   "default": "No",
    "fieldname": "c_form_applicable",
    "fieldtype": "Select",
    "label": "C-Form Applicable",
@@ -275,32 +263,6 @@
    "fieldname": "test",
    "fieldtype": "Section Break",
    "label": "Source of Supply Known to Indentors"
-  },
-  {
-   "fieldname": "source_1",
-   "fieldtype": "Link",
-   "label": "Source 1",
-   "options": "Supplier"
-  },
-  {
-   "fieldname": "column_break_9kar",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "source_2",
-   "fieldtype": "Link",
-   "label": "Source 2",
-   "options": "Supplier"
-  },
-  {
-   "fieldname": "column_break_sztu",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "source_3",
-   "fieldtype": "Link",
-   "label": "Source 3",
-   "options": "Supplier"
   },
   {
    "fieldname": "cost_estimate_section",
@@ -505,32 +467,6 @@
    "label": "Probable Suppliers"
   },
   {
-   "fieldname": "supplier_1",
-   "fieldtype": "Link",
-   "label": "Supplier 1",
-   "options": "Supplier"
-  },
-  {
-   "fieldname": "column_break_evv7",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "supplier_2",
-   "fieldtype": "Link",
-   "label": "Supplier 2",
-   "options": "Supplier"
-  },
-  {
-   "fieldname": "column_break_ntvz",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "supplier_3",
-   "fieldtype": "Link",
-   "label": "Supplier 3",
-   "options": "Supplier"
-  },
-  {
    "fieldname": "indent_type",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -545,7 +481,7 @@
   {
    "fieldname": "basic_details_section",
    "fieldtype": "Section Break",
-   "label": "Basic Details"
+   "label": "Indent Details (CMM)"
   },
   {
    "fieldname": "column_break_yxpi",
@@ -557,9 +493,8 @@
   },
   {
    "fieldname": "budget_approval_document",
-   "fieldtype": "Link",
-   "label": "Budget Approval Document",
-   "options": "Budget"
+   "fieldtype": "Data",
+   "label": "Budget Approval Document"
   },
   {
    "fieldname": "departmentsection_details_section",
@@ -590,21 +525,6 @@
    "fieldtype": "Link",
    "label": "Indentor Designation",
    "options": "Designation"
-  },
-  {
-   "fieldname": "address_1",
-   "fieldtype": "Small Text",
-   "label": "Address"
-  },
-  {
-   "fieldname": "address_2",
-   "fieldtype": "Small Text",
-   "label": "Address"
-  },
-  {
-   "fieldname": "address_3",
-   "fieldtype": "Small Text",
-   "label": "Address"
   },
   {
    "fieldname": "approvals_tab",
@@ -892,19 +812,31 @@
    "label": "Remarks"
   },
   {
-   "fieldname": "address_4",
-   "fieldtype": "Small Text",
-   "label": "Address"
+   "fieldname": "capex_requisition_number",
+   "fieldtype": "Data",
+   "label": "Capex Requisition Number"
   },
   {
-   "fieldname": "address_5",
-   "fieldtype": "Small Text",
-   "label": "Address"
+   "fieldname": "department_requisition_number",
+   "fieldtype": "Data",
+   "label": "Department Requisition Number",
+   "reqd": 1
   },
   {
-   "fieldname": "address_6",
-   "fieldtype": "Small Text",
-   "label": "Address"
+   "fieldname": "table_ophz",
+   "fieldtype": "Table",
+   "options": "Indent Source Suppliers"
+  },
+  {
+   "fieldname": "to_be_filled_by_cmm_section",
+   "fieldtype": "Section Break",
+   "label": "Indent Review Information (To be filled by CMM)"
+  },
+  {
+   "fieldname": "table_pson",
+   "fieldtype": "Table",
+   "label": "To be selected by CMM",
+   "options": "Indent Source Suppliers"
   }
  ],
  "grid_page_length": 50,
@@ -916,11 +848,11 @@
    "link_fieldname": "purchase_indent_reference"
   }
  ],
- "modified": "2025-07-10 01:07:03.367692",
+ "modified": "2025-07-15 15:51:21.908679",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
