@@ -14,18 +14,24 @@
   "due_date",
   "purchase_indent_reference",
   "section_break_fxom",
-  "items"
+  "items",
+  "terms_and_conditions_section",
+  "terms_and_conditions_template",
+  "terms_and_conditions"
  ],
  "fields": [
   {
    "fieldname": "tender_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Tender Type",
    "options": "\nLimited Tender\nPublic Tender\nPAC"
   },
   {
    "fieldname": "enquiry_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Enquiry No"
   },
   {
@@ -36,6 +42,7 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Date"
   },
   {
@@ -60,8 +67,27 @@
   {
    "fieldname": "purchase_indent_reference",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Purchase Indent Reference",
    "options": "Indent"
+  },
+  {
+   "fieldname": "terms_and_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fetch_from": "terms_and_conditions_template.terms",
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Text Editor",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "terms_and_conditions_template",
+   "fieldtype": "Link",
+   "label": "Terms and Conditions Template",
+   "options": "Terms and Conditions"
   }
  ],
  "grid_page_length": 50,
@@ -76,11 +102,11 @@
    "link_fieldname": "tender"
   },
   {
-   "link_doctype": "Request for Quotation",
-   "link_fieldname": "custom_tender"
+   "link_doctype": "Supplier Quotation",
+   "link_fieldname": "custom_tender_reference"
   }
  ],
- "modified": "2025-07-09 14:25:39.329620",
+ "modified": "2025-07-15 16:36:00.221399",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",

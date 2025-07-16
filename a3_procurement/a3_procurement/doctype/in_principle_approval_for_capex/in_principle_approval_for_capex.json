@@ -8,6 +8,7 @@
  "field_order": [
   "section_break_5lr3",
   "amended_from",
+  "capex_id",
   "departmentsection",
   "department_requisition_no",
   "select_indenter",
@@ -15,6 +16,7 @@
   "customer_orderwo_reference",
   "capex_budget_code_reference",
   "in_principle_request_date",
+  "indentor_name",
   "section_break_jtmc",
   "particulars",
   "section_break_vznm",
@@ -23,7 +25,8 @@
  "fields": [
   {
    "fieldname": "section_break_5lr3",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Request Details"
   },
   {
    "fieldname": "amended_from",
@@ -48,7 +51,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Department Requisition No"
+   "label": "Capex Requisition No (From Dept.)"
   },
   {
    "fieldname": "select_indenter",
@@ -70,7 +73,7 @@
   {
    "fieldname": "capex_budget_code_reference",
    "fieldtype": "Data",
-   "label": "Capex Budget Code Reference"
+   "label": "Capex Budget Code Reference (For CS)"
   },
   {
    "fieldname": "in_principle_request_date",
@@ -85,7 +88,7 @@
   {
    "fieldname": "particulars",
    "fieldtype": "Table",
-   "label": "Particulars",
+   "label": "Item Particulars",
    "options": "In-Principle Items"
   },
   {
@@ -96,13 +99,29 @@
    "fieldname": "justification_with_likely_financial_gain",
    "fieldtype": "Small Text",
    "label": "Justification With Likely Financial Gain"
+  },
+  {
+   "fieldname": "capex_id",
+   "fieldtype": "Data",
+   "label": "Capex ID"
+  },
+  {
+   "fetch_from": "select_indenter.full_name",
+   "fieldname": "indentor_name",
+   "fieldtype": "Data",
+   "label": "Indentor Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-07-08 15:45:30.088830",
+ "links": [
+  {
+   "link_doctype": "Indent",
+   "link_fieldname": "in_principle_request"
+  }
+ ],
+ "modified": "2025-07-15 22:33:01.641722",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "In-Principle Approval for CAPEX",
