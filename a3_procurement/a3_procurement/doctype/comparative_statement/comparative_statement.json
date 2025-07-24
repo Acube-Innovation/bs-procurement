@@ -7,16 +7,17 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_acxv",
+  "tender_opening_reference",
+  "no_of_parties_contacted",
+  "no_of_quotation_received",
+  "column_break_mzbc",
   "tender",
   "enquiry_no",
   "due_on",
-  "column_break_mzbc",
-  "no_of_parties_contacted",
-  "no_of_quotation_received",
-  "tender_opening_reference",
   "amended_from",
   "section_break_obqv",
-  "vendor_responses"
+  "vendor_responses",
+  "table_flub"
  ],
  "fields": [
   {
@@ -83,6 +84,11 @@
    "fieldtype": "Link",
    "label": "Tender Opening Reference",
    "options": "Tender  Opening"
+  },
+  {
+   "fieldname": "table_flub",
+   "fieldtype": "Table",
+   "options": "Purchase Recommendation Detail"
   }
  ],
  "grid_page_length": 50,
@@ -94,7 +100,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-07-18 11:23:04.859613",
+ "modified": "2025-07-24 12:43:01.108909",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",

@@ -250,7 +250,6 @@ fixtures = [
         [
             'Purchase  and Negotiation Committee Workflow',
             'Purchase Approval Workflow',
-            'Comparative Statement Workflow',
             'Purchase Recommendation Workflow',
             'Indent Workflow',
             'In-Principle Approval Workflow'
@@ -268,7 +267,15 @@ fixtures = [
             'Pending GM Approval',
             'Pending MD Approval',
             'Pending CMM Approval',
-            'Pending Indenter Approval'
+            'Pending Indenter Approval',
+            'CS Approved & Forwarded to CFO',
+            'HOD Approved & Forwarded to CS',
+            'CFO Approved & Forwarded to GM',
+            'GM Approved and Forwarded to MD',
+            'HOD Approved & Forwarded to CMM',
+            'CMM Approved & Forwarded to GM',
+            'Indentor Approved & Forwarded to HOD',
+            'HOD Approved & Forwarded to CFO'
          ]]
     ]
 },
