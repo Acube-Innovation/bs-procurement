@@ -252,7 +252,8 @@ fixtures = [
             'Purchase Approval Workflow',
             'Purchase Recommendation Workflow',
             'Indent Workflow',
-            'In-Principle Approval Workflow'
+            'In-Principle Approval Workflow',
+            'Proprietory Article Certificate Work Flow'
          ]]
     ]
 },
@@ -275,7 +276,10 @@ fixtures = [
             'HOD Approved & Forwarded to CMM',
             'CMM Approved & Forwarded to GM',
             'Indentor Approved & Forwarded to HOD',
-            'HOD Approved & Forwarded to CFO'
+            'HOD Approved & Forwarded to CFO',
+            'HOD Approved & Forwarded to GM',
+            'Indentor Approved & Forwarded to Senior Manager',
+            'Senior Manager Approved &  Forwarded to HOD'
          ]]
     ]
 },
@@ -290,7 +294,8 @@ fixtures = [
             'General Manager',
             'Managing Director',
             'Indenter',
-            'CMM'
+            'CMM',
+            'Senior Manager'
          ]]
     ]
 }

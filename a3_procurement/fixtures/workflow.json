@@ -4,7 +4,7 @@
   "doctype": "Workflow",
   "document_type": "In-Principle Approval for CAPEX",
   "is_active": 1,
-  "modified": "2025-06-24 13:23:13.895529",
+  "modified": "2025-07-24 14:44:03.721897",
   "name": "In-Principle Approval Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -20,7 +20,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -36,7 +36,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending CS Approval",
+    "state": "HOD Approved & Forwarded to CS",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -52,7 +52,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending CFO Approval",
+    "state": "CS Approved & Forwarded to CFO",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -68,7 +68,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -84,7 +84,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -128,12 +128,12 @@
     "allow_self_approval": 1,
     "allowed": "Head of Department",
     "condition": null,
-    "next_state": "Pending CS Approval",
+    "next_state": "HOD Approved & Forwarded to CS",
     "parent": "In-Principle Approval Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -141,12 +141,12 @@
     "allow_self_approval": 1,
     "allowed": "Company Secretary",
     "condition": null,
-    "next_state": "Pending CFO Approval",
+    "next_state": "CS Approved & Forwarded to CFO",
     "parent": "In-Principle Approval Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CS Approval",
+    "state": "HOD Approved & Forwarded to CS",
     "workflow_builder_id": null
    },
    {
@@ -154,12 +154,12 @@
     "allow_self_approval": 1,
     "allowed": "Chief Finance Officer",
     "condition": null,
-    "next_state": "Pending GM Approval",
+    "next_state": "CFO Approved & Forwarded to GM",
     "parent": "In-Principle Approval Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CFO Approval",
+    "state": "CS Approved & Forwarded to CFO",
     "workflow_builder_id": null
    },
    {
@@ -167,12 +167,12 @@
     "allow_self_approval": 1,
     "allowed": "General Manager",
     "condition": null,
-    "next_state": "Pending MD Approval",
+    "next_state": "GM Approved and Forwarded to MD",
     "parent": "In-Principle Approval Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "workflow_builder_id": null
    },
    {
@@ -185,7 +185,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "workflow_builder_id": null
    },
    {
@@ -198,7 +198,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -211,7 +211,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CS Approval",
+    "state": "HOD Approved & Forwarded to CS",
     "workflow_builder_id": null
    },
    {
@@ -224,7 +224,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CFO Approval",
+    "state": "CS Approved & Forwarded to CFO",
     "workflow_builder_id": null
    },
    {
@@ -237,7 +237,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "workflow_builder_id": null
    },
    {
@@ -250,7 +250,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "workflow_builder_id": null
    }
   ],
@@ -263,7 +263,7 @@
   "doctype": "Workflow",
   "document_type": "Indent",
   "is_active": 1,
-  "modified": "2025-06-24 15:46:48.639228",
+  "modified": "2025-07-24 14:35:25.083547",
   "name": "Indent Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -279,7 +279,23 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": null
+   },
+   {
+    "allow_edit": "CMM",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Indent Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "HOD Approved & Forwarded to CMM",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -295,7 +311,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending GM Approval",
+    "state": "CMM Approved & Forwarded to GM",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -331,22 +347,6 @@
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "CMM",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "parent": "Indent Workflow",
-    "parentfield": "states",
-    "parenttype": "Workflow",
-    "send_email": 1,
-    "state": "Pending CMM Approval",
-    "update_field": null,
-    "update_value": null,
-    "workflow_builder_id": null
    }
   ],
   "transitions": [
@@ -355,12 +355,12 @@
     "allow_self_approval": 1,
     "allowed": "Head of Department",
     "condition": null,
-    "next_state": "Pending CMM Approval",
+    "next_state": "HOD Approved & Forwarded to CMM",
     "parent": "Indent Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -368,12 +368,12 @@
     "allow_self_approval": 1,
     "allowed": "CMM",
     "condition": null,
-    "next_state": "Pending GM Approval",
+    "next_state": "CMM Approved & Forwarded to GM",
     "parent": "Indent Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CMM Approval",
+    "state": "HOD Approved & Forwarded to CMM",
     "workflow_builder_id": null
    },
    {
@@ -386,7 +386,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CMM Approved & Forwarded to GM",
     "workflow_builder_id": null
    },
    {
@@ -399,7 +399,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -412,7 +412,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CMM Approval",
+    "state": "HOD Approved & Forwarded to CMM",
     "workflow_builder_id": null
    },
    {
@@ -425,7 +425,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CMM Approved & Forwarded to GM",
     "workflow_builder_id": null
    }
   ],
@@ -438,7 +438,7 @@
   "doctype": "Workflow",
   "document_type": "Purchase Approval",
   "is_active": 1,
-  "modified": "2025-07-04 15:33:47.279091",
+  "modified": "2025-07-24 13:41:44.867852",
   "name": "Purchase Approval Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -454,7 +454,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending Indenter Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -470,7 +470,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending HOD Approval",
+    "state": "HOD Approved & Forwarded to CFO",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -486,7 +486,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending CFO Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -502,23 +502,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending GM Approval",
-    "update_field": null,
-    "update_value": null,
-    "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "Managing Director",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "parent": "Purchase Approval Workflow",
-    "parentfield": "states",
-    "parenttype": "Workflow",
-    "send_email": 1,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -560,27 +544,14 @@
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "Indenter",
-    "condition": null,
-    "next_state": "Pending HOD Approval",
-    "parent": "Purchase Approval Workflow",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "send_email_to_creator": 0,
-    "state": "Pending Indenter Approval",
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Approve",
-    "allow_self_approval": 1,
     "allowed": "Head of Department",
     "condition": null,
-    "next_state": "Pending CFO Approval",
+    "next_state": "HOD Approved & Forwarded to CFO",
     "parent": "Purchase Approval Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -588,12 +559,12 @@
     "allow_self_approval": 1,
     "allowed": "Chief Finance Officer",
     "condition": null,
-    "next_state": "Pending GM Approval",
+    "next_state": "CFO Approved & Forwarded to GM",
     "parent": "Purchase Approval Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CFO Approval",
+    "state": "HOD Approved & Forwarded to CFO",
     "workflow_builder_id": null
    },
    {
@@ -601,12 +572,12 @@
     "allow_self_approval": 1,
     "allowed": "General Manager",
     "condition": null,
-    "next_state": "Pending MD Approval",
+    "next_state": "GM Approved and Forwarded to MD",
     "parent": "Purchase Approval Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "workflow_builder_id": null
    },
    {
@@ -619,20 +590,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending MD Approval",
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Reject",
-    "allow_self_approval": 1,
-    "allowed": "Indenter",
-    "condition": null,
-    "next_state": "Rejected",
-    "parent": "Purchase Approval Workflow",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "send_email_to_creator": 0,
-    "state": "Pending Indenter Approval",
+    "state": "GM Approved and Forwarded to MD",
     "workflow_builder_id": null
    },
    {
@@ -645,7 +603,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -658,7 +616,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CFO Approval",
+    "state": "HOD Approved & Forwarded to CFO",
     "workflow_builder_id": null
    },
    {
@@ -671,7 +629,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "workflow_builder_id": null
    },
    {
@@ -684,7 +642,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "workflow_builder_id": null
    }
   ],
@@ -697,7 +655,7 @@
   "doctype": "Workflow",
   "document_type": "Purchase  and Negotiation Committee",
   "is_active": 1,
-  "modified": "2025-07-04 15:42:44.002489",
+  "modified": "2025-07-24 13:30:41.022731",
   "name": "Purchase  and Negotiation Committee Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -713,7 +671,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -729,7 +687,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending CFO Approval",
+    "state": "HOD Approved & Forwarded to CFO",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -745,7 +703,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -761,7 +719,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -805,12 +763,12 @@
     "allow_self_approval": 1,
     "allowed": "Head of Department",
     "condition": null,
-    "next_state": "Pending CFO Approval",
+    "next_state": "HOD Approved & Forwarded to CFO",
     "parent": "Purchase  and Negotiation Committee Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -818,12 +776,12 @@
     "allow_self_approval": 1,
     "allowed": "Chief Finance Officer",
     "condition": null,
-    "next_state": "Pending GM Approval",
+    "next_state": "CFO Approved & Forwarded to GM",
     "parent": "Purchase  and Negotiation Committee Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CFO Approval",
+    "state": "HOD Approved & Forwarded to CFO",
     "workflow_builder_id": null
    },
    {
@@ -831,12 +789,12 @@
     "allow_self_approval": 1,
     "allowed": "General Manager",
     "condition": null,
-    "next_state": "Pending MD Approval",
+    "next_state": "GM Approved and Forwarded to MD",
     "parent": "Purchase  and Negotiation Committee Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "workflow_builder_id": null
    },
    {
@@ -849,7 +807,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "workflow_builder_id": null
    },
    {
@@ -862,7 +820,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -875,7 +833,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CFO Approval",
+    "state": "HOD Approved & Forwarded to CFO",
     "workflow_builder_id": null
    },
    {
@@ -888,7 +846,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending GM Approval",
+    "state": "CFO Approved & Forwarded to GM",
     "workflow_builder_id": null
    },
    {
@@ -901,7 +859,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending MD Approval",
+    "state": "GM Approved and Forwarded to MD",
     "workflow_builder_id": null
    }
   ],
@@ -914,7 +872,7 @@
   "doctype": "Workflow",
   "document_type": "Purchase Recommendation",
   "is_active": 1,
-  "modified": "2025-07-04 13:28:09.484413",
+  "modified": "2025-07-24 14:26:44.631251",
   "name": "Purchase Recommendation Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -930,7 +888,23 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to HOD",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": null
+   },
+   {
+    "allow_edit": "System Manager",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Purchase Recommendation Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "HOD Approved & Forwarded to GM",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -966,19 +940,168 @@
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
+   }
+  ],
+  "transitions": [
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "Head of Department",
+    "condition": null,
+    "next_state": "HOD Approved & Forwarded to GM",
+    "parent": "Purchase Recommendation Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "Indentor Approved & Forwarded to HOD",
+    "workflow_builder_id": null
    },
    {
-    "allow_edit": "CMM",
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "General Manager",
+    "condition": null,
+    "next_state": "Approved",
+    "parent": "Purchase Recommendation Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "HOD Approved & Forwarded to GM",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Reject",
+    "allow_self_approval": 1,
+    "allowed": "Head of Department",
+    "condition": null,
+    "next_state": "Rejected",
+    "parent": "Purchase Recommendation Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "Indentor Approved & Forwarded to HOD",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Reject",
+    "allow_self_approval": 1,
+    "allowed": "General Manager",
+    "condition": null,
+    "next_state": "Rejected",
+    "parent": "Purchase Recommendation Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "HOD Approved & Forwarded to GM",
+    "workflow_builder_id": null
+   }
+  ],
+  "workflow_data": null,
+  "workflow_name": "Purchase Recommendation Workflow",
+  "workflow_state_field": "workflow_state"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow",
+  "document_type": "Proprietory Article Certificate",
+  "is_active": 1,
+  "modified": "2025-07-24 14:57:58.715381",
+  "name": "Proprietory Article Certificate Work Flow",
+  "override_status": 0,
+  "send_email_alert": 0,
+  "states": [
+   {
+    "allow_edit": "Senior Manager",
     "avoid_status_override": 0,
     "doc_status": "0",
     "is_optional_state": 0,
     "message": null,
     "next_action_email_template": null,
-    "parent": "Purchase Recommendation Workflow",
+    "parent": "Proprietory Article Certificate Work Flow",
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Pending CMM Approval",
+    "state": "Indentor Approved & Forwarded to Senior Manager",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": null
+   },
+   {
+    "allow_edit": "Head of Department",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "Senior Manager Approved &  Forwarded to HOD",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": null
+   },
+   {
+    "allow_edit": "General Manager",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "HOD Approved & Forwarded to GM",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": null
+   },
+   {
+    "allow_edit": "Managing Director",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "GM Approved and Forwarded to MD",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": null
+   },
+   {
+    "allow_edit": "System Manager",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "Approved",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": null
+   },
+   {
+    "allow_edit": "System Manager",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "Rejected",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -988,27 +1111,66 @@
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "Head of Department",
+    "allowed": "Senior Manager",
     "condition": null,
-    "next_state": "Pending CMM Approval",
-    "parent": "Purchase Recommendation Workflow",
+    "next_state": "Senior Manager Approved &  Forwarded to HOD",
+    "parent": "Proprietory Article Certificate Work Flow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Indentor Approved & Forwarded to Senior Manager",
     "workflow_builder_id": null
    },
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "CMM",
+    "allowed": "Head of Department",
     "condition": null,
-    "next_state": "Approved",
-    "parent": "Purchase Recommendation Workflow",
+    "next_state": "HOD Approved & Forwarded to GM",
+    "parent": "Proprietory Article Certificate Work Flow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CMM Approval",
+    "state": "Senior Manager Approved &  Forwarded to HOD",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "General Manager",
+    "condition": null,
+    "next_state": "GM Approved and Forwarded to MD",
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "HOD Approved & Forwarded to GM",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "Managing Director",
+    "condition": null,
+    "next_state": "Approved",
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "GM Approved and Forwarded to MD",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Reject",
+    "allow_self_approval": 1,
+    "allowed": "Senior Manager",
+    "condition": null,
+    "next_state": "Rejected",
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "Indentor Approved & Forwarded to Senior Manager",
     "workflow_builder_id": null
    },
    {
@@ -1017,29 +1179,42 @@
     "allowed": "Head of Department",
     "condition": null,
     "next_state": "Rejected",
-    "parent": "Purchase Recommendation Workflow",
+    "parent": "Proprietory Article Certificate Work Flow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending HOD Approval",
+    "state": "Senior Manager Approved &  Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
     "action": "Reject",
     "allow_self_approval": 1,
-    "allowed": "CMM",
+    "allowed": "General Manager",
     "condition": null,
     "next_state": "Rejected",
-    "parent": "Purchase Recommendation Workflow",
+    "parent": "Proprietory Article Certificate Work Flow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Pending CMM Approval",
+    "state": "HOD Approved & Forwarded to GM",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Reject",
+    "allow_self_approval": 1,
+    "allowed": "Managing Director",
+    "condition": null,
+    "next_state": "Rejected",
+    "parent": "Proprietory Article Certificate Work Flow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "GM Approved and Forwarded to MD",
     "workflow_builder_id": null
    }
   ],
   "workflow_data": null,
-  "workflow_name": "Purchase Recommendation Workflow",
+  "workflow_name": "Proprietory Article Certificate Work Flow",
   "workflow_state_field": "workflow_state"
  }
 ]
