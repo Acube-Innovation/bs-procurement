@@ -11,7 +11,12 @@
   "section_break_bsap",
   "table_nrsd",
   "section_break_nokt",
-  "suppliermanufacturer"
+  "suppliermanufacturer",
+  "is_the_item_a_spare_part",
+  "is_there_any_known_manufacturersupplier",
+  "why_this_known_manufacturersupplier_not_considered",
+  "if_in_the_knowledge_of_indentor",
+  "any_other_justification"
  ],
  "fields": [
   {
@@ -51,13 +56,40 @@
    "fieldtype": "Link",
    "label": "Supplier/Manufacturer",
    "options": "Supplier"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_the_item_a_spare_part",
+   "fieldtype": "Check",
+   "label": "Is the item a spare part"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_there_any_known_manufacturersupplier",
+   "fieldtype": "Check",
+   "label": "Is there any known manufacturer/supplier of this item in the market"
+  },
+  {
+   "fieldname": "why_this_known_manufacturersupplier_not_considered",
+   "fieldtype": "Small Text",
+   "label": "Why this known manufacturer/supplier not considered? "
+  },
+  {
+   "fieldname": "if_in_the_knowledge_of_indentor",
+   "fieldtype": "Small Text",
+   "label": "If there is no manufacturers of this item, why public/limited tender cannot be issued to locate possibly more suppliers?"
+  },
+  {
+   "fieldname": "any_other_justification",
+   "fieldtype": "Small Text",
+   "label": "Any other justification for procuring the item from a single source?"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-23 17:10:57.703707",
+ "modified": "2025-07-24 11:32:50.367304",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Proprietory Article Certificate",
