@@ -3,78 +3,6 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-17 13:10:21.142077",
-  "name": "CMM Approved & Forwarded to GM",
-  "style": "Primary",
-  "workflow_state_name": "CMM Approved & Forwarded to GM"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-06-23 14:25:32.706562",
-  "name": "Pending CS Approval",
-  "style": "",
-  "workflow_state_name": "Pending CS Approval"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-06-23 14:28:39.099937",
-  "name": "Pending GM Approval",
-  "style": "",
-  "workflow_state_name": "Pending GM Approval"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-06-24 11:40:08.601257",
-  "name": "Pending CMM Approval",
-  "style": "",
-  "workflow_state_name": "Pending CMM Approval"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-06-23 14:28:05.876798",
-  "name": "Pending CFO Approval",
-  "style": "",
-  "workflow_state_name": "Pending CFO Approval"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-06-23 14:29:06.618861",
-  "name": "Pending MD Approval",
-  "style": "",
-  "workflow_state_name": "Pending MD Approval"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-06-23 14:24:26.017180",
-  "name": "Pending HOD Approval",
-  "style": "",
-  "workflow_state_name": "Pending HOD Approval"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-07-18 01:17:08.338483",
-  "name": "HOD Approved & Forwarded to CFO",
-  "style": "Primary",
-  "workflow_state_name": "HOD Approved & Forwarded to CFO"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2025-07-17 12:18:27.706293",
   "name": "HOD Approved & Forwarded to CS",
   "style": "Primary",
@@ -84,28 +12,10 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-17 12:23:01.724438",
-  "name": "GM Approved and Forwarded to MD",
-  "style": "Primary",
-  "workflow_state_name": "GM Approved and Forwarded to MD"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2025-07-17 13:02:59.043663",
   "name": "HOD Approved & Forwarded to CMM",
   "style": "Primary",
   "workflow_state_name": "HOD Approved & Forwarded to CMM"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-07-17 13:53:57.459813",
-  "name": "Indentor Approved & Forwarded to HOD",
-  "style": "Primary",
-  "workflow_state_name": "Indentor Approved & Forwarded to HOD"
  },
  {
   "docstatus": 0,
@@ -129,9 +39,126 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
+  "modified": "2025-07-24 14:48:16.769944",
+  "name": "Indentor Approved & Forwarded to Senior Manager",
+  "style": "",
+  "workflow_state_name": "Indentor Approved & Forwarded to Senior Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-24 14:52:48.796478",
+  "name": "Senior Manager Approved &  Forwarded to HOD",
+  "style": "",
+  "workflow_state_name": "Senior Manager Approved &  Forwarded to HOD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:25:32.706562",
+  "name": "Pending CS Approval",
+  "style": "",
+  "workflow_state_name": "Pending CS Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-24 11:40:08.601257",
+  "name": "Pending CMM Approval",
+  "style": "",
+  "workflow_state_name": "Pending CMM Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:24:26.017180",
+  "name": "Pending HOD Approval",
+  "style": "",
+  "workflow_state_name": "Pending HOD Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-17 12:23:01.724438",
+  "name": "GM Approved and Forwarded to MD",
+  "style": "Primary",
+  "workflow_state_name": "GM Approved and Forwarded to MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-17 13:53:57.459813",
+  "name": "Indentor Approved & Forwarded to HOD",
+  "style": "Primary",
+  "workflow_state_name": "Indentor Approved & Forwarded to HOD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
   "modified": "2025-07-17 12:21:17.563326",
   "name": "CFO Approved & Forwarded to GM",
   "style": "Primary",
   "workflow_state_name": "CFO Approved & Forwarded to GM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-24 14:20:56.106951",
+  "name": "HOD Approved & Forwarded to GM",
+  "style": "",
+  "workflow_state_name": "HOD Approved & Forwarded to GM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-17 13:10:21.142077",
+  "name": "CMM Approved & Forwarded to GM",
+  "style": "Primary",
+  "workflow_state_name": "CMM Approved & Forwarded to GM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:28:39.099937",
+  "name": "Pending GM Approval",
+  "style": "",
+  "workflow_state_name": "Pending GM Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-18 01:17:08.338483",
+  "name": "HOD Approved & Forwarded to CFO",
+  "style": "Primary",
+  "workflow_state_name": "HOD Approved & Forwarded to CFO"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:28:05.876798",
+  "name": "Pending CFO Approval",
+  "style": "",
+  "workflow_state_name": "Pending CFO Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-06-23 14:29:06.618861",
+  "name": "Pending MD Approval",
+  "style": "",
+  "workflow_state_name": "Pending MD Approval"
  }
 ]
