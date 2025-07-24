@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-17 16:12:45.795685",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tender_response",
+  "party",
+  "reference_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "tender_response",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tender Response",
+   "options": "Tender Response"
+  },
+  {
+   "fetch_from": "tender_response.vendor",
+   "fieldname": "party",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Party",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "tender_response.vendor_quotation_reference",
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference Number"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-17 16:23:48.944372",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Comparative Statement Parties",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

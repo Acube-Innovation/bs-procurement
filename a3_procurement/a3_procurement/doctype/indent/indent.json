@@ -174,7 +174,9 @@
    "allow_on_submit": 1,
    "fieldname": "indent_date",
    "fieldtype": "Date",
+   "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Purchase Indent Date"
   },
   {
@@ -472,7 +474,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Indent Type",
-   "options": "\nRaw Material\nCapital Purchase\nConsumable\nSub-contract"
+   "options": "\nRaw Material\nCapital Purchase\nConsumable\nSub-contract\nPAC"
   },
   {
    "fieldname": "column_break_dv6c",
@@ -848,7 +850,7 @@
    "link_fieldname": "purchase_indent_reference"
   }
  ],
- "modified": "2025-07-15 15:51:21.908679",
+ "modified": "2025-07-22 14:20:41.383417",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

@@ -10,6 +10,8 @@
   "description",
   "quantity",
   "unit",
+  "rate",
+  "amount",
   "delivery_period"
  ],
  "fields": [
@@ -45,13 +47,25 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Delivery Period (Date)"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-15 15:59:58.190471",
+ "modified": "2025-07-17 15:49:22.071475",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender Details",

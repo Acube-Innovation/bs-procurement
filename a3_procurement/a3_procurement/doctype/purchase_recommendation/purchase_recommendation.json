@@ -13,6 +13,7 @@
   "column_break_gzzh",
   "comparative_statement",
   "date",
+  "enquiry_no",
   "amended_from",
   "section_break_njjt",
   "table_lylr",
@@ -128,6 +129,12 @@
    "fieldtype": "Link",
    "label": "Comparative Statement",
    "options": "Comparative Statement"
+  },
+  {
+   "fetch_from": "comparative_statement.enquiry_no",
+   "fieldname": "enquiry_no",
+   "fieldtype": "Data",
+   "label": "Enquiry No"
   }
  ],
  "grid_page_length": 50,
@@ -143,7 +150,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-07-09 12:27:37.450484",
+ "modified": "2025-07-23 14:01:11.080794",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",

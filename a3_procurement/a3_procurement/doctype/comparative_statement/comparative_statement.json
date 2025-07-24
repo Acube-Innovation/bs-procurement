@@ -13,36 +13,10 @@
   "column_break_mzbc",
   "no_of_parties_contacted",
   "no_of_quotation_received",
+  "tender_opening_reference",
   "amended_from",
   "section_break_obqv",
-  "table_qfpf",
-  "packing_section",
-  "packing_and_forwarding",
-  "column_break_dfpp",
-  "freight",
-  "tax_and_charges_section",
-  "customs",
-  "total",
-  "column_break_alms",
-  "gst",
-  "section_break_kkum",
-  "price_basis",
-  "payment_terms_template",
-  "payment_schedule",
-  "section_break_wfwp",
-  "validity",
-  "delivery",
-  "terms_and_condition_section",
-  "terms",
-  "text_editor_bgkf",
-  "section_break_bbyz",
-  "prepared_by",
-  "column_break_cpuq",
-  "checked_by",
-  "column_break_yrzf",
-  "verified_by",
-  "column_break_oowc",
-  "date"
+  "vendor_responses"
  ],
  "fields": [
   {
@@ -50,6 +24,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "fetch_from": "tender.enquiry_no",
    "fieldname": "enquiry_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -92,150 +67,22 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "table_qfpf",
-   "fieldtype": "Table",
-   "options": "Comparative Statement  Details"
-  },
-  {
-   "fieldname": "packing_section",
-   "fieldtype": "Section Break",
-   "label": "Packing"
-  },
-  {
-   "fieldname": "packing_and_forwarding",
-   "fieldtype": "Currency",
-   "label": "Packing and Forwarding"
-  },
-  {
-   "fieldname": "column_break_dfpp",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "freight",
-   "fieldtype": "Currency",
-   "label": "Freight"
-  },
-  {
-   "fieldname": "tax_and_charges_section",
-   "fieldtype": "Section Break",
-   "label": "Tax and Charges"
-  },
-  {
-   "fieldname": "customs",
-   "fieldtype": "Percent",
-   "label": "Customs"
-  },
-  {
-   "fieldname": "column_break_alms",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "gst",
-   "fieldtype": "Percent",
-   "label": "GST"
-  },
-  {
-   "fieldname": "total",
-   "fieldtype": "Currency",
-   "label": "Total"
-  },
-  {
-   "fieldname": "section_break_kkum",
-   "fieldtype": "Section Break",
-   "label": "Terms"
-  },
-  {
-   "fieldname": "price_basis",
-   "fieldtype": "Select",
-   "label": "Price Basis",
-   "options": "\nFOR\nEx-works\nFOB\nCIF"
-  },
-  {
-   "fieldname": "payment_terms_template",
-   "fieldtype": "Link",
-   "label": "Payment Terms Template",
-   "options": "Payment Terms Template"
-  },
-  {
-   "fieldname": "payment_schedule",
-   "fieldtype": "Table",
-   "label": "Payment Schedule",
-   "options": "Payment Schedule"
-  },
-  {
-   "fieldname": "section_break_wfwp",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "validity",
-   "fieldtype": "Date",
-   "label": "Validity"
-  },
-  {
-   "fieldname": "delivery",
-   "fieldtype": "Date",
-   "label": "Delivery"
-  },
-  {
-   "fieldname": "terms_and_condition_section",
-   "fieldtype": "Section Break",
-   "label": "Terms and Condition"
-  },
-  {
-   "fieldname": "terms",
-   "fieldtype": "Link",
-   "label": "Terms",
-   "options": "Terms and Conditions"
-  },
-  {
-   "fetch_from": "terms.terms",
-   "fieldname": "text_editor_bgkf",
-   "fieldtype": "Text Editor"
-  },
-  {
-   "fieldname": "section_break_bbyz",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "prepared_by",
-   "fieldtype": "Link",
-   "label": "Prepared By",
-   "options": "User"
-  },
-  {
-   "fieldname": "column_break_cpuq",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "checked_by",
-   "fieldtype": "Link",
-   "label": "Checked By",
-   "options": "User"
-  },
-  {
-   "fieldname": "column_break_yrzf",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "verified_by",
-   "fieldtype": "Link",
-   "label": "Verified By",
-   "options": "User"
-  },
-  {
-   "fieldname": "column_break_oowc",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
    "fieldname": "tender",
    "fieldtype": "Link",
    "label": "Tender",
    "options": "Tender"
+  },
+  {
+   "fieldname": "vendor_responses",
+   "fieldtype": "Table",
+   "label": "Vendor Responses",
+   "options": "Comparative Statement Parties"
+  },
+  {
+   "fieldname": "tender_opening_reference",
+   "fieldtype": "Link",
+   "label": "Tender Opening Reference",
+   "options": "Tender  Opening"
   }
  ],
  "grid_page_length": 50,
@@ -247,7 +94,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-07-09 11:37:11.353313",
+ "modified": "2025-07-18 11:23:04.859613",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",
