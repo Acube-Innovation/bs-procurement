@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-23 15:28:56.203852",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qkwd",
+  "amended_from",
+  "date",
+  "section_break_bsap",
+  "table_nrsd",
+  "section_break_nokt",
+  "suppliermanufacturer"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qkwd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Proprietory Article Certificate",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_bsap",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_nrsd",
+   "fieldtype": "Table",
+   "options": "PAC Items"
+  },
+  {
+   "fieldname": "section_break_nokt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "suppliermanufacturer",
+   "fieldtype": "Link",
+   "label": "Supplier/Manufacturer",
+   "options": "Supplier"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-23 17:10:57.703707",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Proprietory Article Certificate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

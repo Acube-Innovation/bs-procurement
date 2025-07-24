@@ -15,6 +15,8 @@
   "purchase_indent_reference",
   "section_break_fxom",
   "items",
+  "section_break_ehxw",
+  "additional_information",
   "terms_and_conditions_section",
   "terms_and_conditions_template",
   "terms_and_conditions"
@@ -88,6 +90,15 @@
    "fieldtype": "Link",
    "label": "Terms and Conditions Template",
    "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "section_break_ehxw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "additional_information",
+   "fieldtype": "Small Text",
+   "label": "Additional Information"
   }
  ],
  "grid_page_length": 50,
@@ -102,11 +113,11 @@
    "link_fieldname": "tender"
   },
   {
-   "link_doctype": "Supplier Quotation",
-   "link_fieldname": "custom_tender_reference"
+   "link_doctype": "Tender Response",
+   "link_fieldname": "tender_reference"
   }
  ],
- "modified": "2025-07-15 16:36:00.221399",
+ "modified": "2025-07-22 15:41:34.061493",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",

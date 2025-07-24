@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{TO}-{######}",
+ "autoname": "format:{TO}-{2025}-{######}",
  "creation": "2025-07-03 12:53:45.235451",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,10 +10,11 @@
   "amended_from",
   "tender",
   "tender_enquiry__no",
-  "due_date_extended_upto",
+  "status",
   "column_break_sufk",
   "purchase_indent",
   "due__date",
+  "due_date_extended_upto",
   "section_break_qbmh",
   "description",
   "section_break_izcn",
@@ -22,8 +23,10 @@
   "estimate_attached",
   "tender_opening_date",
   "section_break_szfa",
+  "tender_opening_committee_1",
   "tender_opening_committee",
   "tender_opening_committee_2_section",
+  "tender_opening_committee_2",
   "table_laar"
  ],
  "fields": [
@@ -54,6 +57,7 @@
    "label": "Due  Date"
   },
   {
+   "depends_on": "eval:doc.status==\"Overdue\"",
    "fieldname": "due_date_extended_upto",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -75,6 +79,7 @@
   {
    "fieldname": "table_bcra",
    "fieldtype": "Table",
+   "label": "Invited Suppliers",
    "options": "Tender Opening Details"
   },
   {
@@ -127,12 +132,40 @@
    "fieldtype": "Link",
    "label": "Tender",
    "options": "Tender"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nOpen\nOverdue"
+  },
+  {
+   "fieldname": "tender_opening_committee_1",
+   "fieldtype": "Link",
+   "label": "Tender Opening Committee 1",
+   "options": "Tender Opening Committee"
+  },
+  {
+   "fieldname": "tender_opening_committee_2",
+   "fieldtype": "Link",
+   "label": "Tender Opening Committee 2",
+   "options": "Tender Opening Committee"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-07-15 16:36:57.916133",
+ "links": [
+  {
+   "link_doctype": "Tender Response",
+   "link_fieldname": "tender_opening_reference"
+  },
+  {
+   "link_doctype": "Comparative Statement",
+   "link_fieldname": "tender_opening_reference"
+  }
+ ],
+ "modified": "2025-07-18 11:23:18.009703",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender  Opening",

@@ -113,13 +113,14 @@
   {
    "fieldname": "quantity",
    "fieldtype": "Data",
-   "label": "Quantity"
+   "label": "Total Quantity"
   },
   {
    "fieldname": "type_of_purchase",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Type of Purchase"
+   "label": "Type of Purchase",
+   "options": "\nPublic Tender\nLimited Tender\nST\nOthers"
   },
   {
    "fieldname": "no_of_parties_contactedquoted",
@@ -415,7 +416,7 @@
    "link_fieldname": "custom_purchase_approval_reference"
   }
  ],
- "modified": "2025-07-09 12:34:29.206346",
+ "modified": "2025-07-22 14:49:16.013781",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval",

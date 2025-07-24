@@ -7,8 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_4zyg",
+  "level",
+  "purchase_recommendation_reference",
+  "column_break_kccx",
+  "date",
   "amended_from",
-  "type",
+  "section_break_qhlt",
+  "pnc_committee",
   "table_lilx",
   "section_break_aohl",
   "case_file_no",
@@ -61,6 +66,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "fetch_from": "purchase_recommendation_reference.enquiry_no",
    "fieldname": "case_file_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -99,14 +105,6 @@
    "fieldname": "irc_date",
    "fieldtype": "Date",
    "label": "IRC Date"
-  },
-  {
-   "fieldname": "type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Type",
-   "options": "\nLevel 1\nLevel 2\nLevel 3"
   },
   {
    "fieldname": "recommendation_of_the_pnc_section",
@@ -194,6 +192,39 @@
   {
    "fieldname": "column_break_vaxv",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kccx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pnc_committee",
+   "fieldtype": "Link",
+   "label": "PNC Committee",
+   "options": "PNC Committee"
+  },
+  {
+   "fieldname": "section_break_qhlt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Level",
+   "options": "\nLevel 1\nLevel 2\nLevel 3\nLevel 4\nLevel 5"
+  },
+  {
+   "fieldname": "purchase_recommendation_reference",
+   "fieldtype": "Link",
+   "label": "Purchase Recommendation Reference",
+   "options": "Purchase Recommendation"
   }
  ],
  "grid_page_length": 50,
@@ -205,7 +236,7 @@
    "link_fieldname": "custom_purchase__and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-07-09 12:34:55.757628",
+ "modified": "2025-07-23 14:05:34.846866",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase  and Negotiation Committee",

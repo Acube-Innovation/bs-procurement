@@ -222,37 +222,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Indent Management",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "In-Principle Approval for CAPEX ",
-   "link_count": 0,
-   "link_to": "In-Principle Approval for CAPEX",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Indent",
-   "link_count": 0,
-   "link_to": "Indent",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Tender Management",
-   "link_count": 7,
+   "link_count": 8,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -280,9 +251,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Request for Quotation",
+   "label": "Tender Opening Committee",
    "link_count": 0,
-   "link_to": "Request for Quotation",
+   "link_to": "Tender Opening Committee",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -290,9 +261,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Supplier Quotation",
+   "label": "Request for Quotation",
    "link_count": 0,
-   "link_to": "Supplier Quotation",
+   "link_to": "Request for Quotation",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -309,8 +280,18 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Comparative Statement",
+   "link_count": 0,
+   "link_to": "Comparative Statement",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tender Comparison",
    "link_count": 0,
    "link_to": "Comparative Statement",
    "link_type": "DocType",
@@ -326,9 +307,48 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Indent Management",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Proprietory Article Certificate",
+   "link_count": 0,
+   "link_to": "Proprietory Article Certificate",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "In-Principle Approval for CAPEX ",
+   "link_count": 0,
+   "link_to": "In-Principle Approval for CAPEX",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Indent",
+   "link_count": 0,
+   "link_to": "Indent",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-07-15 22:28:02.173288",
+ "modified": "2025-07-24 10:31:31.251886",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Procurement",

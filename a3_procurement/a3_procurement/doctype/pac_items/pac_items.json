@@ -1,44 +1,30 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-07-03 11:54:44.752135",
+ "creation": "2025-07-23 15:31:09.099538",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "item",
+  "item_code",
   "description",
-  "supplier",
-  "quantity",
-  "rate",
-  "total",
-  "recommendation"
+  "item_group"
  ],
  "fields": [
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Quantity"
-  },
-  {
-   "fieldname": "rate",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Rate"
-  },
-  {
-   "fieldname": "total",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Total"
-  },
   {
    "fieldname": "item",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item",
    "options": "Item"
+  },
+  {
+   "fetch_from": "item.item_code",
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Code"
   },
   {
    "fetch_from": "item.description",
@@ -48,28 +34,22 @@
    "label": "Description"
   },
   {
-   "fieldname": "supplier",
+   "fetch_from": "item.item_group",
+   "fieldname": "item_group",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Supplier",
-   "options": "Supplier"
-  },
-  {
-   "fieldname": "recommendation",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Recommendation",
-   "options": "\nL1\nL2\nL3\nL4\nL5"
+   "label": "Item Group",
+   "options": "Item Group"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-17 17:07:48.339625",
+ "modified": "2025-07-23 15:34:00.709833",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "Purchase Recommendation Detail",
+ "name": "PAC Items",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",
