@@ -16,10 +16,10 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Tender Response",
-   "options": "Tender Response"
+   "options": "Supplier Quotation"
   },
   {
-   "fetch_from": "tender_response.vendor",
+   "fetch_from": "tender_response.supplier",
    "fieldname": "party",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -27,7 +27,7 @@
    "options": "Supplier"
   },
   {
-   "fetch_from": "tender_response.vendor_quotation_reference",
+   "fetch_from": "tender_response.quotation_number",
    "fieldname": "reference_number",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -38,7 +38,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-17 16:23:48.944372",
+ "modified": "2025-07-25 11:35:48.545573",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement Parties",

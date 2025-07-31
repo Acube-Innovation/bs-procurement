@@ -9,8 +9,10 @@
   "section_break_4zyg",
   "level",
   "purchase_recommendation_reference",
+  "tender_opening_reference",
   "column_break_kccx",
   "date",
+  "comparative_statement",
   "amended_from",
   "section_break_qhlt",
   "pnc_committee",
@@ -25,21 +27,40 @@
   "irc_date",
   "recommendation_of_the_pnc_section",
   "indentor",
-  "project",
-  "comparative_statement",
   "column_break_vaxv",
-  "item",
-  "total_no_of_items",
-  "section_break_ccbl",
-  "source_recommended",
-  "value_wo_tax",
-  "value_including_tax",
+  "project",
+  "section_break_qyyz",
+  "table_zxij",
+  "recommendation",
+  "section_break_unxq",
+  "table_doig",
   "corresponding_l2",
-  "value_including_tax1",
+  "section_break_ccbl",
   "estimated_costa",
   "actual_costb",
+  "column_break_memx",
   "ab",
-  "special_points_if__any"
+  "ppp_section",
+  "table_zzoa",
+  "section_break_unps",
+  "payment_terms",
+  "table_ciim",
+  "section_break_suzl",
+  "special_points_if_any",
+  "pnc_recommendation_section",
+  "to_place_order_on_quoted_rate",
+  "to_clear_for_regularization_of_order_placement",
+  "to_re_examine_the_file",
+  "to_ask_for_discount",
+  "discount_percent",
+  "column_break_gbzp",
+  "to_place_counter_offer_to_match_with_the_estimated_price",
+  "to_retender_with_more_suppliers",
+  "to_negotiate_in_personvideo_conferencing",
+  "to_hold_for_monthsweeks",
+  "monthsweeks",
+  "section_break_hmim",
+  "sub_negotiation_committee_recommendation_snc"
  ],
  "fields": [
   {
@@ -124,66 +145,28 @@
    "options": "Project"
   },
   {
-   "fieldname": "total_no_of_items",
-   "fieldtype": "Float",
-   "label": "Total No of Items"
-  },
-  {
-   "fieldname": "item",
-   "fieldtype": "Link",
-   "label": "Item",
-   "options": "Item"
-  },
-  {
    "fieldname": "section_break_ccbl",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "source_recommended",
-   "fieldtype": "Data",
-   "label": "Source Recommended"
-  },
-  {
-   "fieldname": "value_wo_tax",
-   "fieldtype": "Float",
-   "label": "Value w/o Tax"
-  },
-  {
-   "fieldname": "value_including_tax",
-   "fieldtype": "Float",
-   "label": "Value including Tax"
-  },
-  {
-   "fieldname": "corresponding_l2",
-   "fieldtype": "Data",
-   "label": "Corresponding L2"
-  },
-  {
-   "fieldname": "value_including_tax1",
-   "fieldtype": "Float",
-   "label": "Value Including Tax"
-  },
-  {
    "fieldname": "estimated_costa",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "label": "Estimated Cost(A)"
   },
   {
    "fieldname": "actual_costb",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "label": "Actual Cost(B)"
   },
   {
    "fieldname": "ab",
-   "fieldtype": "Float",
-   "label": "A-B"
+   "fieldtype": "Currency",
+   "label": "A-B",
+   "read_only": 1
   },
   {
-   "fieldname": "special_points_if__any",
-   "fieldtype": "Small Text",
-   "label": "Special points if  any"
-  },
-  {
+   "depends_on": "eval:doc.purchase_recommendation_reference",
+   "fetch_from": "purchase_recommendation_reference.comparative_statement",
    "fieldname": "comparative_statement",
    "fieldtype": "Link",
    "label": "Comparative Statement",
@@ -225,6 +208,162 @@
    "fieldtype": "Link",
    "label": "Purchase Recommendation Reference",
    "options": "Purchase Recommendation"
+  },
+  {
+   "fieldname": "column_break_memx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_unxq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_zxij",
+   "fieldtype": "Table",
+   "label": "Particulars",
+   "options": "Purchase Recommendation Detail"
+  },
+  {
+   "fetch_from": "purchase_recommendation_reference.recommendation",
+   "fieldname": "recommendation",
+   "fieldtype": "Small Text",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "ppp_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_zzoa",
+   "fieldtype": "Table",
+   "label": "PPP",
+   "options": "PPP"
+  },
+  {
+   "fieldname": "table_doig",
+   "fieldtype": "Table",
+   "label": "Source Recommended",
+   "options": "Source Details"
+  },
+  {
+   "fieldname": "section_break_qyyz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.purchase_recommendation_reference",
+   "fetch_from": "comparative_statement.tender_opening_reference",
+   "fieldname": "tender_opening_reference",
+   "fieldtype": "Link",
+   "label": "Tender Opening Reference",
+   "options": "Tender  Opening"
+  },
+  {
+   "fieldname": "corresponding_l2",
+   "fieldtype": "Table",
+   "label": "Corresponding L2",
+   "options": "Source Details"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "table_ciim",
+   "fieldtype": "Table",
+   "options": "Payment Terms Template Detail"
+  },
+  {
+   "fieldname": "section_break_unps",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_suzl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "special_points_if_any",
+   "fieldtype": "Small Text",
+   "label": "Special Points If Any"
+  },
+  {
+   "fieldname": "pnc_recommendation_section",
+   "fieldtype": "Section Break",
+   "label": "PNC Recommendation"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_place_order_on_quoted_rate",
+   "fieldtype": "Check",
+   "label": "To Place Order On Quoted Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_place_counter_offer_to_match_with_the_estimated_price",
+   "fieldtype": "Check",
+   "label": "To Place Counter Offer To Match With The Estimated Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_clear_for_regularization_of_order_placement",
+   "fieldtype": "Check",
+   "label": "To Clear For Regularization Of Order Placement"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_retender_with_more_suppliers",
+   "fieldtype": "Check",
+   "label": "To Retender With More Suppliers"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_re_examine_the_file",
+   "fieldtype": "Check",
+   "label": "To Re-Examine The File"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_negotiate_in_personvideo_conferencing",
+   "fieldtype": "Check",
+   "label": "To Negotiate In Person/Video Conferencing"
+  },
+  {
+   "fieldname": "section_break_hmim",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sub_negotiation_committee_recommendation_snc",
+   "fieldtype": "Small Text",
+   "label": "Sub Negotiation Committee Recommendation (SNC)"
+  },
+  {
+   "fieldname": "column_break_gbzp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_ask_for_discount",
+   "fieldtype": "Check",
+   "label": "To Ask For Discount"
+  },
+  {
+   "depends_on": "eval:doc.to_ask_for_discount",
+   "fieldname": "discount_percent",
+   "fieldtype": "Percent",
+   "label": "Discount Percent"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_hold_for_monthsweeks",
+   "fieldtype": "Check",
+   "label": "To Hold For Months/Weeks"
+  },
+  {
+   "depends_on": "eval:doc.to_hold_for_monthsweeks",
+   "fieldname": "monthsweeks",
+   "fieldtype": "Data",
+   "label": "Months/Weeks"
   }
  ],
  "grid_page_length": 50,
@@ -236,7 +375,7 @@
    "link_fieldname": "custom_purchase__and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-07-23 14:05:34.846866",
+ "modified": "2025-07-29 11:27:51.057119",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase  and Negotiation Committee",

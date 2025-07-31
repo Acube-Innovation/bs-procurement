@@ -7,16 +7,17 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_5lr3",
-  "amended_from",
   "capex_id",
   "departmentsection",
   "department_requisition_no",
   "select_indenter",
+  "indentor_name",
   "column_break_wxzu",
   "customer_orderwo_reference",
   "capex_budget_code_reference",
   "in_principle_request_date",
-  "indentor_name",
+  "pac_reference",
+  "amended_from",
   "section_break_jtmc",
   "particulars",
   "section_break_vznm",
@@ -110,6 +111,12 @@
    "fieldname": "indentor_name",
    "fieldtype": "Data",
    "label": "Indentor Name"
+  },
+  {
+   "fieldname": "pac_reference",
+   "fieldtype": "Link",
+   "label": "PAC Reference",
+   "options": "Proprietory Article Certificate"
   }
  ],
  "grid_page_length": 50,
@@ -121,7 +128,7 @@
    "link_fieldname": "in_principle_request"
   }
  ],
- "modified": "2025-07-15 22:33:01.641722",
+ "modified": "2025-07-29 12:55:50.678891",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "In-Principle Approval for CAPEX",

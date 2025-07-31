@@ -1,13 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{PAC}-{######}",
  "creation": "2025-07-23 15:28:56.203852",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_qkwd",
-  "amended_from",
   "date",
+  "column_break_disq",
+  "amended_from",
   "section_break_bsap",
   "table_nrsd",
   "section_break_nokt",
@@ -40,7 +42,8 @@
   },
   {
    "fieldname": "section_break_bsap",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Particulars"
   },
   {
    "fieldname": "table_nrsd",
@@ -83,16 +86,30 @@
    "fieldname": "any_other_justification",
    "fieldtype": "Small Text",
    "label": "Any other justification for procuring the item from a single source?"
+  },
+  {
+   "fieldname": "column_break_disq",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-07-24 11:32:50.367304",
+ "links": [
+  {
+   "link_doctype": "Indent",
+   "link_fieldname": "pac_reference"
+  },
+  {
+   "link_doctype": "In-Principle Approval for CAPEX",
+   "link_fieldname": "pac_reference"
+  }
+ ],
+ "modified": "2025-07-28 16:55:07.013547",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Proprietory Article Certificate",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

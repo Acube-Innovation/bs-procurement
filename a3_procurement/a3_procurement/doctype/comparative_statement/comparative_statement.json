@@ -17,7 +17,8 @@
   "amended_from",
   "section_break_obqv",
   "vendor_responses",
-  "table_flub"
+  "table_flub",
+  "table_tobk"
  ],
  "fields": [
   {
@@ -68,6 +69,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "fetch_from": "tender_opening_reference.tender",
    "fieldname": "tender",
    "fieldtype": "Link",
    "label": "Tender",
@@ -89,6 +91,11 @@
    "fieldname": "table_flub",
    "fieldtype": "Table",
    "options": "Purchase Recommendation Detail"
+  },
+  {
+   "fieldname": "table_tobk",
+   "fieldtype": "Table",
+   "options": "Vendor Taxes and Charges"
   }
  ],
  "grid_page_length": 50,
@@ -100,7 +107,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-07-24 12:43:01.108909",
+ "modified": "2025-07-25 12:40:55.931530",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",

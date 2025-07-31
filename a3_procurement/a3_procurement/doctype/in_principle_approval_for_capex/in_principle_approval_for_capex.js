@@ -38,3 +38,33 @@
 //         }
 //     }
 // });
+frappe.ui.form.on('In-Principle Approval for CAPEX', {
+  pac_reference: async function(frm) {
+    if (!frm.doc.pac_reference) return;
+
+    // Clear the existing particulars table
+    frm.clear_table('particulars');
+
+    // Fetch the linked PAC document
+    const res = await frappe.call({
+      method: 'frappe.client.get',
+      args: {
+        doctype: 'Proprietory Article Certificate',
+        name: frm.doc.pac_reference
+      }
+    });
+
+    const pac = res.message;
+    const pac_items = pac.table_nrsd || [];
+
+    // Add each item to the particulars child table
+    pac_items.forEach(row => {
+      frm.add_child('particulars', {
+        item: row.item
+      });
+    });
+
+    frm.refresh_field('particulars');
+    frappe.msgprint(__('Items fetched from PAC.'));
+  }
+});
