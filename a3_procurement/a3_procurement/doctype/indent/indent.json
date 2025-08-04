@@ -26,10 +26,10 @@
   "capex_requisition_number",
   "work_order_details_section",
   "reference_wo_no",
+  "in_principle_request",
+  "pac_reference",
   "column_break_dqnu",
   "c_form_applicable",
-  "column_break_0sa4",
-  "in_principle_request",
   "section_break_l4r0",
   "items",
   "justification",
@@ -180,6 +180,7 @@
    "label": "Purchase Indent Date"
   },
   {
+   "fetch_from": "in_principle_request.departmentsection",
    "fieldname": "departmentsection",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -191,10 +192,6 @@
    "fieldname": "date_of_requisition",
    "fieldtype": "Date",
    "label": "Date of Requisition"
-  },
-  {
-   "fieldname": "column_break_0sa4",
-   "fieldtype": "Column Break"
   },
   {
    "allow_on_submit": 1,
@@ -517,6 +514,7 @@
    "label": "Work Order Details"
   },
   {
+   "fetch_from": "in_principle_request.select_indenter",
    "fieldname": "indentor",
    "fieldtype": "Link",
    "label": "Indentor",
@@ -839,6 +837,13 @@
    "fieldtype": "Table",
    "label": "To be selected by CMM",
    "options": "Indent Source Suppliers"
+  },
+  {
+   "depends_on": "eval:doc.indent_type==\"PAC\"",
+   "fieldname": "pac_reference",
+   "fieldtype": "Link",
+   "label": "PAC Reference",
+   "options": "Proprietory Article Certificate"
   }
  ],
  "grid_page_length": 50,
@@ -850,7 +855,7 @@
    "link_fieldname": "purchase_indent_reference"
   }
  ],
- "modified": "2025-07-22 14:20:41.383417",
+ "modified": "2025-07-29 15:31:05.801035",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

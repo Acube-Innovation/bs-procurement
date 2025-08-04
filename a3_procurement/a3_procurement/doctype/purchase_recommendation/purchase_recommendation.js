@@ -65,3 +65,22 @@ frappe.ui.form.on('Purchase Recommendation', {
     });
   }
 });
+
+frappe.ui.form.on('Purchase Recommendation', {
+  validate(frm) {
+    let reasons = [];
+
+    for (let row of frm.doc.table_lylr || []) {
+      if (row.recommended && row.price_rank !== "L1" && row.reason) {
+        // You can customize the formatting below
+        reasons.push(`${row.supplier} (${row.price_rank}): ${row.reason}`);
+      }
+    }
+
+    if (reasons.length > 0) {
+      frm.set_value('recommendation', reasons.join('\n'));
+    } else {
+      frm.set_value('recommendation', ''); // Clear if no reasons
+    }
+  }
+});

@@ -7,35 +7,27 @@
  "engine": "InnoDB",
  "field_order": [
   "purchaser_details_section",
-  "case_file",
+  "purchase_recommendation",
   "department",
   "project",
   "column_break_lbtv",
+  "case_file",
   "date",
   "indentor",
-  "purchase_recommendation",
   "section_break_nm2b",
   "type_of_purchase",
-  "quantity",
-  "column_break_bfae",
   "item_description",
   "party_details_section",
   "no_of_parties_contactedquoted",
-  "partyparties_recommended",
-  "whether_the_recomemendedparties_offer_is_lowest_or_not",
-  "column_break_oatw",
-  "status_of_partyparties_recommended",
-  "if_not_lowest_reason_for_rejection_of_lower_offers",
+  "table_fbtg",
   "date_and_cost_detail_section",
   "estimated_cost_of_tender",
-  "last_purchased_date",
-  "delivery_date",
   "column_break_mveo",
-  "rate",
-  "last_purchased_rate",
-  "need_date",
+  "delivery_date",
   "column_break_cfju",
-  "value_of_order",
+  "need_date",
+  "section_break_vnab",
+  "table_higc",
   "terms_section",
   "payment_terms_template",
   "payment_schedule",
@@ -78,6 +70,7 @@
    "label": "Purchase Details"
   },
   {
+   "fetch_from": "purchase_recommendation.enquiry_no",
    "fieldname": "case_file",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -107,13 +100,9 @@
   },
   {
    "fieldname": "item_description",
-   "fieldtype": "Small Text",
-   "label": "Item Description"
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Data",
-   "label": "Total Quantity"
+   "fieldtype": "Table",
+   "label": "Item Description",
+   "options": "Purchase Approval Items"
   },
   {
    "fieldname": "type_of_purchase",
@@ -126,21 +115,6 @@
    "fieldname": "no_of_parties_contactedquoted",
    "fieldtype": "Data",
    "label": "No. of parties contacted/quoted"
-  },
-  {
-   "fieldname": "partyparties_recommended",
-   "fieldtype": "Data",
-   "label": "Party/parties recommended"
-  },
-  {
-   "fieldname": "whether_the_recomemendedparties_offer_is_lowest_or_not",
-   "fieldtype": "Data",
-   "label": "Whether the recomemended/parties offer is lowest or not"
-  },
-  {
-   "fieldname": "if_not_lowest_reason_for_rejection_of_lower_offers",
-   "fieldtype": "Small Text",
-   "label": "If not lowest, reason for rejection of lower offers"
   },
   {
    "fieldname": "delivery_date",
@@ -158,26 +132,6 @@
    "label": "Estimated cost of tender"
   },
   {
-   "fieldname": "value_of_order",
-   "fieldtype": "Data",
-   "label": "Value of order"
-  },
-  {
-   "fieldname": "rate",
-   "fieldtype": "Currency",
-   "label": "Rate"
-  },
-  {
-   "fieldname": "last_purchased_rate",
-   "fieldtype": "Currency",
-   "label": "Last purchased rate"
-  },
-  {
-   "fieldname": "last_purchased_date",
-   "fieldtype": "Date",
-   "label": "Last purchased date"
-  },
-  {
    "fieldname": "column_break_lbtv",
    "fieldtype": "Column Break"
   },
@@ -193,23 +147,9 @@
    "label": "Purchaser Details"
   },
   {
-   "fieldname": "column_break_bfae",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "party_details_section",
    "fieldtype": "Section Break",
-   "label": "Party Details"
-  },
-  {
-   "fieldname": "column_break_oatw",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "status_of_partyparties_recommended",
-   "fieldtype": "Select",
-   "label": "Status of party/parties Recommended",
-   "options": "\nPending\nApproved\nNew"
+   "label": "Party/Parties Details"
   },
   {
    "fieldname": "date_and_cost_detail_section",
@@ -405,6 +345,20 @@
    "fieldtype": "Link",
    "label": "Purchase Recommendation",
    "options": "Purchase Recommendation"
+  },
+  {
+   "fieldname": "table_fbtg",
+   "fieldtype": "Table",
+   "options": "Purchase Approval Parties"
+  },
+  {
+   "fieldname": "section_break_vnab",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_higc",
+   "fieldtype": "Table",
+   "options": "Purchase Approval Detail"
   }
  ],
  "grid_page_length": 50,
@@ -416,7 +370,7 @@
    "link_fieldname": "custom_purchase_approval_reference"
   }
  ],
- "modified": "2025-07-22 14:49:16.013781",
+ "modified": "2025-07-25 16:16:51.260132",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval",

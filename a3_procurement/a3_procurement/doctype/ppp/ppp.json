@@ -1,16 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-07-23 15:31:09.099538",
+ "creation": "2025-07-28 18:06:03.820304",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "item",
-  "item_code",
   "description",
-  "item_group",
-  "quantity"
+  "new_rate",
+  "old_rate",
+  "variation",
+  "procurement_date"
  ],
  "fields": [
   {
@@ -21,13 +22,6 @@
    "options": "Item"
   },
   {
-   "fetch_from": "item.item_code",
-   "fieldname": "item_code",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Item Code"
-  },
-  {
    "fetch_from": "item.description",
    "fieldname": "description",
    "fieldtype": "Text Editor",
@@ -35,27 +29,38 @@
    "label": "Description"
   },
   {
-   "fetch_from": "item.item_group",
-   "fieldname": "item_group",
-   "fieldtype": "Link",
+   "fieldname": "new_rate",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Item Group",
-   "options": "Item Group"
+   "label": "New Rate"
   },
   {
-   "fieldname": "quantity",
-   "fieldtype": "Float",
-   "label": "Quantity"
+   "fieldname": "old_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Old Rate"
+  },
+  {
+   "fieldname": "variation",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Variation(%)"
+  },
+  {
+   "fieldname": "procurement_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Procurement Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-29 19:04:59.305231",
+ "modified": "2025-07-29 11:22:24.195489",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "PAC Items",
+ "name": "PPP",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

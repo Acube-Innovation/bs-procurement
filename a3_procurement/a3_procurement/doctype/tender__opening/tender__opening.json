@@ -157,15 +157,15 @@
  "index_web_pages_for_search": 1,
  "links": [
   {
-   "link_doctype": "Tender Response",
-   "link_fieldname": "tender_opening_reference"
+   "link_doctype": "Supplier Quotation",
+   "link_fieldname": "custom_tender_opening_reference"
   },
   {
    "link_doctype": "Comparative Statement",
    "link_fieldname": "tender_opening_reference"
   }
  ],
- "modified": "2025-07-18 11:23:18.009703",
+ "modified": "2025-07-25 00:20:36.985232",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender  Opening",
