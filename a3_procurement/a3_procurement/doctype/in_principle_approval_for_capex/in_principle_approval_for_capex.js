@@ -60,7 +60,9 @@ frappe.ui.form.on('In-Principle Approval for CAPEX', {
     // Add each item to the particulars child table
     pac_items.forEach(row => {
       frm.add_child('particulars', {
-        item: row.item
+        item: row.item,
+        qty:row.quantity,
+        
       });
     });
 

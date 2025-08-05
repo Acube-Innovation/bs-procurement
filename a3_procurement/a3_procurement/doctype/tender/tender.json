@@ -7,19 +7,22 @@
  "engine": "InnoDB",
  "field_order": [
   "tender_type",
-  "date",
-  "time",
-  "column_break_rjod",
   "enquiry_no",
-  "due_date",
   "purchase_indent_reference",
-  "section_break_fxom",
-  "items",
+  "indent_type",
+  "column_break_rjod",
+  "date",
+  "due_date",
+  "time",
   "section_break_ehxw",
   "additional_information",
   "terms_and_conditions_section",
   "terms_and_conditions_template",
-  "terms_and_conditions"
+  "terms_and_conditions",
+  "purchase_particulars_tab",
+  "items",
+  "scm_particulars_tab",
+  "table_zdft"
  ],
  "fields": [
   {
@@ -63,10 +66,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_fxom",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "purchase_indent_reference",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -99,6 +98,30 @@
    "fieldname": "additional_information",
    "fieldtype": "Small Text",
    "label": "Additional Information"
+  },
+  {
+   "depends_on": "eval:doc.indent_type !=\"Sub-contract\";",
+   "fieldname": "purchase_particulars_tab",
+   "fieldtype": "Tab Break",
+   "label": "Purchase Particulars"
+  },
+  {
+   "depends_on": "eval:doc.indent_type ==\"Sub-contract\";",
+   "fieldname": "scm_particulars_tab",
+   "fieldtype": "Tab Break",
+   "label": "SCM Particulars"
+  },
+  {
+   "fetch_from": "purchase_indent_reference.indent_type",
+   "fieldname": "indent_type",
+   "fieldtype": "Data",
+   "label": "Indent Type"
+  },
+  {
+   "depends_on": "eval:doc.indent_type ==\"Sub-contract\";",
+   "fieldname": "table_zdft",
+   "fieldtype": "Table",
+   "options": "SCM Particulars"
   }
  ],
  "grid_page_length": 50,
@@ -107,17 +130,9 @@
   {
    "link_doctype": "Tender  Opening",
    "link_fieldname": "tender"
-  },
-  {
-   "link_doctype": "Comparative Statement",
-   "link_fieldname": "tender"
-  },
-  {
-   "link_doctype": "Tender Response",
-   "link_fieldname": "tender_reference"
   }
  ],
- "modified": "2025-07-22 15:41:34.061493",
+ "modified": "2025-08-05 16:48:24.897990",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",

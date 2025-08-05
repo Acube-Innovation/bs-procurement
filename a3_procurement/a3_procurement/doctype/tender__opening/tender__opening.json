@@ -16,7 +16,7 @@
   "due__date",
   "due_date_extended_upto",
   "section_break_qbmh",
-  "description",
+  "particulars",
   "section_break_izcn",
   "table_bcra",
   "section_break_ooob",
@@ -45,6 +45,7 @@
    "search_index": 1
   },
   {
+   "fetch_from": "tender.enquiry_no",
    "fieldname": "tender_enquiry__no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -66,11 +67,6 @@
   {
    "fieldname": "column_break_sufk",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
   },
   {
    "fieldname": "section_break_izcn",
@@ -118,6 +114,7 @@
    "label": "Tender Opening Date"
   },
   {
+   "fetch_from": "tender.purchase_indent_reference",
    "fieldname": "purchase_indent",
    "fieldtype": "Link",
    "label": "Purchase Indent",
@@ -151,6 +148,12 @@
    "fieldtype": "Link",
    "label": "Tender Opening Committee 2",
    "options": "Tender Opening Committee"
+  },
+  {
+   "fieldname": "particulars",
+   "fieldtype": "Table",
+   "label": "Particulars",
+   "options": "TOC Items"
   }
  ],
  "grid_page_length": 50,
@@ -165,7 +168,7 @@
    "link_fieldname": "tender_opening_reference"
   }
  ],
- "modified": "2025-07-25 00:20:36.985232",
+ "modified": "2025-08-05 10:42:33.138279",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender  Opening",

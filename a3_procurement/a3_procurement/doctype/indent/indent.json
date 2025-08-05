@@ -25,11 +25,11 @@
   "indent_type",
   "capex_requisition_number",
   "work_order_details_section",
+  "c_form_applicable",
   "reference_wo_no",
+  "column_break_dqnu",
   "in_principle_request",
   "pac_reference",
-  "column_break_dqnu",
-  "c_form_applicable",
   "section_break_l4r0",
   "items",
   "justification",
@@ -38,6 +38,19 @@
   "qc_sheets",
   "section_break_vlk1",
   "special_instructions",
+  "scm_particulars_tab",
+  "scm_particulars",
+  "section_break_dzju",
+  "description_of_job_to_be_executed",
+  "section_break_teis",
+  "item_sub_contracted_previously",
+  "column_break_zbmz",
+  "name_of_sub_contractor",
+  "contract_order_number",
+  "section_break_vliq",
+  "reason_for_sub_contract",
+  "section_break_onws",
+  "suggestion",
   "source_tab",
   "test",
   "table_ophz",
@@ -156,7 +169,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Purchase Indent Number",
+   "label": "Indent Number",
    "unique": 1
   },
   {
@@ -177,7 +190,7 @@
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Purchase Indent Date"
+   "label": "Indent Date"
   },
   {
    "fetch_from": "in_principle_request.departmentsection",
@@ -208,16 +221,16 @@
    "options": "\nYes\nNo"
   },
   {
-   "depends_on": "eval:doc.indent_type==\"Capital Purchase\"",
    "fieldname": "in_principle_request",
    "fieldtype": "Link",
    "label": "Capex In-Principle Reference",
    "options": "In-Principle Approval for CAPEX"
   },
   {
+   "depends_on": "eval:doc.indent_type !=\"Sub-contract\";",
    "fieldname": "section_break_l4r0",
    "fieldtype": "Tab Break",
-   "label": "Particulars"
+   "label": "Purchase Particulars"
   },
   {
    "fieldname": "items",
@@ -471,7 +484,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Indent Type",
-   "options": "\nRaw Material\nCapital Purchase\nConsumable\nSub-contract\nPAC"
+   "options": "\nRaw Material\nCapital Purchase\nConsumable\nSub-contract"
   },
   {
    "fieldname": "column_break_dv6c",
@@ -839,11 +852,75 @@
    "options": "Indent Source Suppliers"
   },
   {
-   "depends_on": "eval:doc.indent_type==\"PAC\"",
    "fieldname": "pac_reference",
    "fieldtype": "Link",
    "label": "PAC Reference",
    "options": "Proprietory Article Certificate"
+  },
+  {
+   "depends_on": "eval:doc.indent_type ==\"Sub-contract\";",
+   "fieldname": "scm_particulars_tab",
+   "fieldtype": "Tab Break",
+   "label": "SCM Particulars"
+  },
+  {
+   "fieldname": "scm_particulars",
+   "fieldtype": "Table",
+   "label": "SCM Particulars",
+   "options": "SCM Particulars"
+  },
+  {
+   "fieldname": "section_break_dzju",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description_of_job_to_be_executed",
+   "fieldtype": "Small Text",
+   "label": "Description of job to be executed"
+  },
+  {
+   "fieldname": "section_break_teis",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "item_sub_contracted_previously",
+   "fieldtype": "Check",
+   "label": "Item Sub Contracted Previously"
+  },
+  {
+   "fieldname": "column_break_zbmz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.item_sub_contracted_previously==1;",
+   "fieldname": "name_of_sub_contractor",
+   "fieldtype": "Data",
+   "label": "Name of sub Contractor"
+  },
+  {
+   "depends_on": "eval:doc.item_sub_contracted_previously==1;",
+   "fieldname": "contract_order_number",
+   "fieldtype": "Data",
+   "label": "Contract Order number"
+  },
+  {
+   "fieldname": "section_break_vliq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason_for_sub_contract",
+   "fieldtype": "Small Text",
+   "label": "Reason For Sub Contract"
+  },
+  {
+   "fieldname": "section_break_onws",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "suggestion",
+   "fieldtype": "Small Text",
+   "label": "Suggestion"
   }
  ],
  "grid_page_length": 50,
@@ -855,7 +932,7 @@
    "link_fieldname": "purchase_indent_reference"
   }
  ],
- "modified": "2025-07-29 15:31:05.801035",
+ "modified": "2025-08-05 16:55:27.082931",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

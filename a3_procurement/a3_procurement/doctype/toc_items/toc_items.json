@@ -1,15 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-07-09 10:29:24.606517",
+ "creation": "2025-08-04 18:05:32.470853",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "item",
   "description",
+  "uom",
   "quantity",
-  "unit",
   "delivery_period"
  ],
  "fields": [
@@ -21,24 +21,23 @@
    "options": "Item"
   },
   {
-   "fetch_from": "item.description",
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "in_list_view": 1,
    "label": "Description"
   },
   {
-   "fieldname": "quantity",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Quantity"
-  },
-  {
-   "fieldname": "unit",
+   "fieldname": "uom",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Unit",
+   "label": "UOM",
    "options": "UOM"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
   },
   {
    "fieldname": "delivery_period",
@@ -51,10 +50,10 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-04 18:12:09.826625",
+ "modified": "2025-08-04 18:12:57.773612",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "Tender Details",
+ "name": "TOC Items",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",
