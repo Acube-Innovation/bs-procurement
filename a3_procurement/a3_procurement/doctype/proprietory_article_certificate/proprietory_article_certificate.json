@@ -1,14 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{PAC}-{######}",
+ "autoname": "naming_series:",
  "creation": "2025-07-23 15:28:56.203852",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_qkwd",
   "date",
+  "user",
+  "employee",
   "column_break_disq",
+  "naming_series",
+  "department",
+  "employee_name",
   "amended_from",
   "section_break_bsap",
   "table_nrsd",
@@ -38,7 +43,8 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
-   "label": "Date"
+   "in_list_view": 1,
+   "label": "PAC Date"
   },
   {
    "fieldname": "section_break_bsap",
@@ -57,6 +63,7 @@
   {
    "fieldname": "suppliermanufacturer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Supplier/Manufacturer",
    "options": "Supplier"
   },
@@ -64,7 +71,7 @@
    "default": "0",
    "fieldname": "is_the_item_a_spare_part",
    "fieldtype": "Check",
-   "label": "Is the item a spare part"
+   "label": "Is the item a spare part,attachment or accessory for an existing equipment?"
   },
   {
    "default": "0",
@@ -73,6 +80,7 @@
    "label": "Is there any known manufacturer/supplier of this item in the market"
   },
   {
+   "description": "Indenter must bring our comparative mandatory advantages of the item selected from the type (s) offered by other manufacturers",
    "fieldname": "why_this_known_manufacturersupplier_not_considered",
    "fieldtype": "Small Text",
    "label": "Why this known manufacturer/supplier not considered? "
@@ -90,6 +98,36 @@
   {
    "fieldname": "column_break_disq",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "PAC ID"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "Indent User",
+   "options": "User"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Indent Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
   }
  ],
  "grid_page_length": 50,
@@ -105,11 +143,11 @@
    "link_fieldname": "pac_reference"
   }
  ],
- "modified": "2025-07-28 16:55:07.013547",
+ "modified": "2025-08-05 12:56:07.259016",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Proprietory Article Certificate",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

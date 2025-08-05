@@ -104,3 +104,37 @@ frappe.ui.form.on('Tender  Opening', {
     }
   }
 });
+
+frappe.ui.form.on('Tender  Opening', {
+    tender: function(frm) {
+        if (frm.doc.tender) {
+            // Clear existing child table
+            frm.clear_table("particulars");
+
+            frappe.call({
+                method: "frappe.client.get",
+                args: {
+                    doctype: "Tender",
+                    name: frm.doc.tender
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        let toc_doc = r.message;
+
+                        // Loop through the particulars table and add to items table
+                        (toc_doc.items || []).forEach(row => {
+                            let child = frm.add_child("particulars");
+                            child.item = row.item;
+                            child.description = row.description;
+                            child.quantity = row.quantity;
+                            child.uom = row.unit;
+                            child.delivery_period = row.delivery_period;
+                        });
+
+                        frm.refresh_field("particulars");
+                    }
+                }
+            });
+        }
+    }
+});

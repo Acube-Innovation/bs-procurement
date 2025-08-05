@@ -46,165 +46,6 @@ frappe.ui.form.on('Comparative Statement  Details', {
 });
 
 
-// frappe.ui.form.on('Comparative Statement', {
-//   refresh(frm) {
-//     frm.add_custom_button(__('Fetch Items'), () => {
-//       fetch_tender_details_grouped(frm);
-//     });
-//   }
-// });
-
-// async function fetch_tender_details_grouped(frm) {
-//   frm.clear_table('table_flub');  // Clear existing rows
-
-//   let all_rows = [];
-
-//   for (const party of frm.doc.vendor_responses || []) {
-//     if (!party.tender_response) continue;
-
-//     const res = await frappe.call({
-//       method: 'frappe.client.get',
-//       args: {
-//         doctype: 'Tender Response',
-//         name: party.tender_response
-//       }
-//     });
-
-//     const tender_response = res.message;
-//     const vendor = tender_response.vendor;
-
-//     for (const item of tender_response.items || []) {
-//       all_rows.push({
-//         item: item.item,
-//         description: item.description,
-//         quantity: item.quantity,
-//         rate: item.rate,
-//         total: item.amount,
-//         supplier: vendor
-//       });
-//     }
-//   }
-
-//   // ✅ Grouping by item (sort by item name)
-//   all_rows.sort((a, b) => {
-//     if (a.item < b.item) return -1;
-//     if (a.item > b.item) return 1;
-//     return 0;
-//   });
-
-//   // ✅ Add to child table
-//   for (const row_data of all_rows) {
-//     const row = frm.add_child('table_flub', row_data);
-//   }
-// }
-
-frappe.ui.form.on('Comparative Statement', {
-  tender_opening_reference(frm) {
-    if (!frm.doc.tender_opening_reference) return;
-
-    frm.clear_table('vendor_responses');
-
-    frappe.call({
-      method: 'frappe.client.get_list',
-      args: {
-        doctype: 'Supplier Quotation',
-        filters: {
-          custom_tender_opening_reference: frm.doc.tender_opening_reference
-        },
-        fields: ['name']
-      },
-      callback: function (res) {
-        const quotations = res.message || [];
-
-        quotations.forEach(quotation => {
-          const row = frm.add_child('vendor_responses');
-          row.tender_response = quotation.name;
-        });
-
-        frm.refresh_field('vendor_responses');
-        frappe.msgprint(`${quotations.length} Supplier Quotation(s) added.`);
-      }
-    });
-  }
-});
-
-
-
-// frappe.ui.form.on('Comparative Statement', {
-//   refresh(frm) {
-//     frm.add_custom_button(__('Fetch Quotation Items'), () => {
-//       fetch_supplier_quotation_items(frm);
-//     });
-//   }
-// });
-
-// async function fetch_supplier_quotation_items(frm) {
-//   frm.clear_table('table_flub'); // Clear existing entries
-
-//   let all_rows = [];
-
-//   for (const party of frm.doc.vendor_responses || []) {
-//     const quotation_name = party.tender_response;
-//     if (!quotation_name) continue;
-
-//     // Fetch Supplier Quotation with items
-//     const res = await frappe.call({
-//       method: 'frappe.client.get',
-//       args: {
-//         doctype: 'Supplier Quotation',
-//         name: quotation_name
-//       }
-//     });
-
-//     const sq = res.message;
-//     const supplier = sq.supplier;
-
-//     for (const item of sq.items || []) {
-//       all_rows.push({
-//         item: item.item_code,
-//         description: item.description,
-//         quantity: item.qty,
-//         rate: item.rate,
-//         total: item.amount,
-//         supplier: supplier
-//       });
-//     }
-//   }
-
-//   // Group by item and assign price_rank
-//   const grouped = {};
-
-//   all_rows.forEach(row => {
-//     if (!grouped[row.item]) grouped[row.item] = [];
-//     grouped[row.item].push(row);
-//   });
-
-//   for (const item_code in grouped) {
-//     const group = grouped[item_code];
-
-//     // Sort by rate
-//     group.sort((a, b) => a.rate - b.rate);
-
-//     // Assign price_rank
-//     group.forEach((row, idx) => {
-//       row.price_rank = `L${idx + 1}`;
-//     });
-//   }
-
-//   // Flatten and sort grouped rows by item
-//   const sorted_rows = Object.values(grouped).flat().sort((a, b) => {
-//     return a.item.localeCompare(b.item);
-//   });
-
-//   // Add to table_flub
-//   for (const row_data of sorted_rows) {
-//     frm.add_child('table_flub', row_data);
-//   }
-
-//   frm.refresh_field('table_flub');
-//   frappe.msgprint('Supplier Quotation items fetched with price ranks (L1, L2, etc).');
-// }
-
 frappe.ui.form.on('Comparative Statement', {
   refresh(frm) {
     frm.add_custom_button(__('Fetch Quotation Items'), () => {
@@ -284,3 +125,60 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
   frm.refresh_fields(['table_flub', 'table_tobk']);
   frappe.msgprint('Quotation items and vendor taxes fetched.');
 }
+
+frappe.ui.form.on('Comparative Statement', {
+  tender_opening_reference(frm) {
+    if (!frm.doc.tender_opening_reference) return;
+
+    frm.clear_table('vendor_responses');
+
+    // Fetch Supplier Quotations
+    frappe.call({
+      method: 'frappe.client.get_list',
+      args: {
+        doctype: 'Supplier Quotation',
+        filters: {
+          custom_tender_opening_reference: frm.doc.tender_opening_reference
+        },
+        fields: ['name']
+      },
+      callback: function (res) {
+        const quotations = res.message || [];
+
+        quotations.forEach(quotation => {
+          const row = frm.add_child('vendor_responses');
+          row.tender_response = quotation.name;
+        });
+
+        frm.refresh_field('vendor_responses');
+        frappe.msgprint(`${quotations.length} Supplier Quotation(s) added.`);
+      }
+    });
+
+    // Fetch Tender Opening Details and update counts
+    frappe.call({
+      method: 'frappe.client.get',
+      args: {
+        doctype: 'Tender  Opening',
+        name: frm.doc.tender_opening_reference
+      },
+      callback: function(r) {
+        if (r.message && r.message.table_bcra) {
+          const details = r.message.table_bcra;
+
+          const total_parties = details.length;
+          const quotations_received = details.filter(row => row.status === 'Received').length;
+
+          frm.set_value('no_of_parties_contacted', total_parties);
+          frm.set_value('no_of_quotation_received', quotations_received);
+
+          // frappe.msgprint(__('Fetched Tender Opening stats: ') +
+          //   `Parties Contacted: ${total_parties}, Quotations Received: ${quotations_received}`);
+        }
+      }
+    });
+  }
+});
+
+
+
