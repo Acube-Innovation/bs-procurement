@@ -298,5 +298,24 @@ fixtures = [
             'Senior Manager'
          ]]
     ]
+},
+{
+    "dt": "Workspace",
+    "filters": [
+        ["name", "in", 
+        [
+            'Build',
+            'ERPNext Integrations',
+            'Integrations',
+            'ERPNext Settings',
+            'Tools',
+            'CRM',
+            'Website',
+            'Support',
+            'Projects',
+            'Quality',
+            'Manufacturing'
+         ]]
+    ]
 }
 ]
