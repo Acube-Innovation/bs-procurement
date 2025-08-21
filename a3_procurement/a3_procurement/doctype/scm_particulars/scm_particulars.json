@@ -8,10 +8,22 @@
  "field_order": [
   "drawing_no",
   "rev",
+  "idn_no",
+  "raw_material_sizespecification",
+  "sizespecification",
+  "column_break_clwm",
   "name1",
-  "quantity",
+  "item_description",
+  "section_break_hwpt",
   "delivery_date",
-  "raw_material_sizespecification"
+  "column_break_pymh",
+  "quantity",
+  "column_break_twxg",
+  "fim_rate",
+  "column_break_wxht",
+  "total_fim_cost",
+  "section_break_vwwv",
+  "delivery_remarks"
  ],
  "fields": [
   {
@@ -28,9 +40,10 @@
   },
   {
    "fieldname": "name1",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Name"
+   "label": "Item Name",
+   "options": "Item"
   },
   {
    "fieldname": "quantity",
@@ -42,20 +55,75 @@
    "fieldname": "delivery_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Delivery Date"
+   "label": "Final Delivery Date"
   },
   {
    "fieldname": "raw_material_sizespecification",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Raw Material Size/Specification"
+   "label": "Raw Material"
+  },
+  {
+   "fieldname": "idn_no",
+   "fieldtype": "Float",
+   "label": "Identification No"
+  },
+  {
+   "fieldname": "delivery_remarks",
+   "fieldtype": "Small Text",
+   "label": "Delivery Remarks"
+  },
+  {
+   "fieldname": "sizespecification",
+   "fieldtype": "Small Text",
+   "label": "Size/Specification"
+  },
+  {
+   "fieldname": "column_break_clwm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name1.description",
+   "fieldname": "item_description",
+   "fieldtype": "Text Editor",
+   "label": "Item Description"
+  },
+  {
+   "fieldname": "section_break_hwpt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pymh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_twxg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fim_rate",
+   "fieldtype": "Currency",
+   "label": "FIM Rate"
+  },
+  {
+   "fieldname": "column_break_wxht",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_fim_cost",
+   "fieldtype": "Currency",
+   "label": "Total FIM Cost"
+  },
+  {
+   "fieldname": "section_break_vwwv",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-05 16:14:07.095881",
+ "modified": "2025-08-14 16:55:37.756382",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "SCM Particulars",

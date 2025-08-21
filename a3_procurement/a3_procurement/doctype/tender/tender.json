@@ -6,23 +6,57 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "tender_type",
+  "tender_enquiry_details_cmm_section",
   "enquiry_no",
-  "purchase_indent_reference",
-  "indent_type",
-  "column_break_rjod",
   "date",
+  "amended_from",
+  "column_break_rjod",
   "due_date",
   "time",
+  "column_break_cbty",
+  "tender_type",
+  "status",
+  "department__section_details_section",
+  "purchase_indent_reference",
+  "indent_type",
+  "scr_reference",
+  "scr_type",
+  "reference",
+  "type",
+  "column_break_cmgp",
+  "intended_employee",
+  "indneted_department",
+  "scr_employee",
+  "scr_department",
+  "employee",
+  "department",
+  "column_break_vtjl",
+  "enquiry_created_by_user",
+  "employee_name",
+  "enquiry_forwarded_deparment",
   "section_break_ehxw",
   "additional_information",
-  "terms_and_conditions_section",
-  "terms_and_conditions_template",
-  "terms_and_conditions",
   "purchase_particulars_tab",
   "items",
   "scm_particulars_tab",
-  "table_zdft"
+  "table_zdft",
+  "terms_and_conditions_tab",
+  "terms_and_conditions_section",
+  "terms_and_conditions_template",
+  "terms_and_conditions",
+  "tender_extension_tab",
+  "extension_particulars_section",
+  "extended_date",
+  "extended_by_user",
+  "column_break_rmfb",
+  "reason_for_extension",
+  "column_break_ezwb",
+  "extended_employee",
+  "extended_department",
+  "extended_designation",
+  "tender_invitees_tab",
+  "details_of_vendors_invited_section",
+  "invited_vendors"
  ],
  "fields": [
   {
@@ -35,25 +69,25 @@
   },
   {
    "fieldname": "enquiry_no",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Enquiry No"
+   "label": "Enquiry ID"
   },
   {
    "fieldname": "due_date",
    "fieldtype": "Date",
-   "label": "Due Date"
+   "label": "Tender Due Date"
   },
   {
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Date"
+   "label": "Enquiry Date"
   },
   {
    "fieldname": "time",
    "fieldtype": "Datetime",
-   "label": "Time"
+   "label": "Tender Due Time"
   },
   {
    "fieldname": "items",
@@ -103,13 +137,13 @@
    "depends_on": "eval:doc.indent_type !=\"Sub-contract\";",
    "fieldname": "purchase_particulars_tab",
    "fieldtype": "Tab Break",
-   "label": "Purchase Particulars"
+   "label": "Purchase Tender Particulars"
   },
   {
    "depends_on": "eval:doc.indent_type ==\"Sub-contract\";",
    "fieldname": "scm_particulars_tab",
    "fieldtype": "Tab Break",
-   "label": "SCM Particulars"
+   "label": "SCM Tender Particulars"
   },
   {
    "fetch_from": "purchase_indent_reference.indent_type",
@@ -122,17 +156,204 @@
    "fieldname": "table_zdft",
    "fieldtype": "Table",
    "options": "SCM Particulars"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tender",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "tender_enquiry_details_cmm_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Enquiry Details (CMM)"
+  },
+  {
+   "fieldname": "column_break_cbty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "department__section_details_section",
+   "fieldtype": "Section Break",
+   "label": "Department / Section Details"
+  },
+  {
+   "fieldname": "column_break_cmgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vtjl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "purchase_indent_reference.full_name",
+   "fieldname": "intended_employee",
+   "fieldtype": "Data",
+   "label": "Intended Employee"
+  },
+  {
+   "fieldname": "terms_and_conditions_tab",
+   "fieldtype": "Tab Break",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Document Status",
+   "options": "\nEnquiry Sent\nDate Extended\nPNC\nPAF\nOpened"
+  },
+  {
+   "fieldname": "tender_extension_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tender Extension"
+  },
+  {
+   "fieldname": "scr_reference",
+   "fieldtype": "Link",
+   "label": "SCR Reference",
+   "options": "Sub-Contract Request"
+  },
+  {
+   "fieldname": "scr_type",
+   "fieldtype": "Select",
+   "label": "SCR Type"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type"
+  },
+  {
+   "fetch_from": "purchase_indent_reference.departmentsection",
+   "fieldname": "indneted_department",
+   "fieldtype": "Link",
+   "label": "Indneted Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "scr_employee",
+   "fieldtype": "Data",
+   "label": "SCR Employee"
+  },
+  {
+   "fieldname": "scr_department",
+   "fieldtype": "Link",
+   "label": "SCR Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Data",
+   "label": "Employee"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "enquiry_created_by_user",
+   "fieldtype": "Link",
+   "label": "Enquiry Created by User",
+   "options": "User"
+  },
+  {
+   "description": "Employee name of the user who created the Enquiry",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "enquiry_forwarded_deparment",
+   "fieldtype": "Link",
+   "label": "Enquiry Forwarded Deparment",
+   "options": "Department"
+  },
+  {
+   "fieldname": "extension_particulars_section",
+   "fieldtype": "Section Break",
+   "label": "Extension Particulars"
+  },
+  {
+   "fieldname": "extended_date",
+   "fieldtype": "Date",
+   "label": "Extended Date"
+  },
+  {
+   "fieldname": "extended_by_user",
+   "fieldtype": "Link",
+   "label": "Extended By User",
+   "options": "User"
+  },
+  {
+   "description": "Name of user extended Enquiry",
+   "fieldname": "extended_employee",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "description": "Department of user extended Enquiry",
+   "fieldname": "extended_department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "column_break_ezwb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rmfb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_for_extension",
+   "fieldtype": "Small Text",
+   "label": "Reason for Extension"
+  },
+  {
+   "fieldname": "extended_designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "tender_invitees_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tender Invitees"
+  },
+  {
+   "fieldname": "details_of_vendors_invited_section",
+   "fieldtype": "Section Break",
+   "label": "Details of Vendors Invited"
+  },
+  {
+   "fieldname": "invited_vendors",
+   "fieldtype": "Table",
+   "label": "Invited Vendors",
+   "options": "Invited in RFQ"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [
   {
    "link_doctype": "Tender  Opening",
    "link_fieldname": "tender"
   }
  ],
- "modified": "2025-08-05 16:48:24.897990",
+ "modified": "2025-08-15 12:35:27.467135",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",
