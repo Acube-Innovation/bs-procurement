@@ -1,0 +1,387 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-14 10:34:43.860273",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details",
+  "naming_series",
+  "scr_date",
+  "column_break_uxym",
+  "type_of_scr",
+  "column_break_jvbj",
+  "materials_issuance",
+  "section_break_fjuh",
+  "repeat_order",
+  "section_break_xadx",
+  "previous_sub_contractor",
+  "previous_co_id",
+  "column_break_nmag",
+  "previous_order_no",
+  "previous_po_id",
+  "indentor_details_section",
+  "indentor_id",
+  "column_break_kqrt",
+  "indentor_name",
+  "column_break_hwzd",
+  "departmentsection",
+  "work_order_details_section",
+  "work_order_no",
+  "customer",
+  "customer_po_no",
+  "customer_po_date",
+  "column_break_rsby",
+  "project",
+  "budget_approval_document",
+  "vendor_class_requested",
+  "third_party_inspection_required",
+  "third_party_inspection_agency",
+  "column_break_hivo",
+  "description_of_job_to_be_executed",
+  "reason_for_sub_contracting",
+  "section_break_easg",
+  "table_nmqr",
+  "enclosures_tab",
+  "table_cxjs",
+  "particulars_tab",
+  "scm_particulars",
+  "section_break_avjd",
+  "justification",
+  "source_tab",
+  "source_of_supply_known_to_indentors_section",
+  "table_scrb",
+  "suggestionsremarks",
+  "estimation_tab",
+  "table_xpza",
+  "section_break_jeix",
+  "total",
+  "column_break_vvxs",
+  "gst",
+  "column_break_gwzd",
+  "net_total"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "scr_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "SCR Date"
+  },
+  {
+   "fieldname": "column_break_uxym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Brahmos",
+   "fieldname": "materials_issuance",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Materials Issuance",
+   "options": "\nBrahmos\nSub-Contractor"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Section Break",
+   "label": "Sub-Contracting Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "SCR Id"
+  },
+  {
+   "fieldname": "type_of_scr",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type of SCR",
+   "options": "\nSingle Party\nLimited Tender"
+  },
+  {
+   "default": "0",
+   "fieldname": "repeat_order",
+   "fieldtype": "Check",
+   "label": "Repeat Order"
+  },
+  {
+   "depends_on": "eval:doc.repeat_order",
+   "fieldname": "previous_order_no",
+   "fieldtype": "Data",
+   "label": "Previous Order No"
+  },
+  {
+   "depends_on": "eval:doc.repeat_order",
+   "description": "As per Purchase Orders updated by Accounts",
+   "fieldname": "previous_po_id",
+   "fieldtype": "Link",
+   "label": "Previous PO Id",
+   "options": "Purchase Order"
+  },
+  {
+   "depends_on": "eval:doc.repeat_order",
+   "description": "As per Contract Orders updated by Accounts",
+   "fieldname": "previous_co_id",
+   "fieldtype": "Link",
+   "label": "Previous CO Id",
+   "options": "Subcontracting Order"
+  },
+  {
+   "fieldname": "work_order_details_section",
+   "fieldtype": "Section Break",
+   "label": "Work Order Details"
+  },
+  {
+   "fieldname": "work_order_no",
+   "fieldtype": "Data",
+   "label": "Work Order No"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "customer_po_no",
+   "fieldtype": "Data",
+   "label": "Customer PO No"
+  },
+  {
+   "fieldname": "customer_po_date",
+   "fieldtype": "Date",
+   "label": "Customer PO Date"
+  },
+  {
+   "fieldname": "column_break_rsby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "label": "Project"
+  },
+  {
+   "fieldname": "column_break_hivo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enclosures_tab",
+   "fieldtype": "Tab Break",
+   "label": "Enclosures"
+  },
+  {
+   "fieldname": "table_cxjs",
+   "fieldtype": "Table",
+   "options": "SCR Enclosure"
+  },
+  {
+   "fieldname": "source_tab",
+   "fieldtype": "Tab Break",
+   "label": "Source"
+  },
+  {
+   "fieldname": "source_of_supply_known_to_indentors_section",
+   "fieldtype": "Section Break",
+   "label": "Source of Supply Known to Indentors"
+  },
+  {
+   "fieldname": "table_scrb",
+   "fieldtype": "Table",
+   "options": "Indent Source Suppliers"
+  },
+  {
+   "fieldname": "suggestionsremarks",
+   "fieldtype": "Small Text",
+   "label": "Suggestions/Remarks"
+  },
+  {
+   "fieldname": "particulars_tab",
+   "fieldtype": "Tab Break",
+   "label": "Particulars"
+  },
+  {
+   "fieldname": "scm_particulars",
+   "fieldtype": "Table",
+   "label": "SCM Particulars",
+   "options": "SCM Particulars"
+  },
+  {
+   "fieldname": "section_break_avjd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "justification",
+   "fieldtype": "Small Text",
+   "label": "Justification"
+  },
+  {
+   "description": "As of Cost Center/Budget Updated from Accounts",
+   "fieldname": "budget_approval_document",
+   "fieldtype": "Link",
+   "label": "Budget Approval Document",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "vendor_class_requested",
+   "fieldtype": "Table MultiSelect",
+   "label": "Vendor Class Requested",
+   "options": "Vendor Class Items"
+  },
+  {
+   "default": "0",
+   "fieldname": "third_party_inspection_required",
+   "fieldtype": "Check",
+   "label": "Third Party Inspection Required"
+  },
+  {
+   "depends_on": "eval:doc.third_party_inspection_required",
+   "fieldname": "third_party_inspection_agency",
+   "fieldtype": "Link",
+   "label": "Third Party Inspection Agency",
+   "options": "Third Party Inspection Agents"
+  },
+  {
+   "fieldname": "description_of_job_to_be_executed",
+   "fieldtype": "Small Text",
+   "label": "Description of Job to be Executed"
+  },
+  {
+   "default": "Schedule constraint in IN-House ",
+   "fieldname": "reason_for_sub_contracting",
+   "fieldtype": "Small Text",
+   "label": "Reason for Sub contracting"
+  },
+  {
+   "depends_on": "eval:doc.repeat_order",
+   "fieldname": "previous_sub_contractor",
+   "fieldtype": "Link",
+   "label": "Previous Sub Contractor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_fjuh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jvbj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xadx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nmag",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "indentor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Indentor Details"
+  },
+  {
+   "fieldname": "indentor_id",
+   "fieldtype": "Link",
+   "label": "Indentor User Id",
+   "options": "User"
+  },
+  {
+   "fieldname": "departmentsection",
+   "fieldtype": "Link",
+   "label": "Department/Section",
+   "options": "Department"
+  },
+  {
+   "fieldname": "column_break_kqrt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "indentor_name",
+   "fieldtype": "Data",
+   "label": "Indentor Name"
+  },
+  {
+   "fieldname": "column_break_hwzd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Estimation"
+  },
+  {
+   "fieldname": "table_xpza",
+   "fieldtype": "Table",
+   "options": "Estimation"
+  },
+  {
+   "fieldname": "section_break_jeix",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_vvxs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Currency",
+   "label": "GST"
+  },
+  {
+   "fieldname": "column_break_gwzd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total"
+  },
+  {
+   "fieldname": "section_break_easg",
+   "fieldtype": "Section Break",
+   "label": "Payment Terms"
+  },
+  {
+   "fieldname": "table_nmqr",
+   "fieldtype": "Table",
+   "options": "Payment Terms Template Detail"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-14 22:45:28.840446",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Sub-Contract Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

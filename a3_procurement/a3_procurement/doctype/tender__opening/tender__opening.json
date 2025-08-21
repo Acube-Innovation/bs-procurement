@@ -6,28 +6,41 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "enquiry_details_section",
+  "tender",
+  "tender_opening_date",
+  "column_break_zvlm",
+  "due__date",
+  "due_date_extended_upto",
+  "column_break_zrco",
+  "tender_opening_created_by",
+  "employee_name",
+  "section_break_wzfr",
+  "description",
   "section_break_oykd",
   "amended_from",
-  "tender",
-  "tender_enquiry__no",
   "status",
   "column_break_sufk",
   "purchase_indent",
-  "due__date",
-  "due_date_extended_upto",
   "section_break_qbmh",
   "particulars",
-  "section_break_izcn",
+  "tab_break_lbzb",
   "table_bcra",
-  "section_break_ooob",
-  "estimate_attached",
-  "tender_opening_date",
+  "technical_committee_tab",
+  "technical_evaluation_status",
+  "column_break_slqh",
+  "technical_committee_date",
   "section_break_szfa",
   "tender_opening_committee_1",
   "tender_opening_committee",
   "tender_opening_committee_2_section",
   "tender_opening_committee_2",
-  "table_laar"
+  "table_laar",
+  "section_break_cwjl",
+  "remarks",
+  "commercial_committee_tab",
+  "estimation_tab",
+  "estimate_attached"
  ],
  "fields": [
   {
@@ -43,13 +56,6 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fetch_from": "tender.enquiry_no",
-   "fieldname": "tender_enquiry__no",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Tender Enquiry  No"
   },
   {
    "fieldname": "due__date",
@@ -69,18 +75,10 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_izcn",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "table_bcra",
    "fieldtype": "Table",
    "label": "Invited Suppliers",
    "options": "Tender Opening Details"
-  },
-  {
-   "fieldname": "section_break_ooob",
-   "fieldtype": "Section Break"
   },
   {
    "default": "0",
@@ -91,7 +89,7 @@
   {
    "fieldname": "section_break_szfa",
    "fieldtype": "Section Break",
-   "label": "Tender Opening Committee 1"
+   "label": "Tender Opening Committee 1 (Technical)"
   },
   {
    "fieldname": "tender_opening_committee",
@@ -101,7 +99,7 @@
   {
    "fieldname": "tender_opening_committee_2_section",
    "fieldtype": "Section Break",
-   "label": "Tender Opening Committee 2"
+   "label": "Tender Opening Committee 2 (Technical)"
   },
   {
    "fieldname": "table_laar",
@@ -127,7 +125,7 @@
   {
    "fieldname": "tender",
    "fieldtype": "Link",
-   "label": "Tender",
+   "label": "Tender ID",
    "options": "Tender"
   },
   {
@@ -154,6 +152,85 @@
    "fieldtype": "Table",
    "label": "Particulars",
    "options": "TOC Items"
+  },
+  {
+   "fieldname": "enquiry_details_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Enquiry Details"
+  },
+  {
+   "fieldname": "column_break_zvlm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zrco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tender_opening_created_by",
+   "fieldtype": "Link",
+   "label": "Tender Opening Created by",
+   "options": "User"
+  },
+  {
+   "description": "Name of Employee created ",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "section_break_wzfr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Details of the purchase indent/sub-contracting request ",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "tab_break_lbzb",
+   "fieldtype": "Tab Break",
+   "label": "Tender Responses"
+  },
+  {
+   "fieldname": "technical_committee_tab",
+   "fieldtype": "Tab Break",
+   "label": "Technical Committee",
+   "options": "\nCompleted\nPending\nOn Hold"
+  },
+  {
+   "fieldname": "technical_evaluation_status",
+   "fieldtype": "Select",
+   "label": "Technical Evaluation Status"
+  },
+  {
+   "fieldname": "commercial_committee_tab",
+   "fieldtype": "Tab Break",
+   "label": "Commercial Committee"
+  },
+  {
+   "fieldname": "column_break_slqh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "technical_committee_date",
+   "fieldtype": "Date",
+   "label": "Technical Committee Date"
+  },
+  {
+   "fieldname": "section_break_cwjl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "estimation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Estimation"
   }
  ],
  "grid_page_length": 50,
@@ -168,7 +245,7 @@
    "link_fieldname": "tender_opening_reference"
   }
  ],
- "modified": "2025-08-05 10:42:33.138279",
+ "modified": "2025-08-18 11:34:57.204031",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender  Opening",

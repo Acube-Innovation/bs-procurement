@@ -28,7 +28,8 @@
 
 frappe.ui.form.on('Indent', {
     in_principle_request: function(frm) {
-        if (frm.doc.in_principle_request && frm.doc.indent_type === "Capital Purchase") {
+        // if (frm.doc.in_principle_request && frm.doc.indent_type === "Capital Purchase") {
+        if (frm.doc.in_principle_request) {
             // Clear existing child table
             frm.clear_table("items");
 

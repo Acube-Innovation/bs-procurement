@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-11 11:16:58.210318",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "scr_no",
+  "scr_review_date",
+  "column_break_oryn",
+  "work_order_reference",
+  "project",
+  "column_break_kcoy",
+  "section_break_urfm",
+  "qa",
+  "brief_description",
+  "section_break_ubpl",
+  "vendors_proposed_by_project_department",
+  "column_break_yxls",
+  "vendors_proposed_by_scm_department",
+  "recommendation_section",
+  "recommended_vendorsgm",
+  "commentsrecommendations"
+ ],
+ "fields": [
+  {
+   "fieldname": "scr_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "SCR No",
+   "options": "Sub-Contract Request",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oryn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "section_break_urfm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "brief_description",
+   "fieldtype": "Small Text",
+   "label": "Brief Description"
+  },
+  {
+   "fieldname": "section_break_ubpl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vendors_proposed_by_project_department",
+   "fieldtype": "Table",
+   "label": "Vendors Proposed By Project Department",
+   "options": "SCR Vendors"
+  },
+  {
+   "fieldname": "column_break_yxls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vendors_proposed_by_scm_department",
+   "fieldtype": "Table",
+   "label": "Vendors Proposed By SCM Department",
+   "options": "SCR Vendors"
+  },
+  {
+   "fieldname": "qa",
+   "fieldtype": "Select",
+   "label": "QA",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "commentsrecommendations",
+   "fieldtype": "Small Text",
+   "label": "Comments/Recommendations(GM)"
+  },
+  {
+   "fetch_from": "scr_no.reference_wo_no",
+   "fieldname": "work_order_reference",
+   "fieldtype": "Data",
+   "label": "Work Order Reference"
+  },
+  {
+   "fieldname": "recommended_vendorsgm",
+   "fieldtype": "Table",
+   "label": "Recommended Vendors(GM)",
+   "options": "SCR Vendors"
+  },
+  {
+   "fieldname": "recommendation_section",
+   "fieldtype": "Section Break",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "scr_review_date",
+   "fieldtype": "Date",
+   "label": "SCR Review Date"
+  },
+  {
+   "fieldname": "column_break_kcoy",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-14 23:28:28.030378",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "SCR Review",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

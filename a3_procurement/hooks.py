@@ -44,6 +44,10 @@ app_license = "mit"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Supplier Quotation": "public/js/supplier_quotation.js"
+}
+
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -300,22 +304,22 @@ fixtures = [
     ]
 },
 {
-    "dt": "Workspace",
+    "doctype": "Workspace",
     "filters": [
         ["name", "in", 
         [
-            'Build',
-            'ERPNext Integrations',
-            'Integrations',
-            'ERPNext Settings',
-            'Tools',
-            'CRM',
-            'Website',
-            'Support',
-            'Projects',
-            'Quality',
-            'Manufacturing'
-         ]]
+            "Build",
+            "ERPNext Integrations",
+            "Integrations",
+            "ERPNext Settings",
+            "Tools",
+            "CRM",
+            "Website",
+            "Support",
+            "Projects",
+            "Quality",
+            "Manufacturing"
+        ]]
     ]
 }
 ]
