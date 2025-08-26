@@ -301,6 +301,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "indentor_id.full_name",
    "fieldname": "indentor_name",
    "fieldtype": "Data",
    "label": "Indentor Name"
@@ -359,8 +360,17 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-08-14 22:45:28.840446",
+ "links": [
+  {
+   "link_doctype": "Tender",
+   "link_fieldname": "scr_reference"
+  },
+  {
+   "link_doctype": "SCR Review",
+   "link_fieldname": "scr_no"
+  }
+ ],
+ "modified": "2025-08-26 16:44:01.583784",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

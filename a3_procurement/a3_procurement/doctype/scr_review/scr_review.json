@@ -1,16 +1,22 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{scr_no}/{######}",
  "creation": "2025-08-11 11:16:58.210318",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "scr_no",
-  "scr_review_date",
-  "column_break_oryn",
   "work_order_reference",
+  "column_break_oryn",
+  "scr_review_date",
   "project",
-  "column_break_kcoy",
+  "section_break_tvbh",
+  "type_of_scr",
+  "materials_issuance",
+  "column_break_wmty",
+  "indentor_name",
+  "departmentsection",
   "section_break_urfm",
   "qa",
   "brief_description",
@@ -83,7 +89,7 @@
    "label": "Comments/Recommendations(GM)"
   },
   {
-   "fetch_from": "scr_no.reference_wo_no",
+   "fetch_from": "scr_no.work_order_no",
    "fieldname": "work_order_reference",
    "fieldtype": "Data",
    "label": "Work Order Reference"
@@ -105,17 +111,51 @@
    "label": "SCR Review Date"
   },
   {
-   "fieldname": "column_break_kcoy",
+   "fieldname": "section_break_tvbh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "scr_no.type_of_scr",
+   "fieldname": "type_of_scr",
+   "fieldtype": "Data",
+   "label": "Type of SCR"
+  },
+  {
+   "fetch_from": "scr_no.materials_issuance",
+   "fieldname": "materials_issuance",
+   "fieldtype": "Data",
+   "label": "Materials Issuance"
+  },
+  {
+   "fieldname": "column_break_wmty",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "scr_no.indentor_name",
+   "fieldname": "indentor_name",
+   "fieldtype": "Data",
+   "label": "Indentor Name"
+  },
+  {
+   "fetch_from": "scr_no.departmentsection",
+   "fieldname": "departmentsection",
+   "fieldtype": "Data",
+   "label": "Department/Section"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-08-14 23:28:28.030378",
+ "links": [
+  {
+   "link_doctype": "Tender",
+   "link_fieldname": "scr_reference"
+  }
+ ],
+ "modified": "2025-08-26 16:37:47.324184",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "SCR Review",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,0 +1,160 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{EST}-{type}-{######}",
+ "creation": "2025-08-25 13:36:20.717793",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "indent_reference",
+  "sub_contract_reference",
+  "date",
+  "column_break_rwhw",
+  "supplier",
+  "supplier_reference_no",
+  "section_break_aguz",
+  "purchase_estimate",
+  "section_break_elgu",
+  "sub_contract_estimate",
+  "section_break_wpfv",
+  "total",
+  "column_break_qvaz",
+  "gst",
+  "column_break_peam",
+  "new_total",
+  "section_break_fbbt",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Purchase\nSub-Contract",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rwhw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Purchase\"",
+   "fieldname": "indent_reference",
+   "fieldtype": "Link",
+   "label": "Indent Reference",
+   "mandatory_depends_on": "eval:doc.type==\"Purchase\"",
+   "options": "Indent"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Sub-Contract\"",
+   "fieldname": "sub_contract_reference",
+   "fieldtype": "Link",
+   "label": "Sub-Contract Reference",
+   "mandatory_depends_on": "eval:doc.type==\"Sub-Contract\"",
+   "options": "Sub-Contract Request"
+  },
+  {
+   "fieldname": "section_break_aguz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Purchase\"",
+   "fieldname": "purchase_estimate",
+   "fieldtype": "Table",
+   "label": "Purchase Estimate",
+   "options": "Estimate"
+  },
+  {
+   "fieldname": "section_break_elgu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Sub-Contract\"",
+   "fieldname": "sub_contract_estimate",
+   "fieldtype": "Table",
+   "label": "Sub-Contract Estimate",
+   "options": "Estimation"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_wpfv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_qvaz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Currency",
+   "label": "GST"
+  },
+  {
+   "fieldname": "column_break_peam",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_total",
+   "fieldtype": "Currency",
+   "label": "New Total"
+  },
+  {
+   "fieldname": "supplier_reference_no",
+   "fieldtype": "Data",
+   "label": "Supplier Reference No"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_fbbt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-25 16:13:30.197693",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Cost Estimate",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
