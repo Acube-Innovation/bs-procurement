@@ -9,13 +9,13 @@
   "basic_details_section",
   "indent_type",
   "cost_range",
-  "document_status",
   "column_break_yxpi",
   "indent_date",
   "store_category",
   "column_break_ymfp",
   "naming_series",
   "indent_id_no",
+  "document_status",
   "departmentsection_details_section",
   "column_break_frtn",
   "department_requisition_number",
@@ -27,12 +27,16 @@
   "departmentsection",
   "indentor_designation",
   "work_order_details_section",
+  "from_existing_customer_order",
+  "reference_wo_id",
   "reference_wo_no",
   "budget_approval_document",
   "column_break_nsyz",
+  "is_single_party",
   "pac_reference",
   "c_form_applicable",
   "column_break_dqnu",
+  "from_existing_capex",
   "capex_requisition_number",
   "in_principle_request",
   "section_break_l4r0",
@@ -86,6 +90,7 @@
   "table_wqma",
   "estimate_tab",
   "estimation_section",
+  "cost_estimate",
   "table_ckhr",
   "section_break_xpee",
   "total",
@@ -142,7 +147,7 @@
    "label": "Date of Dept Requisition"
   },
   {
-   "allow_on_submit": 1,
+   "depends_on": "eval:doc.from_existing_customer_order==0",
    "fieldname": "reference_wo_no",
    "fieldtype": "Data",
    "label": "Reference WO No"
@@ -156,10 +161,11 @@
    "options": "\nYes\nNo"
   },
   {
-   "depends_on": "eval:doc.indent_type==\"Capital Purchase\"",
+   "depends_on": "eval:doc.indent_type==\"Capital Purchase\"&doc.from_existing_capex",
    "fieldname": "in_principle_request",
    "fieldtype": "Link",
    "label": "In-Principle Capex ID",
+   "mandatory_depends_on": "eval:doc.indent_type==\"Capital Purchase\"",
    "options": "In-Principle Approval for CAPEX"
   },
   {
@@ -446,7 +452,7 @@
    "label": "Approvals"
   },
   {
-   "depends_on": "eval:doc.indent_type==\"Capital Purchase\"",
+   "depends_on": "eval:doc.indent_type==\"Capital Purchase\"&doc.from_existing_capex==0",
    "fieldname": "capex_requisition_number",
    "fieldtype": "Data",
    "label": "Capex Requisition Number"
@@ -474,6 +480,7 @@
    "options": "Indent Source Suppliers"
   },
   {
+   "depends_on": "eval:doc.is_single_party",
    "fieldname": "pac_reference",
    "fieldtype": "Link",
    "label": "PAC Reference",
@@ -512,6 +519,7 @@
    "label": "Attachments"
   },
   {
+   "fetch_from": "indentor.full_name",
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Indentor Name"
@@ -579,6 +587,39 @@
    "fieldname": "estimation_section",
    "fieldtype": "Section Break",
    "label": "Estimation"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.from_existing_customer_order",
+   "fieldname": "reference_wo_id",
+   "fieldtype": "Link",
+   "label": "Reference WO Id",
+   "options": "Sales Order"
+  },
+  {
+   "default": "0",
+   "fieldname": "from_existing_customer_order",
+   "fieldtype": "Check",
+   "label": "From Existing Customer Order"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_single_party",
+   "fieldtype": "Check",
+   "label": "Is Single Party"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.indent_type==\"Capital Purchase\"",
+   "fieldname": "from_existing_capex",
+   "fieldtype": "Check",
+   "label": "From Existing Capex"
+  },
+  {
+   "fieldname": "cost_estimate",
+   "fieldtype": "Link",
+   "label": "Cost Estimate",
+   "options": "Cost Estimate"
   }
  ],
  "grid_page_length": 50,
@@ -588,9 +629,17 @@
   {
    "link_doctype": "Tender",
    "link_fieldname": "purchase_indent_reference"
+  },
+  {
+   "link_doctype": "Material Request",
+   "link_fieldname": "custom_indent_reference"
+  },
+  {
+   "link_doctype": "Cost Estimate",
+   "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-08-21 12:25:44.768359",
+ "modified": "2025-08-26 11:11:01.302509",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",
