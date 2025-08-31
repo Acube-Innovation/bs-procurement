@@ -1,0 +1,424 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{TO}-{2025}-{######}",
+ "creation": "2025-07-03 12:53:45.235451",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enquiry_details_section",
+  "tender",
+  "purchase_indent",
+  "scr_id",
+  "type_of_bid",
+  "column_break_zvlm",
+  "tender_opening_date",
+  "due__date",
+  "due_date_extended_upto",
+  "column_break_zrco",
+  "tender_opening_created_by",
+  "employee_name",
+  "reference",
+  "amended_from",
+  "section_break_wzfr",
+  "description",
+  "section_break_qbmh",
+  "particulars",
+  "scm_particulars",
+  "tab_break_lbzb",
+  "table_bcra",
+  "technical_committee_tab",
+  "technical_evaluation_status",
+  "column_break_slqh",
+  "technical_committee_date",
+  "technical_evaluation_report_section",
+  "table_aprq",
+  "section_break_szfa",
+  "tender_opening_committee_1",
+  "tender_opening_committee",
+  "tender_opening_committee_2_section",
+  "tender_opening_committee_2",
+  "table_laar",
+  "section_break_cwjl",
+  "remarks",
+  "commercial_committee_tab",
+  "commercial_evaluation_status",
+  "column_break_pqjy",
+  "commercial_committee_date",
+  "commercial_evaluation_report_section",
+  "table_mzil",
+  "tender_opening_committee_1_commercial_section",
+  "tender_opening_committee_3",
+  "table_xzop",
+  "tender_opening_committee_2_commercial_section",
+  "tender_opening_committee_4",
+  "table_cyyq",
+  "section_break_xwzw",
+  "remarks_1",
+  "estimation_tab",
+  "estimate_attached",
+  "cost_estimate",
+  "table_oena",
+  "table_wquf",
+  "section_break_tykp",
+  "total",
+  "column_break_pguz",
+  "gst",
+  "column_break_sqgm",
+  "new_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tender Opening",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "due__date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due  Date"
+  },
+  {
+   "fieldname": "due_date_extended_upto",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due date extended upto"
+  },
+  {
+   "fieldname": "table_bcra",
+   "fieldtype": "Table",
+   "label": "Invited Suppliers",
+   "options": "Tender Opening Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "estimate_attached",
+   "fieldtype": "Check",
+   "label": "Estimate Attached"
+  },
+  {
+   "fieldname": "section_break_szfa",
+   "fieldtype": "Section Break",
+   "label": "Tender Opening Committee 1 (Technical)"
+  },
+  {
+   "fieldname": "tender_opening_committee",
+   "fieldtype": "Table",
+   "options": "Tender Opening Committee Details"
+  },
+  {
+   "fieldname": "tender_opening_committee_2_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Opening Committee 2 (Technical)"
+  },
+  {
+   "fieldname": "table_laar",
+   "fieldtype": "Table",
+   "options": "Tender Opening Committee Details"
+  },
+  {
+   "fieldname": "tender_opening_date",
+   "fieldtype": "Date",
+   "label": "Tender Opening Date"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"Indent\"",
+   "fetch_from": "tender.purchase_indent_reference",
+   "fieldname": "purchase_indent",
+   "fieldtype": "Link",
+   "label": "Purchase Indent ID",
+   "options": "Indent"
+  },
+  {
+   "fieldname": "section_break_qbmh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tender",
+   "fieldtype": "Link",
+   "label": "Tender ID",
+   "options": "Tender"
+  },
+  {
+   "fieldname": "tender_opening_committee_1",
+   "fieldtype": "Link",
+   "label": "Tender Opening Committee 1",
+   "options": "Tender Opening Committee"
+  },
+  {
+   "fieldname": "tender_opening_committee_2",
+   "fieldtype": "Link",
+   "label": "Tender Opening Committee 2",
+   "options": "Tender Opening Committee"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"Indent\"",
+   "fieldname": "particulars",
+   "fieldtype": "Table",
+   "label": "Purchase Particulars",
+   "options": "TOC Items"
+  },
+  {
+   "fieldname": "enquiry_details_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Enquiry Details"
+  },
+  {
+   "fieldname": "column_break_zvlm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zrco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tender_opening_created_by",
+   "fieldtype": "Link",
+   "label": "Tender Opening Created by",
+   "options": "User"
+  },
+  {
+   "description": "Name of Employee created ",
+   "fetch_from": "tender_opening_created_by.full_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "section_break_wzfr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Details of the purchase indent/sub-contracting request ",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "tab_break_lbzb",
+   "fieldtype": "Tab Break",
+   "label": "Tender Responses"
+  },
+  {
+   "depends_on": "eval:doc.type_of_bid==\"Two\"|doc.reference==\"SCR\"\n",
+   "fieldname": "technical_committee_tab",
+   "fieldtype": "Tab Break",
+   "label": "Technical Committee",
+   "options": "\nCompleted\nPending\nOn Hold"
+  },
+  {
+   "fieldname": "technical_evaluation_status",
+   "fieldtype": "Select",
+   "label": "Technical Evaluation Status",
+   "options": "Pending\nVerified"
+  },
+  {
+   "fieldname": "commercial_committee_tab",
+   "fieldtype": "Tab Break",
+   "label": "Commercial Committee"
+  },
+  {
+   "fieldname": "column_break_slqh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "technical_committee_date",
+   "fieldtype": "Date",
+   "label": "Technical Committee Date"
+  },
+  {
+   "fieldname": "section_break_cwjl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "estimation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Estimation"
+  },
+  {
+   "fieldname": "type_of_bid",
+   "fieldtype": "Data",
+   "label": "Type of Bid"
+  },
+  {
+   "fieldname": "commercial_evaluation_status",
+   "fieldtype": "Select",
+   "label": "Commercial Evaluation Status",
+   "options": "Pending\nVerified"
+  },
+  {
+   "fieldname": "column_break_pqjy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "commercial_committee_date",
+   "fieldtype": "Date",
+   "label": "Commercial Committee Date"
+  },
+  {
+   "fieldname": "tender_opening_committee_1_commercial_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Opening Committee 1 (Commercial)"
+  },
+  {
+   "fieldname": "tender_opening_committee_3",
+   "fieldtype": "Link",
+   "label": "Tender Opening Committee 1",
+   "options": "Tender Opening Committee"
+  },
+  {
+   "fieldname": "table_xzop",
+   "fieldtype": "Table",
+   "options": "Tender Opening Committee Details"
+  },
+  {
+   "fieldname": "tender_opening_committee_2_commercial_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Opening Committee 2 (Commercial)"
+  },
+  {
+   "fieldname": "tender_opening_committee_4",
+   "fieldtype": "Link",
+   "label": "Tender Opening Committee 2",
+   "options": "Tender Opening Committee"
+  },
+  {
+   "fieldname": "table_cyyq",
+   "fieldtype": "Table",
+   "options": "Tender Opening Committee Details"
+  },
+  {
+   "fieldname": "section_break_xwzw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks_1",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "technical_evaluation_report_section",
+   "fieldtype": "Section Break",
+   "label": "Technical Evaluation Report"
+  },
+  {
+   "fieldname": "table_aprq",
+   "fieldtype": "Table",
+   "options": "Selected Vendors"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"SCR\"",
+   "fetch_from": "tender.scr_id",
+   "fieldname": "scr_id",
+   "fieldtype": "Link",
+   "label": "SCR ID",
+   "options": "Sub-Contract Request"
+  },
+  {
+   "fetch_from": "tender.reference",
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"SCR\"",
+   "fieldname": "scm_particulars",
+   "fieldtype": "Table",
+   "label": "SCM Particulars",
+   "options": "SCM Particulars"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"Indent\"&doc.estimate_attached",
+   "fieldname": "table_oena",
+   "fieldtype": "Table",
+   "options": "Estimate"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"SCR\"&doc.estimate_attached",
+   "fieldname": "table_wquf",
+   "fieldtype": "Table",
+   "options": "Estimation"
+  },
+  {
+   "fieldname": "section_break_tykp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.estimate_attached && (doc.reference==\"SCR\" || doc.reference==\"Indent\")",
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_pguz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.estimate_attached && (doc.reference==\"SCR\" || doc.reference==\"Indent\")",
+   "fieldname": "gst",
+   "fieldtype": "Currency",
+   "label": "GST"
+  },
+  {
+   "fieldname": "column_break_sqgm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.estimate_attached && (doc.reference==\"SCR\" || doc.reference==\"Indent\")",
+   "fieldname": "new_total",
+   "fieldtype": "Currency",
+   "label": "New Total"
+  },
+  {
+   "fieldname": "commercial_evaluation_report_section",
+   "fieldtype": "Section Break",
+   "label": "Commercial Evaluation Report"
+  },
+  {
+   "fieldname": "table_mzil",
+   "fieldtype": "Table",
+   "options": "Selected Vendors"
+  },
+  {
+   "depends_on": "eval:doc.estimate_attached && (doc.reference==\"SCR\" || doc.reference==\"Indent\")",
+   "fieldname": "cost_estimate",
+   "fieldtype": "Link",
+   "label": "Cost Estimate",
+   "options": "Cost Estimate"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Supplier Quotation",
+   "link_fieldname": "custom_tender_opening_reference"
+  },
+  {
+   "link_doctype": "Comparative Statement",
+   "link_fieldname": "tender_opening_reference"
+  }
+ ],
+ "modified": "2025-08-28 15:03:46.353976",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Tender Opening",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

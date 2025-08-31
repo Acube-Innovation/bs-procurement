@@ -7,7 +7,7 @@ frappe.ui.form.on("Supplier Quotation", {
         frappe.call({
             method: "frappe.client.get",
             args: {
-                doctype: "Tender  Opening",
+                doctype: "Tender Opening",
                 name: frm.doc.custom_tender_opening_reference
             },
             callback: function(res) {

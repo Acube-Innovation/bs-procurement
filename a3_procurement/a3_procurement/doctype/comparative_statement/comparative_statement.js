@@ -159,7 +159,7 @@ frappe.ui.form.on('Comparative Statement', {
     frappe.call({
       method: 'frappe.client.get',
       args: {
-        doctype: 'Tender  Opening',
+        doctype: 'Tender Opening',
         name: frm.doc.tender_opening_reference
       },
       callback: function(r) {

@@ -1,52 +1,46 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-07-03 12:56:30.876529",
+ "creation": "2025-08-27 23:32:08.037217",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "supplier",
-  "status",
-  "date_of_receipt_of_quotation",
-  "rfq"
+  "vendor",
+  "selected",
+  "status"
  ],
  "fields": [
   {
-   "fieldname": "supplier",
+   "fieldname": "vendor",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Supplier",
+   "label": "Vendor",
    "options": "Supplier"
   },
   {
-   "fieldname": "date_of_receipt_of_quotation",
-   "fieldtype": "Date",
+   "default": "0",
+   "fieldname": "selected",
+   "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "Date of Receipt of Quotation"
+   "label": "Selected"
   },
   {
-   "default": "Regret",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
    "options": "\nReceived\nRegret"
-  },
-  {
-   "fieldname": "rfq",
-   "fieldtype": "Attach",
-   "label": "RFQ"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-30 14:55:53.075461",
+ "modified": "2025-08-28 15:19:17.690903",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "Tender Opening Details",
+ "name": "Selected Vendors",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

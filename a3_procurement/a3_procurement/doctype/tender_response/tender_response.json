@@ -8,47 +8,16 @@
  "field_order": [
   "tender_details_section",
   "tender_reference",
+  "reference",
   "indent_reference",
+  "scr_reference",
   "status",
-  "tender_opening_reference",
   "column_break_rwrw",
   "vendor",
   "vendor_quotation_reference",
   "response_date",
-  "section_break_kalb",
-  "items",
-  "remarks",
-  "technical_specs",
-  "section_break_dhik",
-  "technical_documents",
-  "column_break_ljga",
-  "product_catalogue",
-  "column_break_jjpz",
-  "commercial_documents",
-  "section_break_ausm",
-  "vendor_payment_terms",
-  "vendor_delivery_terms",
-  "packingandforwarding",
-  "column_break_poio",
-  "vendor_warranty",
-  "quotation_validity",
-  "frieght_courier_charges",
-  "section_break_qcfo",
-  "other_charges_1",
-  "column_break_myob",
-  "value_1",
-  "section_break_ldug",
-  "other_charges_2",
-  "column_break_pkqi",
-  "value_2",
-  "section_break_idjc",
-  "other_charges_3",
-  "column_break_nmbq",
-  "value_3",
-  "section_break_whng",
-  "other_charges_4",
-  "column_break_iytr",
-  "value_4"
+  "section_break_bruu",
+  "remarks"
  ],
  "fields": [
   {
@@ -57,7 +26,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Tender Reference",
-   "options": "Tender"
+   "options": "Tender",
+   "reqd": 1
   },
   {
    "fieldname": "vendor",
@@ -65,7 +35,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Vendor",
-   "options": "Supplier"
+   "options": "Supplier",
+   "reqd": 1
   },
   {
    "fieldname": "response_date",
@@ -86,54 +57,11 @@
    "label": "Remarks"
   },
   {
-   "fieldname": "section_break_dhik",
-   "fieldtype": "Section Break",
-   "label": "Attachments"
-  },
-  {
-   "fieldname": "technical_documents",
-   "fieldtype": "Attach",
-   "label": "Technical Documents"
-  },
-  {
-   "fieldname": "technical_specs",
-   "fieldtype": "Small Text",
-   "label": "Technical Specs"
-  },
-  {
-   "fieldname": "product_catalogue",
-   "fieldtype": "Attach",
-   "label": "Product Catalogue"
-  },
-  {
-   "fieldname": "section_break_ausm",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "commercial_documents",
-   "fieldtype": "Attach",
-   "label": "Commercial Documents "
-  },
-  {
-   "fieldname": "items",
-   "fieldtype": "Table",
-   "label": "Items",
-   "options": "Tender Details"
-  },
-  {
    "fieldname": "column_break_rwrw",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_kalb",
-   "fieldtype": "Section Break",
-   "label": "Quotation Particulars"
-  },
-  {
-   "fieldname": "column_break_ljga",
-   "fieldtype": "Column Break"
-  },
-  {
+   "depends_on": "eval:doc.reference==\"Indent\"",
    "fetch_from": "tender_reference.purchase_indent_reference",
    "fieldname": "indent_reference",
    "fieldtype": "Link",
@@ -141,27 +69,6 @@
    "in_standard_filter": 1,
    "label": "Indent Reference",
    "options": "Indent"
-  },
-  {
-   "fieldname": "vendor_payment_terms",
-   "fieldtype": "Link",
-   "label": "Vendor Payment Terms",
-   "options": "Payment Term"
-  },
-  {
-   "fieldname": "vendor_warranty",
-   "fieldtype": "Data",
-   "label": "Vendor Warranty"
-  },
-  {
-   "fieldname": "quotation_validity",
-   "fieldtype": "Data",
-   "label": "Quotation Validity"
-  },
-  {
-   "fieldname": "vendor_delivery_terms",
-   "fieldtype": "Data",
-   "label": "Vendor Delivery Terms"
   },
   {
    "fieldname": "vendor_quotation_reference",
@@ -174,106 +81,28 @@
    "label": "Tender Details"
   },
   {
-   "fieldname": "column_break_jjpz",
-   "fieldtype": "Column Break"
+   "fieldname": "section_break_bruu",
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_poio",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "packingandforwarding",
-   "fieldtype": "Data",
-   "label": "Packing & Forwarding"
-  },
-  {
-   "fieldname": "frieght_courier_charges",
-   "fieldtype": "Data",
-   "label": "Frieght (COURIER CHARGES)"
-  },
-  {
-   "fieldname": "tender_opening_reference",
+   "depends_on": "eval:doc.reference==\"SCR\"",
+   "fetch_from": "tender_reference.scr_id",
+   "fieldname": "scr_reference",
    "fieldtype": "Link",
-   "label": "Tender Opening Reference",
-   "options": "Tender  Opening"
+   "label": "SCR Reference",
+   "options": "Sub-Contract Request"
   },
   {
-   "fieldname": "section_break_qcfo",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "other_charges_1",
+   "fetch_from": "tender_reference.reference",
+   "fieldname": "reference",
    "fieldtype": "Data",
-   "label": "Other  Charges"
-  },
-  {
-   "fieldname": "column_break_myob",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "value_1",
-   "fieldtype": "Currency",
-   "label": "Value"
-  },
-  {
-   "fieldname": "section_break_ldug",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "other_charges_2",
-   "fieldtype": "Data",
-   "label": "Other Charges"
-  },
-  {
-   "fieldname": "column_break_pkqi",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "value_2",
-   "fieldtype": "Currency",
-   "label": "Value"
-  },
-  {
-   "fieldname": "section_break_idjc",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "other_charges_3",
-   "fieldtype": "Data",
-   "label": "Other Charges"
-  },
-  {
-   "fieldname": "column_break_nmbq",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "value_3",
-   "fieldtype": "Currency",
-   "label": "Value"
-  },
-  {
-   "fieldname": "section_break_whng",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "other_charges_4",
-   "fieldtype": "Data",
-   "label": "Other Charges"
-  },
-  {
-   "fieldname": "column_break_iytr",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "value_4",
-   "fieldtype": "Currency",
-   "label": "Value"
+   "label": "Reference Type"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-18 14:41:08.466615",
+ "modified": "2025-08-30 13:58:59.352706",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender Response",

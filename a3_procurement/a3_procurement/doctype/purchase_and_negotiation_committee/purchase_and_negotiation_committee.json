@@ -72,7 +72,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Purchase  and Negotiation Committee",
+   "options": "Purchase and Negotiation Committee",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -255,7 +255,7 @@
    "fieldname": "tender_opening_reference",
    "fieldtype": "Link",
    "label": "Tender Opening Reference",
-   "options": "Tender  Opening"
+   "options": "Tender Opening"
   },
   {
    "fieldname": "corresponding_l2",
@@ -375,10 +375,10 @@
    "link_fieldname": "custom_purchase__and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-07-29 11:27:51.057119",
+ "modified": "2025-08-27 16:55:47.839823",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "Purchase  and Negotiation Committee",
+ "name": "Purchase and Negotiation Committee",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

@@ -27,7 +27,7 @@
   "purchase_indent_reference",
   "indent_type",
   "scr_reference",
-  "scr_type",
+  "scr_id",
   "column_break_cmgp",
   "intended_employee",
   "indented_department",
@@ -211,20 +211,15 @@
    "depends_on": "eval:doc.reference==\"SCR\"",
    "fieldname": "scr_reference",
    "fieldtype": "Link",
-   "label": "SCR ID",
+   "label": "SCR Reviw ID",
    "options": "SCR Review"
-  },
-  {
-   "depends_on": "eval:doc.reference==\"SCR\"",
-   "fetch_from": "scr_reference.type_of_scr",
-   "fieldname": "scr_type",
-   "fieldtype": "Data",
-   "label": "SCR Type"
   },
   {
    "fieldname": "reference",
    "fieldtype": "Select",
-   "label": "Reference",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Reference Type",
    "options": "\nIndent\nSCR"
   },
   {
@@ -318,6 +313,7 @@
    "label": "Details of Vendors Invited"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "invited_vendors",
    "fieldtype": "Table",
    "label": "Invited Vendors",
@@ -326,7 +322,6 @@
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Enquiry ID"
   },
   {
@@ -352,6 +347,13 @@
    "fieldtype": "Link",
    "label": "Extended By Employee",
    "options": "Employee"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"SCR\"",
+   "fetch_from": "scr_reference.scr_no",
+   "fieldname": "scr_id",
+   "fieldtype": "Data",
+   "label": "SCR ID"
   }
  ],
  "grid_page_length": 50,
@@ -359,11 +361,19 @@
  "is_submittable": 1,
  "links": [
   {
-   "link_doctype": "Tender  Opening",
+   "link_doctype": "Tender Opening",
    "link_fieldname": "tender"
+  },
+  {
+   "link_doctype": "Request for Quotation",
+   "link_fieldname": "custom_tender"
+  },
+  {
+   "link_doctype": "Tender Response",
+   "link_fieldname": "tender_reference"
   }
  ],
- "modified": "2025-08-26 18:18:55.437951",
+ "modified": "2025-08-30 14:02:49.029634",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",

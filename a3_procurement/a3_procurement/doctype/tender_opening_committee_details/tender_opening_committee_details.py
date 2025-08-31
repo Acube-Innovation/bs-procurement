@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class TenderOpeningCommitee(Document):
+class TenderOpeningCommitteeDetails(Document):
 	pass

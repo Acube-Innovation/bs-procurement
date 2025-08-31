@@ -173,7 +173,7 @@
    "name": "Supplier Quotation-custom_tender_opening_reference",
    "no_copy": 0,
    "non_negative": 0,
-   "options": "Tender  Opening",
+   "options": "Tender Opening",
    "owner": "Administrator",
    "permlevel": 0,
    "placeholder": null,

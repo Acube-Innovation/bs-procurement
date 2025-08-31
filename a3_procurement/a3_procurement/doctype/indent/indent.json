@@ -547,6 +547,7 @@
    "options": "History Card"
   },
   {
+   "depends_on": "eval:!doc.__islocal",
    "fieldname": "estimate_tab",
    "fieldtype": "Tab Break",
    "label": "Estimate"
@@ -639,7 +640,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-08-26 11:11:01.302509",
+ "modified": "2025-08-28 13:14:06.916397",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

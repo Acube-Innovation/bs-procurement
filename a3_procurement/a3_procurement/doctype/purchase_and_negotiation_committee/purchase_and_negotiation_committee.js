@@ -1,13 +1,13 @@
 // Copyright (c) 2025, Acube and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Purchase  and Negotiation Committee", {
+// frappe.ui.form.on("Purchase and Negotiation Committee", {
 // 	refresh(frm) {
 
 // 	},
 // });
 
-frappe.ui.form.on('Purchase  and Negotiation Committee', {
+frappe.ui.form.on('Purchase and Negotiation Committee', {
   pnc_committee: function(frm) {
     if (frm.doc.pnc_committee) {
       frm.clear_table("table_lilx");
@@ -34,7 +34,7 @@ frappe.ui.form.on('Purchase  and Negotiation Committee', {
   }
 });
 
-frappe.ui.form.on("Purchase  and Negotiation Committee", {
+frappe.ui.form.on("Purchase and Negotiation Committee", {
     payment_terms: function(frm) {
         // Triggering the server-side method when payment_terms field is changed
        frappe.call({
@@ -54,7 +54,7 @@ frappe.ui.form.on("Purchase  and Negotiation Committee", {
     }
 });
 
-// frappe.ui.form.on('Purchase  and Negotiation Committee', {
+// frappe.ui.form.on('Purchase and Negotiation Committee', {
 //   purchase_recommendation_reference: async function(frm) {
 //     if (!frm.doc.purchase_recommendation_reference) return;
 
@@ -107,7 +107,7 @@ frappe.ui.form.on("Purchase  and Negotiation Committee", {
 // });
 
 
-frappe.ui.form.on('Purchase  and Negotiation Committee', {
+frappe.ui.form.on('Purchase and Negotiation Committee', {
   purchase_recommendation_reference: async function(frm) {
     if (!frm.doc.purchase_recommendation_reference) return;
 
@@ -191,7 +191,7 @@ async function update_supplier_quotation_values(frm) {
 }
 
 
-frappe.ui.form.on('Purchase  and Negotiation Committee', {
+frappe.ui.form.on('Purchase and Negotiation Committee', {
   estimated_costa: function(frm) {
     calculate_ab(frm);
   },
