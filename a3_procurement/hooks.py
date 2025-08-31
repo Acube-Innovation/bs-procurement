@@ -252,7 +252,7 @@ fixtures = [
     "filters": [
         ["name", "in", 
         [
-            'Purchase  and Negotiation Committee Workflow',
+            'Purchase and Negotiation Committee Workflow',
             'Purchase Approval Workflow',
             'Purchase Recommendation Workflow',
             'Indent Workflow',
@@ -301,25 +301,6 @@ fixtures = [
             'CMM',
             'Senior Manager'
          ]]
-    ]
-},
-{
-    "doctype": "Workspace",
-    "filters": [
-        ["name", "in", 
-        [
-            "Build",
-            "ERPNext Integrations",
-            "Integrations",
-            "ERPNext Settings",
-            "Tools",
-            "CRM",
-            "Website",
-            "Support",
-            "Projects",
-            "Quality",
-            "Manufacturing"
-        ]]
     ]
 }
 ]

@@ -92,40 +92,87 @@ frappe.ui.form.on('Indent', {
 //         });
 //     }
 // });
+// frappe.ui.form.on('Indent', {
+//     async refresh(frm) {
+//         const user = frappe.session.user;
+
+//         await frappe.call({
+//             method: "frappe.client.get_list",
+//             args: {
+//                 doctype: "Employee",
+//                 filters: { user_id: user },
+//                 fields: ["department"],
+//                 limit_page_length: 1
+//             },
+//             callback: function(r) {
+//                 if (r.message && r.message.length > 0) {
+//                     const department = r.message[0].department;
+//                     let newLabel = "";
+
+//                     if (department === "Subcontracting - BATL") {
+//                         newLabel = "Indent Details (SCM)";
+//                     } else if (department === "Purchase") {
+//                         newLabel = "Indent Details (CMM)";
+//                     }
+
+//                     if (newLabel) {
+//                         // Update the df.label value
+//                         frm.fields_dict.basic_details_section.df.label = newLabel;
+
+//                         // Manually update the section label in the DOM
+//                         $(frm.fields_dict.basic_details_section.wrapper)
+//                             .find('.section-head')
+//                             .html(`<span>${newLabel}</span>`);
+//                     }
+//                 }
+//             }
+//         });
+//     }
+// });
+
 frappe.ui.form.on('Indent', {
-    async refresh(frm) {
-        const user = frappe.session.user;
+    cost_estimate: function(frm) {
+        if (frm.doc.cost_estimate) {
+            // Clear existing Estimate table in Indent
+            frm.clear_table("table_ckhr");
 
-        await frappe.call({
-            method: "frappe.client.get_list",
-            args: {
-                doctype: "Employee",
-                filters: { user_id: user },
-                fields: ["department"],
-                limit_page_length: 1
-            },
-            callback: function(r) {
-                if (r.message && r.message.length > 0) {
-                    const department = r.message[0].department;
-                    let newLabel = "";
+            frappe.call({
+                method: "frappe.client.get",
+                args: {
+                    doctype: "Cost Estimate",
+                    name: frm.doc.cost_estimate
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        let cost_estimate_doc = r.message;
 
-                    if (department === "Subcontracting - BATL") {
-                        newLabel = "Indent Details (SCM)";
-                    } else if (department === "Purchase") {
-                        newLabel = "Indent Details (CMM)";
-                    }
+                        // Fetch child table if type = Purchase
+                        if (cost_estimate_doc.type === "Purchase" && cost_estimate_doc.purchase_estimate) {
+                            (cost_estimate_doc.purchase_estimate || []).forEach(row => {
+                                let child = frm.add_child("table_ckhr");
+                                child.item = row.item;
+                                child.quantity = row.quantity;
+                                child.estimated_cost_batl = row.estimated_cost_batl;
+                                child.total_estimated_cost = row.total_estimated_cost;
+                            });
+                            frm.refresh_field("table_ckhr");
+                        }
 
-                    if (newLabel) {
-                        // Update the df.label value
-                        frm.fields_dict.basic_details_section.df.label = newLabel;
-
-                        // Manually update the section label in the DOM
-                        $(frm.fields_dict.basic_details_section.wrapper)
-                            .find('.section-head')
-                            .html(`<span>${newLabel}</span>`);
+                        // Fetch totals
+                        frm.set_value("total", cost_estimate_doc.total);
+                        frm.set_value("gst", cost_estimate_doc.gst);
+                        frm.set_value("new_total", cost_estimate_doc.new_total);
                     }
                 }
-            }
-        });
+            });
+        } else {
+            // Clear values if cost_estimate is removed
+            frm.clear_table("table_ckhr");
+            frm.set_value("total", null);
+            frm.set_value("gst", null);
+            frm.set_value("new_total", null);
+            frm.refresh_fields(["table_ckhr", "total", "gst", "new_total"]);
+        }
     }
 });
+

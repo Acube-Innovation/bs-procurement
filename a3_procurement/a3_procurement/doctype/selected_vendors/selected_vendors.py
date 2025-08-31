@@ -5,8 +5,5 @@
 from frappe.model.document import Document
 
 
-class SubContractRequest(Document):
-
-    def before_save(self):
-        # By this point, self.name is guaranteed to exist
-        self.scr_id_no = self.name
+class SelectedVendors(Document):
+	pass

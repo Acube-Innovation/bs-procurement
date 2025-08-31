@@ -31,6 +31,7 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Type",
    "options": "Purchase\nSub-Contract",
    "reqd": 1
@@ -43,6 +44,8 @@
    "depends_on": "eval:doc.type==\"Purchase\"",
    "fieldname": "indent_reference",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Indent Reference",
    "mandatory_depends_on": "eval:doc.type==\"Purchase\"",
    "options": "Indent"
@@ -51,6 +54,8 @@
    "depends_on": "eval:doc.type==\"Sub-Contract\"",
    "fieldname": "sub_contract_reference",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Sub-Contract Reference",
    "mandatory_depends_on": "eval:doc.type==\"Sub-Contract\"",
    "options": "Sub-Contract Request"
@@ -80,6 +85,7 @@
   {
    "fieldname": "supplier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Supplier",
    "options": "Supplier"
   },
@@ -118,6 +124,7 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Date"
   },
   {
@@ -133,7 +140,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-25 16:13:30.197693",
+ "modified": "2025-08-28 14:57:39.033292",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Cost Estimate",

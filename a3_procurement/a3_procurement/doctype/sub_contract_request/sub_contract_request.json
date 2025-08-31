@@ -8,9 +8,11 @@
  "field_order": [
   "details",
   "naming_series",
+  "scr_id_no",
   "scr_date",
   "column_break_uxym",
   "type_of_scr",
+  "type_of_bid",
   "column_break_jvbj",
   "materials_issuance",
   "section_break_fjuh",
@@ -54,6 +56,7 @@
   "table_scrb",
   "suggestionsremarks",
   "estimation_tab",
+  "cost_estimate",
   "table_xpza",
   "section_break_jeix",
   "total",
@@ -311,6 +314,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:!doc.__islocal",
    "fieldname": "estimation_tab",
    "fieldtype": "Tab Break",
    "label": "Estimation"
@@ -356,21 +360,35 @@
    "fieldname": "table_nmqr",
    "fieldtype": "Table",
    "options": "Payment Terms Template Detail"
+  },
+  {
+   "fieldname": "scr_id_no",
+   "fieldtype": "Data",
+   "label": "SCR Id No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_of_bid",
+   "fieldtype": "Select",
+   "label": "Type of Bid",
+   "options": "Two\nSingle"
+  },
+  {
+   "fieldname": "cost_estimate",
+   "fieldtype": "Link",
+   "label": "Cost Estimate",
+   "options": "Cost Estimate"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [
   {
-   "link_doctype": "Tender",
-   "link_fieldname": "scr_reference"
-  },
-  {
    "link_doctype": "SCR Review",
    "link_fieldname": "scr_no"
   }
  ],
- "modified": "2025-08-26 16:44:01.583784",
+ "modified": "2025-08-28 12:47:18.136436",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",
