@@ -1,0 +1,30 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-07-15 14:41:37.060323",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[],\"fields\":[[\"name\",\"Pending Receivables\"],[\"work_order\",\"Pending Receivables\"],[\"sales_invoice\",\"Pending Receivables\"],[\"gst\",\"Pending Receivables\"],[\"basic_amount\",\"Pending Receivables\"],[\"item_description\",\"Pending Receivables\"],[\"customer\",\"Pending Receivables\"],[\"invoice_date\",\"Pending Receivables\"],[\"item_id\",\"Pending Receivables\"],[\"qunatity\",\"Pending Receivables\"],[\"total_receivables\",\"Pending Receivables\"],[\"pending_age\",\"Pending Receivables\"],[\"present_status\",\"Pending Receivables\"],[\"edc\",\"Pending Receivables\"]],\"order_by\":\"`tabPending Receivables`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":120,\"work_order\":120,\"sales_invoice\":120,\"gst\":120,\"basic_amount\":120,\"item_description\":120,\"customer\":120,\"invoice_date\":120,\"item_id\":120,\"qunatity\":120,\"total_receivables\":120,\"pending_age\":120,\"present_status\":120,\"edc\":120},\"group_by\":null}",
+ "letter_head": "BATL-Letter Head",
+ "letterhead": null,
+ "modified": "2025-07-16 17:26:31.937286",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Receivables Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Pending Receivables",
+ "report_name": "Receivables Report",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

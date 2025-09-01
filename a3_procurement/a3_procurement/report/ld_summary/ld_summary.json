@@ -1,0 +1,30 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-07-15 14:51:11.730992",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[],\"fields\":[[\"name\",\"LD Log\"],[\"customer\",\"LD Log\"],[\"ldn_no\",\"LD Log\"],[\"ld_amount\",\"LD Log\"],[\"work_order\",\"LD Log\"],[\"item\",\"LD Log\"],[\"ld_rate\",\"LD Log\"],[\"purchase_order\",\"LD Log\"],[\"purchase_order_date\",\"LD Log\"],[\"invoice\",\"LD Log\"]],\"order_by\":\"`tabLD Log`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":120,\"customer\":120,\"ldn_no\":120,\"ld_amount\":120,\"work_order\":120,\"item\":120,\"ld_rate\":120,\"purchase_order\":120,\"purchase_order_date\":120,\"invoice\":120},\"group_by\":null}",
+ "letter_head": "BATL-Letter Head",
+ "letterhead": null,
+ "modified": "2025-07-16 17:26:23.682908",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "LD Summary",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "LD Log",
+ "report_name": "LD Summary",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}
