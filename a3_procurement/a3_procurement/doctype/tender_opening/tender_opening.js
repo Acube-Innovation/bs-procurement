@@ -1,11 +1,7 @@
 // Copyright (c) 2025, Acube and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Tender Opening", {
-// 	refresh(frm) {
 
-// 	},
-// });
 frappe.ui.form.on('Tender Opening', {
   refresh: function(frm) {
     const current_user = frappe.session.user;
@@ -105,216 +101,8 @@ frappe.ui.form.on('Tender Opening', {
   }
 });
 
-// frappe.ui.form.on('Tender Opening', {
-//     tender: function(frm) {
-//         if (frm.doc.tender) {
-//             // Clear existing child table
-//             frm.clear_table("particulars");
-
-//             frappe.call({
-//                 method: "frappe.client.get",
-//                 args: {
-//                     doctype: "Tender",
-//                     name: frm.doc.tender
-//                 },
-//                 callback: function(r) {
-//                     if (r.message) {
-//                         let toc_doc = r.message;
-
-//                         // Loop through the particulars table and add to items table
-//                         (toc_doc.items || []).forEach(row => {
-//                             let child = frm.add_child("particulars");
-//                             child.item = row.item;
-//                             child.description = row.description;
-//                             child.quantity = row.quantity;
-//                             child.uom = row.unit;
-//                             child.delivery_period = row.delivery_period;
-//                         });
-
-//                         frm.refresh_field("particulars");
-//                     }
-//                 }
-//             });
-//         }
-//     }
-// });
 
 
-// frappe.ui.form.on('Tender Opening', {
-//     tender: function(frm) {
-//         if (frm.doc.tender) {
-//             // Clear child tables first
-//             frm.clear_table("particulars");
-//             frm.clear_table("scm_particulars");
-//             frm.clear_table("table_bcra");
-//             frm.clear_table("table_aprq");
-
-//             frappe.call({
-//                 method: "frappe.client.get",
-//                 args: {
-//                     doctype: "Tender",
-//                     name: frm.doc.tender
-//                 },
-//                 callback: function(r) {
-//                     if (r.message) {
-//                         let tender_doc = r.message;
-
-//                         // Case 1: If reference is Indent → map `items` into `particulars`
-//                         if (tender_doc.reference === "Indent") {
-//                             (tender_doc.items || []).forEach(row => {
-//                                 let child = frm.add_child("particulars");
-//                                 child.item = row.item;
-//                                 child.description = row.description;
-//                                 child.quantity = row.quantity;
-//                                 child.uom = row.unit;
-//                                 child.delivery_period = row.delivery_period;
-//                             });
-//                             frm.refresh_field("particulars");
-//                         }
-
-//                         // Case 2: If reference is SCR → map `table_zdft` into `scm_particulars`
-//                         else if (tender_doc.reference === "SCR") {
-//                             (tender_doc.table_zdft || []).forEach(row => {
-//                                 let child = frm.add_child("scm_particulars");
-//                                 child.drawing_no = row.drawing_no;
-//                                 child.rev = row.rev;
-//                                 child.idn_no = row.idn_no;
-//                                 child.raw_material_sizespecification = row.raw_material_sizespecification;
-//                                 child.sizespecification = row.sizespecification;
-//                                 child.name1 = row.name1;
-//                                 child.item_description = row.item_description;
-//                                 child.delivery_date = row.delivery_date;
-//                                 child.quantity = row.quantity;
-//                                 child.fim_rate = row.fim_rate;
-//                                 child.total_fim_cost = row.total_fim_cost;
-//                                 child.delivery_remarks = row.delivery_remarks;
-//                             });
-//                             frm.refresh_field("scm_particulars");
-//                         }
-
-//                         // Case 3: Always map invited_vendors → table_bcra + table_aprq
-//                         (tender_doc.invited_vendors || []).forEach(row => {
-//                             // → Tender Opening Details
-//                             let child1 = frm.add_child("table_bcra");
-//                             child1.supplier = row.vendor_name;
-
-//                             // → Selected Vendors
-//                             let child2 = frm.add_child("table_aprq");
-//                             child2.vendor = row.vendor_name;
-//                         });
-//                         frm.refresh_field("table_bcra");
-//                         frm.refresh_field("table_aprq");
-//                     }
-//                 }
-//             });
-//         }
-//     }
-// });
-
-// frappe.ui.form.on('Tender Opening', {
-//     tender: function(frm) {
-//         if (frm.doc.tender) {
-//             // Clear child tables first
-//             frm.clear_table("particulars");
-//             frm.clear_table("scm_particulars");
-//             frm.clear_table("table_bcra");
-//             frm.clear_table("table_aprq");
-
-//             frappe.call({
-//                 method: "frappe.client.get",
-//                 args: {
-//                     doctype: "Tender",
-//                     name: frm.doc.tender
-//                 },
-//                 callback: function(r) {
-//                     if (r.message) {
-//                         let tender_doc = r.message;
-
-//                         // Case 1: If reference is Indent → map `items` into `particulars`
-//                         if (tender_doc.reference === "Indent") {
-//                             (tender_doc.items || []).forEach(row => {
-//                                 let child = frm.add_child("particulars");
-//                                 child.item = row.item;
-//                                 child.description = row.description;
-//                                 child.quantity = row.quantity;
-//                                 child.uom = row.unit;
-//                                 child.delivery_period = row.delivery_period;
-//                             });
-//                             frm.refresh_field("particulars");
-
-//                             // fetch type_of_bid from Indent
-//                             if (tender_doc.purchase_indent_reference) {
-//                                 frappe.call({
-//                                     method: "frappe.client.get_value",
-//                                     args: {
-//                                         doctype: "Indent",
-//                                         filters: { name: tender_doc.purchase_indent_reference },
-//                                         fieldname: ["type_of_bid"]
-//                                     },
-//                                     callback: function(res) {
-//                                         if (res.message) {
-//                                             frm.set_value("type_of_bid", res.message.type_of_bid);
-//                                         }
-//                                     }
-//                                 });
-//                             }
-//                         }
-
-//                         // Case 2: If reference is SCR → map `table_zdft` into `scm_particulars`
-//                         else if (tender_doc.reference === "SCR") {
-//                             (tender_doc.table_zdft || []).forEach(row => {
-//                                 let child = frm.add_child("scm_particulars");
-//                                 child.drawing_no = row.drawing_no;
-//                                 child.rev = row.rev;
-//                                 child.idn_no = row.idn_no;
-//                                 child.raw_material_sizespecification = row.raw_material_sizespecification;
-//                                 child.sizespecification = row.sizespecification;
-//                                 child.name1 = row.name1;
-//                                 child.item_description = row.item_description;
-//                                 child.delivery_date = row.delivery_date;
-//                                 child.quantity = row.quantity;
-//                                 child.fim_rate = row.fim_rate;
-//                                 child.total_fim_cost = row.total_fim_cost;
-//                                 child.delivery_remarks = row.delivery_remarks;
-//                             });
-//                             frm.refresh_field("scm_particulars");
-
-//                             // fetch type_of_bid from Sub Contract Request
-//                             if (tender_doc.scr_reference) {
-//                                 frappe.call({
-//                                     method: "frappe.client.get_value",
-//                                     args: {
-//                                         doctype: "Sub-Contract Request",
-//                                         filters: { name: tender_doc.scr_id },
-//                                         fieldname: ["type_of_bid"]
-//                                     },
-//                                     callback: function(res) {
-//                                         if (res.message) {
-//                                             frm.set_value("type_of_bid", res.message.type_of_bid);
-//                                         }
-//                                     }
-//                                 });
-//                             }
-//                         }
-
-//                         // Case 3: Always map invited_vendors → table_bcra + table_aprq
-//                         (tender_doc.invited_vendors || []).forEach(row => {
-//                             // → Tender Opening Details
-//                             let child1 = frm.add_child("table_bcra");
-//                             child1.supplier = row.vendor_name;
-
-//                             // → Selected Vendors
-//                             let child2 = frm.add_child("table_aprq");
-//                             child2.vendor = row.vendor_name;
-//                         });
-//                         frm.refresh_field("table_bcra");
-//                         frm.refresh_field("table_aprq");
-//                     }
-//                 }
-//             });
-//         }
-//     }
-// });
 
 frappe.ui.form.on('Tender Opening', {
     tender: function(frm) {
@@ -413,7 +201,6 @@ frappe.ui.form.on('Tender Opening', {
                         frm.refresh_field("table_bcra");
                         frm.refresh_field("table_aprq");
 
-                        // 🔥 NEW PART: Check Tender Responses and mark status = Received
                         frappe.call({
                             method: "frappe.client.get_list",
                             args: {
