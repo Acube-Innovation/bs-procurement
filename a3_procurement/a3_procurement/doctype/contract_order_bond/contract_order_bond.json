@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-01 16:10:37.844159",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_c7gc",
+  "order_no",
+  "column_break_usrq",
+  "order_to",
+  "column_break_gfal",
+  "order_date",
+  "indimminity_bond_section",
+  "received_via",
+  "column_break_mmzk",
+  "validity_date",
+  "column_break_ftih",
+  "attach_document",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_c7gc",
+   "fieldtype": "Section Break",
+   "label": "Order Details"
+  },
+  {
+   "fieldname": "order_no",
+   "fieldtype": "Data",
+   "label": "Order No."
+  },
+  {
+   "fieldname": "column_break_usrq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "order_to",
+   "fieldtype": "Link",
+   "label": "Order To ",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_gfal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "label": "Order Date"
+  },
+  {
+   "fieldname": "indimminity_bond_section",
+   "fieldtype": "Section Break",
+   "label": "Indiminity Bond"
+  },
+  {
+   "fieldname": "received_via",
+   "fieldtype": "Select",
+   "label": "Received Via",
+   "options": "\nEmail\nPhysical Document"
+  },
+  {
+   "fieldname": "column_break_mmzk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "validity_date",
+   "fieldtype": "Date",
+   "label": " Validity Date"
+  },
+  {
+   "fieldname": "column_break_ftih",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "label": "Attach Document"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contract Order Bond",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-02 20:59:04.958238",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Contract Order Bond",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
