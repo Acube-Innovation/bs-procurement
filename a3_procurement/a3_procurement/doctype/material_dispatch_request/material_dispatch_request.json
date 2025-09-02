@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-09-01 16:22:29.280229",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xd9k",
+  "amended_from",
+  "naming_series",
+  "supplier",
+  "material_condition",
+  "column_break_qfkz",
+  "request_date",
+  "mode_of_delivey",
+  "material_purpose",
+  "column_break_ixmw",
+  "contract_order_no",
+  "nature_of_outing",
+  "section_break_lomo",
+  "table_kvod"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xd9k",
+   "fieldtype": "Section Break",
+   "label": "Dispatch Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Material Dispatch Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Material Dispatch Request ID"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "material_condition",
+   "fieldtype": "Select",
+   "label": "Material Condition",
+   "options": "\nPacked\nLoose"
+  },
+  {
+   "fieldname": "column_break_qfkz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "mode_of_delivey",
+   "fieldtype": "Select",
+   "label": "Mode of Delivey",
+   "options": "\nDoor Delivery"
+  },
+  {
+   "fieldname": "material_purpose",
+   "fieldtype": "Select",
+   "label": "Material Purpose",
+   "options": "\nProcessing"
+  },
+  {
+   "fieldname": "column_break_ixmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_order_no",
+   "fieldtype": "Data",
+   "label": "Contract Order No."
+  },
+  {
+   "fieldname": "nature_of_outing",
+   "fieldtype": "Select",
+   "label": "Nature of Outing",
+   "options": "\nreturnable\nNon Returnable"
+  },
+  {
+   "fieldname": "section_break_lomo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_kvod",
+   "fieldtype": "Table",
+   "options": "Material Dispatch Request Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-02 20:57:45.518840",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Material Dispatch Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
