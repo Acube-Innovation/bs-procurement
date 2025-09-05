@@ -372,10 +372,10 @@
  "links": [
   {
    "link_doctype": "Purchase Order",
-   "link_fieldname": "custom_purchase__and_negotiation_committee_reference"
+   "link_fieldname": "custom_purchase_and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-08-27 16:55:47.839823",
+ "modified": "2025-09-02 23:20:15.414324",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase and Negotiation Committee",

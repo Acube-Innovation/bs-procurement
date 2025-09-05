@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{forwarding_note_number}",
+ "creation": "2025-09-03 16:48:45.530609",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "forwarding_note_number",
+  "batl_dc_no",
+  "column_break_npfm",
+  "date",
+  "vendor",
+  "column_break_lgzd",
+  "despatch_request_no",
+  "contract_order_no",
+  "column_break_fxch",
+  "igp_no",
+  "other_ref",
+  "section_break_ewko",
+  "forwarding_note_item",
+  "section_break_xaty",
+  "confirmation_by_vendor_date",
+  "column_break_seio",
+  "column_break_ydzo",
+  "column_break_pahl"
+ ],
+ "fields": [
+  {
+   "fieldname": "forwarding_note_number",
+   "fieldtype": "Data",
+   "label": "Forwarding Note Number"
+  },
+  {
+   "fieldname": "despatch_request_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Despatch Request No"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "igp_no",
+   "fieldtype": "Data",
+   "label": "IGP No"
+  },
+  {
+   "fieldname": "batl_dc_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "BATL DC No"
+  },
+  {
+   "fieldname": "other_ref",
+   "fieldtype": "Data",
+   "label": "Other Ref"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Vendor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "forwarding_note_item",
+   "fieldtype": "Table",
+   "label": "Forwarding Note Item",
+   "options": "Forwarding Note Item"
+  },
+  {
+   "fieldname": "column_break_npfm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ewko",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_lgzd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_order_no",
+   "fieldtype": "Link",
+   "label": "Contract Order No",
+   "options": "Subcontracting Order"
+  },
+  {
+   "fieldname": "column_break_fxch",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "confirmation_by_vendor_date",
+   "fieldtype": "Date",
+   "label": "Confirmation by Vendor Date"
+  },
+  {
+   "fieldname": "section_break_xaty",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_seio",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ydzo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pahl",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-04 18:08:35.299084",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Forwarding Note",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{TO}-{2025}-{######}",
- "creation": "2025-07-03 12:53:45.235451",
+ "creation": "2025-09-02 22:59:53.722936",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -12,8 +12,9 @@
   "scr_id",
   "type_of_bid",
   "column_break_zvlm",
+  "status",
   "tender_opening_date",
-  "due__date",
+  "due_date",
   "due_date_extended_upto",
   "column_break_zrco",
   "tender_opening_created_by",
@@ -79,12 +80,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "due__date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Due  Date"
-  },
-  {
    "fieldname": "due_date_extended_upto",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -125,6 +120,7 @@
   {
    "fieldname": "tender_opening_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Tender Opening Date"
   },
   {
@@ -143,7 +139,8 @@
    "fieldname": "tender",
    "fieldtype": "Link",
    "label": "Tender ID",
-   "options": "Tender"
+   "options": "Tender",
+   "reqd": 1
   },
   {
    "fieldname": "tender_opening_committee_1",
@@ -216,7 +213,7 @@
    "fieldname": "technical_evaluation_status",
    "fieldtype": "Select",
    "label": "Technical Evaluation Status",
-   "options": "Pending\nVerified"
+   "options": "Pending\nVerified\nNo Vendors Qualified"
   },
   {
    "fieldname": "commercial_committee_tab",
@@ -255,7 +252,7 @@
    "fieldname": "commercial_evaluation_status",
    "fieldtype": "Select",
    "label": "Commercial Evaluation Status",
-   "options": "Pending\nVerified"
+   "options": "Pending\nVerified\nNo Vendors Qualified"
   },
   {
    "fieldname": "column_break_pqjy",
@@ -329,6 +326,7 @@
    "fetch_from": "tender.reference",
    "fieldname": "reference",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Reference"
   },
   {
@@ -396,6 +394,19 @@
    "fieldtype": "Link",
    "label": "Cost Estimate",
    "options": "Cost Estimate"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nTechnical Review\nTechnical Qualified\nTechnical Not Qualified\nCommercial Review\nCommercial Not Qualified\nCommercial Qualified\nRe-Tender\nTender Opened"
   }
  ],
  "grid_page_length": 50,
@@ -410,13 +421,27 @@
    "link_fieldname": "tender_opening_reference"
   }
  ],
- "modified": "2025-08-28 15:03:46.353976",
+ "modified": "2025-09-03 12:52:06.784496",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender Opening",
  "naming_rule": "Expression",
  "owner": "Administrator",
- "permissions": [],
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",

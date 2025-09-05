@@ -8,6 +8,7 @@
  "field_order": [
   "vendor",
   "selected",
+  "date_of_receipt_of_quotation",
   "status"
  ],
  "fields": [
@@ -26,9 +27,13 @@
    "label": "Selected"
   },
   {
+   "fieldname": "date_of_receipt_of_quotation",
+   "fieldtype": "Date",
+   "label": "Date of Receipt of Quotation"
+  },
+  {
    "fieldname": "status",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Status",
    "options": "\nReceived\nRegret"
   }
@@ -37,7 +42,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-28 15:19:17.690903",
+ "modified": "2025-09-03 13:37:25.988240",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Selected Vendors",

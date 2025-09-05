@@ -2,6 +2,7 @@ frappe.ui.form.on("Supplier Quotation", {
     custom_tender_opening_reference: function(frm) {
         if (!frm.doc.custom_tender_opening_reference) return;
 
+        // clear items first
         frm.clear_table("items");
 
         frappe.call({
@@ -14,6 +15,7 @@ frappe.ui.form.on("Supplier Quotation", {
                 if (res.message) {
                     let tender_opening = res.message;
 
+                    // ---- Populate Items from Tender Opening ----
                     (tender_opening.particulars || []).forEach(row => {
                         let item_row = frm.add_child("items");
                         item_row.item_code = row.item;
@@ -22,9 +24,25 @@ frappe.ui.form.on("Supplier Quotation", {
                         item_row.qty = row.quantity;
                         item_row.expected_delivery_date = row.delivery_period;
                     });
-
                     frm.refresh_field("items");
-                    frappe.msgprint("Items fetched from Indent.");
+
+                    // ---- Filter Supplier field ----
+                    let allowed_vendors = (tender_opening.table_mzil || [])
+                        .filter(row => row.selected)
+                        .map(row => row.vendor);
+
+                    frm.set_query("supplier", function() {
+                        return {
+                            filters: [
+                                ["Supplier", "name", "in", allowed_vendors]
+                            ]
+                        };
+                    });
+
+                    // If already set supplier is not in allowed list, clear it
+                    if (frm.doc.supplier && !allowed_vendors.includes(frm.doc.supplier)) {
+                        frm.set_value("supplier", null);
+                    }
                 }
             }
         });

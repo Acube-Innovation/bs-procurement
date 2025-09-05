@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-03 16:45:35.805661",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "drg",
+  "finished_qty",
+  "column_break_iuiw",
+  "raw_mtl",
+  "mtl_size",
+  "rmc",
+  "raw_qty"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "drg",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Drg"
+  },
+  {
+   "fieldname": "finished_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Finished Qty",
+   "precision": "2"
+  },
+  {
+   "fieldname": "raw_mtl",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Raw Mtl"
+  },
+  {
+   "fieldname": "mtl_size",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mtl Size"
+  },
+  {
+   "fieldname": "rmc",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "RMC"
+  },
+  {
+   "fieldname": "raw_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Raw Qty",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_iuiw",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-03 17:31:10.025770",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Forwarding Note Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sub-Contracting</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"5GhGmFPoce\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"iT8JC4nEmx\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"rz3mvtAXpX\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontracting\",\"col\":4}}]",
+ "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sub-Contracting</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"5GhGmFPoce\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"iT8JC4nEmx\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"vZI0nTAigX\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"rz3mvtAXpX\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Requests\",\"col\":4}},{\"id\":\"VjdJz74DDH\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Tracking\",\"col\":4}}]",
  "creation": "2025-08-05 11:57:08.272489",
  "custom_blocks": [],
  "docstatus": 0,
@@ -184,7 +184,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Indent Management",
-   "link_count": 3,
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -222,8 +222,18 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Subcontracting",
-   "link_count": 8,
+   "label": "SCR Scope of Work",
+   "link_count": 0,
+   "link_to": "SCR Scope",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Order Management",
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -251,9 +261,117 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Order Acceptance",
+   "link_count": 0,
+   "link_to": "Sub Contracting Order Acceptance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contract Order Bond",
+   "link_count": 0,
+   "link_to": "Contract Order Bond",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subcontract Tracking",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Raw Materials to be Transfered",
+   "link_count": 0,
+   "link_to": "Subcontracted Raw Materials To Be Transferred",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Finished Items to be Received",
+   "link_count": 0,
+   "link_to": "Subcontracted Item To Be Received",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "SO Materials Summary",
+   "link_count": 0,
+   "link_to": "Subcontract Order Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subcontract Requests",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Material Despatch Request",
+   "link_count": 0,
+   "link_to": "Material Dispatch Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Forwarding Note",
+   "link_count": 0,
+   "link_to": "Forwarding Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "DP Extension Proforma",
+   "link_count": 0,
+   "link_to": "DP Extension Proforma",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Subcontracting Receipt",
    "link_count": 0,
    "link_to": "Subcontracting Receipt",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Offering to QC",
+   "link_count": 0,
+   "link_to": "Quality Inspection",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -267,49 +385,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Invoice",
-   "link_count": 0,
-   "link_to": "Purchase Invoice",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Payment Entry",
-   "link_count": 0,
-   "link_to": "Payment Entry",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Order Acceptance",
-   "link_count": 0,
-   "link_to": "Sub Contracting Order Acceptance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CO Bond",
-   "link_count": 0,
-   "link_to": "Contract Order Bond",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2025-09-01 16:14:34.347912",
+ "modified": "2025-09-04 20:27:51.865420",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract",
