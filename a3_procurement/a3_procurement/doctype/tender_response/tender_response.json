@@ -43,7 +43,8 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Response Date"
+   "label": "Response Date",
+   "reqd": 1
   },
   {
    "fieldname": "status",
@@ -102,7 +103,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 13:58:59.352706",
+ "modified": "2025-09-02 23:51:50.987831",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender Response",

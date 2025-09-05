@@ -15,6 +15,7 @@
   "type_of_bid",
   "column_break_jvbj",
   "materials_issuance",
+  "scr_scope_of_work",
   "section_break_fjuh",
   "repeat_order",
   "section_break_xadx",
@@ -378,6 +379,12 @@
    "fieldtype": "Link",
    "label": "Cost Estimate",
    "options": "Cost Estimate"
+  },
+  {
+   "fieldname": "scr_scope_of_work",
+   "fieldtype": "Link",
+   "label": "SCR Scope of Work",
+   "options": "SCR Scope"
   }
  ],
  "grid_page_length": 50,
@@ -388,7 +395,7 @@
    "link_fieldname": "scr_no"
   }
  ],
- "modified": "2025-08-28 12:47:18.136436",
+ "modified": "2025-09-04 13:28:19.415362",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

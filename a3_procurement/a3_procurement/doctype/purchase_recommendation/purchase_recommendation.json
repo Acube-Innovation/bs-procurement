@@ -24,7 +24,7 @@
   "verified_by",
   "column_break_nnzy",
   "checked_by",
-  "approved__by"
+  "approved_by"
  ],
  "fields": [
   {
@@ -119,12 +119,6 @@
    "options": "User"
   },
   {
-   "fieldname": "approved__by",
-   "fieldtype": "Link",
-   "label": "Approved  By",
-   "options": "User"
-  },
-  {
    "fieldname": "comparative_statement",
    "fieldtype": "Link",
    "label": "Comparative Statement",
@@ -135,6 +129,12 @@
    "fieldname": "enquiry_no",
    "fieldtype": "Data",
    "label": "Enquiry No"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
   }
  ],
  "grid_page_length": 50,
@@ -150,7 +150,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-07-23 14:01:11.080794",
+ "modified": "2025-09-02 23:21:26.800524",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",

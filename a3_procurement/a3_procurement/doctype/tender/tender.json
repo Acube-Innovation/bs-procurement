@@ -36,8 +36,10 @@
   "section_break_ehxw",
   "additional_information",
   "purchase_particulars_tab",
+  "items_1",
   "items",
   "scm_particulars_tab",
+  "items_section",
   "table_zdft",
   "terms_and_conditions_tab",
   "terms_and_conditions_section",
@@ -354,6 +356,16 @@
    "fieldname": "scr_id",
    "fieldtype": "Data",
    "label": "SCR ID"
+  },
+  {
+   "fieldname": "items_1",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
   }
  ],
  "grid_page_length": 50,
@@ -373,7 +385,7 @@
    "link_fieldname": "tender_reference"
   }
  ],
- "modified": "2025-08-30 14:02:49.029634",
+ "modified": "2025-09-03 08:44:08.761152",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",

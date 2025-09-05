@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"vaiZ6L4Mxx\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"4BfGPxGl-p\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"NIJ39FK5hS\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"ehqmygURxy\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":4}}]",
+ "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"vaiZ6L4Mxx\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"4BfGPxGl-p\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"ehqmygURxy\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"UZ322P-eiw\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":4}}]",
  "creation": "2025-06-23 12:47:13.561858",
  "custom_blocks": [],
  "docstatus": 0,
@@ -65,65 +65,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Purchase Management",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Recommendation",
-   "link_count": 0,
-   "link_to": "Purchase Recommendation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Approval",
-   "link_count": 0,
-   "link_to": "Purchase Approval",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase  and Negotiation Committee",
-   "link_count": 0,
-   "link_to": "Purchase and Negotiation Committee",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Order",
-   "link_count": 0,
-   "link_to": "Purchase Order",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Material Request",
-   "link_count": 0,
-   "link_to": "Material Request",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Indent Management",
    "link_count": 4,
    "link_type": "DocType",
@@ -173,8 +114,145 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Vendor Management",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vendor",
+   "link_count": 0,
+   "link_to": "Supplier",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vendor Group",
+   "link_count": 0,
+   "link_to": "Supplier Group",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vendor Type",
+   "link_count": 0,
+   "link_to": "Supplier Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vendor Evaluation Form",
+   "link_count": 0,
+   "link_to": "Supplier",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Re-Evaluation Due Report",
+   "link_count": 0,
+   "link_to": "Supplier",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Order Management",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Recommendation",
+   "link_count": 0,
+   "link_to": "Purchase Recommendation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Approval",
+   "link_count": 0,
+   "link_to": "Purchase Approval",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase  and Negotiation Committee",
+   "link_count": 0,
+   "link_to": "Purchase and Negotiation Committee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Management",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Order",
+   "link_count": 0,
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Order Amendment",
+   "link_count": 0,
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Order  Cancellation",
+   "link_count": 0,
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Tender Management",
-   "link_count": 9,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -248,157 +326,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Tender Comparison",
-   "link_count": 0,
-   "link_to": "Comparative Statement",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Quotation Lost Reason",
-   "link_count": 0,
-   "link_to": "Quotation Lost Reason",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Order Management",
-   "link_count": 6,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Order",
-   "link_count": 0,
-   "link_to": "Purchase Order",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "GRN",
-   "link_count": 0,
-   "link_to": "Purchase Receipt",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Invoice",
-   "link_count": 0,
-   "link_to": "Purchase Invoice",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Payment Entry",
-   "link_count": 0,
-   "link_to": "Payment Entry",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stock Entry",
-   "link_count": 0,
-   "link_to": "Stock Entry",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Warehouse",
-   "link_count": 0,
-   "link_to": "Warehouse",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vendor Management",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vendor",
-   "link_count": 0,
-   "link_to": "Supplier",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vendor Group",
-   "link_count": 0,
-   "link_to": "Supplier Group",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vendor Type",
-   "link_count": 0,
-   "link_to": "Supplier Type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vendor Evaluation Form",
-   "link_count": 0,
-   "link_to": "Supplier",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Re-Evaluation Due Report",
-   "link_count": 0,
-   "link_to": "Supplier",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2025-08-31 19:46:09.119482",
+ "modified": "2025-09-04 16:44:08.222604",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Procurement",
