@@ -39,6 +39,10 @@
   "from_existing_capex",
   "capex_requisition_number",
   "in_principle_request",
+  "bid_details_section",
+  "type_of_bid",
+  "column_break_ulov",
+  "amended_from",
   "section_break_l4r0",
   "items",
   "justification",
@@ -47,6 +51,10 @@
   "qc_sheets",
   "section_break_vlk1",
   "special_instructions",
+  "payment_terms_tab",
+  "payment_terms_and_conditions_section",
+  "payment_terms_template",
+  "payment_terms",
   "source_tab",
   "test",
   "table_ophz",
@@ -62,9 +70,6 @@
   "select_purchase_order",
   "column_break_i7sq",
   "attach_purchase_order",
-  "bid_details_section",
-  "type_of_bid",
-  "amended_from",
   "history_card_tab",
   "table_xcnj",
   "check_list_section",
@@ -621,6 +626,32 @@
    "fieldtype": "Link",
    "label": "Cost Estimate",
    "options": "Cost Estimate"
+  },
+  {
+   "fieldname": "column_break_ulov",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_terms_and_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Terms and Conditions"
+  },
+  {
+   "fieldname": "payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Table",
+   "label": "Payment Terms",
+   "options": "Payment Terms Template Detail"
+  },
+  {
+   "fieldname": "payment_terms_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment Terms"
   }
  ],
  "grid_page_length": 50,
@@ -640,7 +671,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-08-28 13:14:06.916397",
+ "modified": "2025-09-08 16:19:15.601345",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",
