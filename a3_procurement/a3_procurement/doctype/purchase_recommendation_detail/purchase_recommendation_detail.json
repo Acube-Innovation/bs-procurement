@@ -15,7 +15,9 @@
   "recommended",
   "reason",
   "column_break_tbxk",
-  "description"
+  "description",
+  "finished_good",
+  "drawing_no"
  ],
  "fields": [
   {
@@ -81,13 +83,26 @@
   {
    "fieldname": "column_break_tbxk",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:parent.reference==\"SCR\"",
+   "fieldname": "finished_good",
+   "fieldtype": "Link",
+   "label": "Finished Good",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval:parent.reference==\"SCR\"",
+   "fieldname": "drawing_no",
+   "fieldtype": "Data",
+   "label": "Drawing No"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-24 12:22:49.680535",
+ "modified": "2025-09-09 12:55:59.505699",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation Detail",

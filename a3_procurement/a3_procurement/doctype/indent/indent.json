@@ -288,6 +288,7 @@
    "label": "Bid Details"
   },
   {
+   "default": "Single",
    "description": "It will be applicable only after the Approval of Chairman",
    "fieldname": "type_of_bid",
    "fieldtype": "Select",
@@ -671,7 +672,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-09-08 16:19:15.601345",
+ "modified": "2025-09-09 13:06:28.036486",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",
