@@ -24,7 +24,8 @@
    "in_standard_filter": 1,
    "label": "SCR Id",
    "options": "Sub-Contract Request",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "column_break_lvnq",
@@ -69,7 +70,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-04 15:39:32.512419",
+ "modified": "2025-09-08 17:03:45.572732",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "SCR Scope",

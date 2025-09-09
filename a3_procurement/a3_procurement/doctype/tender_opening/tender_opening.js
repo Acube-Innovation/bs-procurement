@@ -87,12 +87,12 @@ frappe.ui.form.on('Tender Opening', {
                             frm.refresh_field("scm_particulars");
 
                             // fetch type_of_bid from Sub Contract Request
-                            if (tender_doc.scr_reference) {
+                            if (tender_doc.scr_id) {
                                 frappe.call({
                                     method: "frappe.client.get_value",
                                     args: {
                                         doctype: "Sub-Contract Request",
-                                        filters: { name: tender_doc.scr_reference },
+                                        filters: { name: tender_doc.scr_id },
                                         fieldname: ["type_of_bid"]
                                     },
                                     callback: function(res) {
@@ -117,7 +117,7 @@ frappe.ui.form.on('Tender Opening', {
                             args: {
                                 doctype: "Tender Response",
                                 filters: { tender_reference: frm.doc.tender },
-                                fields: ["vendor"]
+                                fields: ["vendor","response_date"]
                             },
                             callback: function(res) {
                                 if (res.message) {
@@ -126,15 +126,20 @@ frappe.ui.form.on('Tender Opening', {
                                     (frm.doc.table_bcra || []).forEach(row => {
                                         if (responded_vendors.includes(row.supplier)) {
                                             row.status = "Received";
+                                            row.date_of_receipt_of_quotation = res.message.find(r => r.vendor === row.supplier).response_date;
 
                                             // Branch by type_of_bid
                                             if (frm.doc.type_of_bid === "Two") {
                                                 let child2 = frm.add_child("table_aprq");
                                                 child2.vendor = row.supplier;
+                                                child2.date_of_receipt_of_quotation = row.date_of_receipt_of_quotation;
+                                                child2.status = row.status;
                                             }
                                             else if (frm.doc.type_of_bid === "Single") {
                                                 let child3 = frm.add_child("table_mzil");
                                                 child3.vendor = row.supplier;
+                                                child3.date_of_receipt_of_quotation = row.date_of_receipt_of_quotation;
+                                                child2.status = row.status;
                                             }
                                         }
                                     });
