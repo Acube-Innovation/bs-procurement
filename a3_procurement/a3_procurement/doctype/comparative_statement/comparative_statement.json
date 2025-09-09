@@ -11,10 +11,16 @@
   "no_of_parties_contacted",
   "no_of_quotation_received",
   "column_break_mzbc",
-  "tender",
   "enquiry_no",
   "due_on",
+  "reference",
   "amended_from",
+  "cmm_details_section",
+  "indent_id",
+  "column_break_jugq",
+  "scm_details_section",
+  "scr_request",
+  "column_break_xjwx",
   "section_break_obqv",
   "vendor_responses",
   "table_flub",
@@ -26,7 +32,7 @@
    "fieldtype": "Section Break"
   },
   {
-   "fetch_from": "tender.naming_series",
+   "fetch_from": "tender_opening_reference.tender",
    "fieldname": "enquiry_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -69,13 +75,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fetch_from": "tender_opening_reference.tender",
-   "fieldname": "tender",
-   "fieldtype": "Link",
-   "label": "Tender",
-   "options": "Tender"
-  },
-  {
    "fieldname": "vendor_responses",
    "fieldtype": "Table",
    "label": "Vendor Responses",
@@ -96,6 +95,46 @@
    "fieldname": "table_tobk",
    "fieldtype": "Table",
    "options": "Vendor Taxes and Charges"
+  },
+  {
+   "fetch_from": "tender_opening_reference.reference",
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"Indent\"",
+   "fieldname": "cmm_details_section",
+   "fieldtype": "Section Break",
+   "label": "CMM Details"
+  },
+  {
+   "fetch_from": "tender_opening_reference.purchase_indent",
+   "fieldname": "indent_id",
+   "fieldtype": "Link",
+   "label": "Indent ID",
+   "options": "Indent"
+  },
+  {
+   "fieldname": "column_break_jugq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"SCR\"",
+   "fieldname": "scm_details_section",
+   "fieldtype": "Section Break",
+   "label": "SCM Details"
+  },
+  {
+   "fetch_from": "tender_opening_reference.scr_id",
+   "fieldname": "scr_request",
+   "fieldtype": "Link",
+   "label": "SCR Request",
+   "options": "Sub-Contract Request"
+  },
+  {
+   "fieldname": "column_break_xjwx",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -107,7 +146,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-08-28 15:30:38.895082",
+ "modified": "2025-09-09 12:43:41.102405",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",
