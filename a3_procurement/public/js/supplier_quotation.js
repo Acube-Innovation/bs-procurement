@@ -119,8 +119,8 @@ frappe.ui.form.on("Supplier Quotation", {
                     (scr_scope.table_smtn || []).forEach(row => {
                         let item_row = frm.add_child("items");
                         item_row.item_code = row.scope_of_work;
-                        item_row.item_namescm = row.name1;
-                        item_row.drawing_no = row.drawing_no;
+                        item_row.custom_finished_good = row.name1;
+                        item_row.custom_drawing_number = row.drawing_no;
                     });
                     frm.refresh_field("items");
 
