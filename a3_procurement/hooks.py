@@ -4,6 +4,7 @@ app_publisher = "Acube"
 app_description = "Procurement App"
 app_email = "admin@acube.co"
 app_license = "mit"
+app_version = 0.1.0
 
 # Apps
 # ------------------
