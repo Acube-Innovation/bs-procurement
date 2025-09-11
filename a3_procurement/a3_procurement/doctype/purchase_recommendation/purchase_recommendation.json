@@ -7,14 +7,23 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_m0qv",
-  "file_no",
-  "department",
-  "purchase_reference_no",
-  "column_break_gzzh",
   "comparative_statement",
-  "date",
   "enquiry_no",
+  "tender_opening_reference",
+  "reference",
+  "column_break_gzzh",
+  "file_no",
+  "purchase_reference_no",
+  "date",
   "amended_from",
+  "cmm_details_section",
+  "indent_reference",
+  "column_break_jusr",
+  "department_pi",
+  "scm_details_section",
+  "scr_reference",
+  "column_break_ggec",
+  "department_scr",
   "section_break_njjt",
   "table_lylr",
   "section_break_knid",
@@ -40,14 +49,6 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "department",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Department",
-   "options": "Department"
   },
   {
    "fieldname": "purchase_reference_no",
@@ -122,7 +123,8 @@
    "fieldname": "comparative_statement",
    "fieldtype": "Link",
    "label": "Comparative Statement",
-   "options": "Comparative Statement"
+   "options": "Comparative Statement",
+   "reqd": 1
   },
   {
    "fetch_from": "comparative_statement.enquiry_no",
@@ -135,6 +137,72 @@
    "fieldtype": "Link",
    "label": "Approved By",
    "options": "User"
+  },
+  {
+   "fetch_from": "comparative_statement.reference",
+   "fieldname": "reference",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Reference Type",
+   "options": "\nIndent\nSCR"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"Indent\"",
+   "fieldname": "cmm_details_section",
+   "fieldtype": "Section Break",
+   "label": "CMM Details"
+  },
+  {
+   "fetch_from": "comparative_statement.indent_id",
+   "fieldname": "indent_reference",
+   "fieldtype": "Link",
+   "label": "Indent Reference",
+   "options": "Indent"
+  },
+  {
+   "fieldname": "column_break_jusr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.reference==\"SCR\"",
+   "fieldname": "scm_details_section",
+   "fieldtype": "Section Break",
+   "label": "SCM Details"
+  },
+  {
+   "fetch_from": "comparative_statement.scr_request",
+   "fieldname": "scr_reference",
+   "fieldtype": "Link",
+   "label": "SCR Reference",
+   "options": "Sub-Contract Request"
+  },
+  {
+   "fieldname": "column_break_ggec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "comparative_statement.tender_opening_reference",
+   "fieldname": "tender_opening_reference",
+   "fieldtype": "Link",
+   "label": "Tender Opening Reference",
+   "options": "Tender Opening"
+  },
+  {
+   "fetch_from": "indent_reference.departmentsection",
+   "fieldname": "department_pi",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fetch_from": "scr_reference.departmentsection",
+   "fieldname": "department_scr",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
   }
  ],
  "grid_page_length": 50,
@@ -150,7 +218,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-09-02 23:21:26.800524",
+ "modified": "2025-09-10 14:14:10.198725",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",

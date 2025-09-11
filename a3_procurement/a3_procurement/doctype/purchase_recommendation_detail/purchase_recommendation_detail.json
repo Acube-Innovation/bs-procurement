@@ -7,17 +7,19 @@
  "engine": "InnoDB",
  "field_order": [
   "item",
-  "supplier",
+  "finished_good",
+  "drawing_no",
   "quantity",
-  "rate",
-  "total",
+  "uom",
+  "description",
+  "column_break_tbxk",
+  "supplier",
   "price_rank",
   "recommended",
   "reason",
-  "column_break_tbxk",
-  "description",
-  "finished_good",
-  "drawing_no"
+  "required_date",
+  "rate",
+  "total"
  ],
  "fields": [
   {
@@ -96,13 +98,24 @@
    "fieldname": "drawing_no",
    "fieldtype": "Data",
    "label": "Drawing No"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "required_date",
+   "fieldtype": "Date",
+   "label": "Required Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-09 12:55:59.505699",
+ "modified": "2025-09-10 12:46:53.886728",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation Detail",

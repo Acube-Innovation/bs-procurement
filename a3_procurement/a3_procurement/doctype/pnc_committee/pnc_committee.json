@@ -16,14 +16,16 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name",
+   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "committee",
    "fieldtype": "Table",
    "label": "Committee",
-   "options": "PNC  Detail"
+   "options": "PNC Detail"
   },
   {
    "fieldname": "status",
@@ -43,7 +45,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-23 10:46:36.855345",
+ "modified": "2025-09-10 11:54:40.190630",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "PNC Committee",

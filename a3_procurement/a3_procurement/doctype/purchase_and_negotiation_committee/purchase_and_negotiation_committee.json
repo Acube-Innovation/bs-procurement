@@ -12,8 +12,17 @@
   "tender_opening_reference",
   "column_break_kccx",
   "date",
+  "reference_type",
   "comparative_statement",
   "amended_from",
+  "cmm_details_section",
+  "indent_reference",
+  "column_break_eejd",
+  "department_cmm",
+  "scm_details_section",
+  "scr_reference",
+  "column_break_sooh",
+  "department_scm",
   "section_break_qhlt",
   "pnc_committee",
   "table_lilx",
@@ -80,7 +89,7 @@
   {
    "fieldname": "table_lilx",
    "fieldtype": "Table",
-   "options": "PNC  Detail"
+   "options": "PNC Detail"
   },
   {
    "fieldname": "section_break_aohl",
@@ -364,6 +373,61 @@
    "fieldname": "monthsweeks",
    "fieldtype": "Data",
    "label": "Months/Weeks"
+  },
+  {
+   "fetch_from": "purchase_recommendation_reference.reference",
+   "fieldname": "reference_type",
+   "fieldtype": "Select",
+   "label": "Reference Type",
+   "options": "\nIndent\nSCR"
+  },
+  {
+   "depends_on": "eval:doc.reference_type==\"Indent\"",
+   "fieldname": "cmm_details_section",
+   "fieldtype": "Section Break",
+   "label": "CMM Details"
+  },
+  {
+   "fetch_from": "purchase_recommendation_reference.indent_reference",
+   "fieldname": "indent_reference",
+   "fieldtype": "Link",
+   "label": "Indent Reference",
+   "options": "Indent"
+  },
+  {
+   "fieldname": "column_break_eejd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "indent_reference.departmentsection",
+   "fieldname": "department_cmm",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "depends_on": "eval:doc.reference_type==\"SCR\"",
+   "fieldname": "scm_details_section",
+   "fieldtype": "Section Break",
+   "label": "SCM Details"
+  },
+  {
+   "fetch_from": "purchase_recommendation_reference.scr_reference",
+   "fieldname": "scr_reference",
+   "fieldtype": "Link",
+   "label": "SCR Reference",
+   "options": "Sub-Contract Request"
+  },
+  {
+   "fieldname": "column_break_sooh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "scr_reference.departmentsection",
+   "fieldname": "department_scm",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
   }
  ],
  "grid_page_length": 50,
@@ -375,7 +439,7 @@
    "link_fieldname": "custom_purchase_and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-09-02 23:20:15.414324",
+ "modified": "2025-09-10 16:01:26.475860",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase and Negotiation Committee",

@@ -71,7 +71,11 @@ frappe.ui.form.on('Purchase Approval', {
         description: detail.description,
         qty: detail.quantity,
         rate: detail.rate,
-        amount: detail.total
+        amount: detail.total,
+        required_date: detail.required_date,
+        uom: detail.uom,
+        finished_good: detail.finished_good,
+        drawing_no: detail.drawing_no
       });
     });
 
