@@ -30,6 +30,7 @@
   "indentor_name",
   "column_break_hwzd",
   "departmentsection",
+  "abbr",
   "work_order_details_section",
   "work_order_no",
   "customer",
@@ -385,6 +386,13 @@
    "fieldtype": "Link",
    "label": "SCR Scope of Work",
    "options": "SCR Scope"
+  },
+  {
+   "fetch_from": "departmentsection.custom_abbr",
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Abbr"
   }
  ],
  "grid_page_length": 50,
@@ -395,7 +403,7 @@
    "link_fieldname": "scr_no"
   }
  ],
- "modified": "2025-09-04 13:28:19.415362",
+ "modified": "2025-09-10 11:49:55.780301",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

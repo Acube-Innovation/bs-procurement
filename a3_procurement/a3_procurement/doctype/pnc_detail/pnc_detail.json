@@ -7,9 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "members",
+  "user_name",
   "verified_and_signed",
   "invitees",
-  "verified_and_signed1"
+  "designation",
+  "verified_and_signed_1"
  ],
  "fields": [
   {
@@ -27,27 +29,42 @@
    "label": "Verified and signed"
   },
   {
-   "fieldname": "invitees",
-   "fieldtype": "Data",
+   "fieldname": "user_name",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Invitees"
+   "label": "User Name",
+   "options": "User"
+  },
+  {
+   "fieldname": "invitees",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Invitees",
+   "options": "User"
   },
   {
    "default": "0",
-   "fieldname": "verified_and_signed1",
+   "fieldname": "verified_and_signed_1",
    "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "Verified and Signed"
+   "label": "Verified and signed"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Designation",
+   "options": "Designation"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-03 17:45:00.264367",
+ "modified": "2025-09-10 12:00:50.659899",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
- "name": "PNC  Detail",
+ "name": "PNC Detail",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

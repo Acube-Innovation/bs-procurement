@@ -26,6 +26,7 @@
   "column_break_uvkm",
   "departmentsection",
   "indentor_designation",
+  "abbr",
   "work_order_details_section",
   "from_existing_customer_order",
   "reference_wo_id",
@@ -138,7 +139,6 @@
    "label": "Indent Date"
   },
   {
-   "fetch_from": "in_principle_request.departmentsection",
    "fieldname": "departmentsection",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -653,6 +653,13 @@
    "fieldname": "payment_terms_tab",
    "fieldtype": "Tab Break",
    "label": "Payment Terms"
+  },
+  {
+   "fetch_from": "departmentsection.custom_abbr",
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Abbr"
   }
  ],
  "grid_page_length": 50,
@@ -672,7 +679,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-09-09 13:06:28.036486",
+ "modified": "2025-09-11 11:45:57.389675",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

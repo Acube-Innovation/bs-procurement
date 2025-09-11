@@ -176,3 +176,28 @@ frappe.ui.form.on('Indent', {
     }
 });
 
+frappe.ui.form.on('Indent', {
+    onload: function(frm) {
+        if (frm.is_new()) {
+            //Set the current logged in user to indentor
+            frm.set_value("indentor", frappe.session.user);
+
+            // fetch department and designation from Employee linked to the current user
+            frappe.call({
+                method: "frappe.client.get_list",
+                args: {
+                    doctype: "Employee",
+                    filters: { user_id: frappe.session.user },
+                    fields: ["name", "department", "designation"]
+                },
+                callback: function(r) {
+                    if (r.message && r.message.length > 0) {
+                        let emp = r.message[0];
+                        frm.set_value("department_section", emp.department);
+                        frm.set_value("indentor_designation", emp.designation);
+                    }
+                }
+            });
+        }
+    }
+});

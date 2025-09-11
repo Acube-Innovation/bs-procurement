@@ -53,6 +53,10 @@ frappe.ui.form.on('Purchase Recommendation', {
               new_row.price_rank = row.price_rank;
               new_row.recommended = row.recommended;
               new_row.reason = row.reason;
+              new_row.required_date = row.required_date;
+              new_row.uom = row.uom;
+              new_row.finished_good = row.finished_good;
+              new_row.drawing_no = row.drawing_no;
             }
           });
 
