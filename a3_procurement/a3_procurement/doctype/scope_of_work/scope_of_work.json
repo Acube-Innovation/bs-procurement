@@ -14,6 +14,7 @@
   "scope_of_work",
   "rate",
   "amount",
+  "delivery_date",
   "column_break_mynv",
   "raw_material_sizespecification",
   "supply_condition",
@@ -89,13 +90,18 @@
    "fieldname": "delivery_schedule",
    "fieldtype": "Small Text",
    "label": "Delivery Schedule"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-04 13:02:31.089197",
+ "modified": "2025-09-12 11:37:51.892498",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Scope of Work",

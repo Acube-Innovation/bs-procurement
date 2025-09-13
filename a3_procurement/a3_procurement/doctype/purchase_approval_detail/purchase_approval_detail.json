@@ -14,7 +14,9 @@
   "amount",
   "required_date",
   "last_purchased_date",
-  "last_purchased_rate"
+  "last_purchased_rate",
+  "finished_good",
+  "drawing_no"
  ],
  "fields": [
   {
@@ -70,13 +72,24 @@
    "fieldname": "required_date",
    "fieldtype": "Date",
    "label": "Required Date"
+  },
+  {
+   "fieldname": "finished_good",
+   "fieldtype": "Link",
+   "label": "Finished Good",
+   "options": "Item"
+  },
+  {
+   "fieldname": "drawing_no",
+   "fieldtype": "Data",
+   "label": "Drawing No"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-10 13:14:18.236994",
+ "modified": "2025-09-11 16:40:56.746471",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval Detail",
