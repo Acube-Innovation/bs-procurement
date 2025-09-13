@@ -121,6 +121,10 @@ frappe.ui.form.on("Supplier Quotation", {
                         item_row.item_code = row.scope_of_work;
                         item_row.custom_finished_good = row.name1;
                         item_row.custom_drawing_number = row.drawing_no;
+                        item_row.qty = row.quantity;
+                        item_row.uom = row.uom;
+                        item_row.expected_delivery_date = row.delivery_date;
+                        item_row.rate = row.rate;
                     });
                     frm.refresh_field("items");
 

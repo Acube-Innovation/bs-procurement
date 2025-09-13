@@ -401,9 +401,13 @@
   {
    "link_doctype": "SCR Review",
    "link_fieldname": "scr_no"
+  },
+  {
+   "link_doctype": "SCR Scope",
+   "link_fieldname": "scr_id"
   }
  ],
- "modified": "2025-09-10 11:49:55.780301",
+ "modified": "2025-09-12 14:26:50.917760",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

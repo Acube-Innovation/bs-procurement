@@ -193,7 +193,7 @@ frappe.ui.form.on('Indent', {
                 callback: function(r) {
                     if (r.message && r.message.length > 0) {
                         let emp = r.message[0];
-                        frm.set_value("department_section", emp.department);
+                        frm.set_value("departmentsection", emp.department);
                         frm.set_value("indentor_designation", emp.designation);
                     }
                 }
