@@ -15,6 +15,10 @@
   "department",
   "employee_name",
   "amended_from",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
   "section_break_bsap",
   "table_nrsd",
   "section_break_nokt",
@@ -128,6 +132,27 @@
    "fieldname": "employee_name",
    "fieldtype": "Data",
    "label": "Employee Name"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -143,7 +168,7 @@
    "link_fieldname": "pac_reference"
   }
  ],
- "modified": "2025-08-05 12:56:07.259016",
+ "modified": "2025-09-16 17:45:01.045550",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Proprietory Article Certificate",

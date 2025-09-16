@@ -16,6 +16,10 @@
   "vendor",
   "vendor_quotation_reference",
   "response_date",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
   "section_break_bruu",
   "remarks"
  ],
@@ -98,12 +102,33 @@
    "fieldname": "reference",
    "fieldtype": "Data",
    "label": "Reference Type"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-02 23:51:50.987831",
+ "modified": "2025-09-16 17:45:32.219122",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender Response",

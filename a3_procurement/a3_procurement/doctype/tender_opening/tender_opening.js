@@ -111,45 +111,46 @@ frappe.ui.form.on('Tender Opening', {
                         });
                         frm.refresh_field("table_bcra");
 
-                        // Now fetch Tender Responses → update table_bcra status and add only received vendors
-                        frappe.call({
-                            method: "frappe.client.get_list",
-                            args: {
-                                doctype: "Tender Response",
-                                filters: { tender_reference: frm.doc.tender },
-                                fields: ["vendor","response_date"]
-                            },
-                            callback: function(res) {
-                                if (res.message) {
-                                    let responded_vendors = res.message.map(r => r.vendor);
+                      // Now fetch Tender Responses → update table_bcra status and add only received vendors
+                      frappe.call({
+                          method: "frappe.client.get_list",
+                          args: {
+                              doctype: "Tender Response",
+                              filters: { tender_reference: frm.doc.tender },
+                              fields: ["vendor","response_date"]
+                          },
+                          callback: function(res) {
+                              if (res.message && res.message.length > 0) {
+                                  res.message.forEach(resp => {
+                                      (frm.doc.table_bcra || []).forEach(row => {
+                                          if (row.supplier === resp.vendor) {
+                                              row.status = "Received";
+                                              row.date_of_receipt_of_quotation = resp.response_date;
 
-                                    (frm.doc.table_bcra || []).forEach(row => {
-                                        if (responded_vendors.includes(row.supplier)) {
-                                            row.status = "Received";
-                                            row.date_of_receipt_of_quotation = res.message.find(r => r.vendor === row.supplier).response_date;
+                                              // Branch by type_of_bid
+                                              if (frm.doc.type_of_bid === "Two") {
+                                                  let child2 = frm.add_child("table_aprq");
+                                                  child2.vendor = row.supplier;
+                                                  child2.date_of_receipt_of_quotation = resp.response_date;
+                                                  child2.status = row.status;
+                                              }
+                                              else if (frm.doc.type_of_bid === "Single") {
+                                                  let child3 = frm.add_child("table_mzil");
+                                                  child3.vendor = row.supplier;
+                                                  child3.date_of_receipt_of_quotation = resp.response_date;
+                                                  child3.status = row.status;   // <-- fixed bug: was using child2 before
+                                              }
+                                          }
+                                      });
+                                  });
 
-                                            // Branch by type_of_bid
-                                            if (frm.doc.type_of_bid === "Two") {
-                                                let child2 = frm.add_child("table_aprq");
-                                                child2.vendor = row.supplier;
-                                                child2.date_of_receipt_of_quotation = row.date_of_receipt_of_quotation;
-                                                child2.status = row.status;
-                                            }
-                                            else if (frm.doc.type_of_bid === "Single") {
-                                                let child3 = frm.add_child("table_mzil");
-                                                child3.vendor = row.supplier;
-                                                child3.date_of_receipt_of_quotation = row.date_of_receipt_of_quotation;
-                                                child2.status = row.status;
-                                            }
-                                        }
-                                    });
+                                  frm.refresh_field("table_bcra");
+                                  frm.refresh_field("table_aprq");
+                                  frm.refresh_field("table_mzil");
+                              }
+                          }
+                      });
 
-                                    frm.refresh_field("table_bcra");
-                                    frm.refresh_field("table_aprq");
-                                    frm.refresh_field("table_mzil");
-                                }
-                            }
-                        });
                     }
                 }
             });

@@ -37,7 +37,6 @@
   "customer_po_no",
   "customer_po_date",
   "column_break_rsby",
-  "project",
   "budget_approval_document",
   "vendor_class_requested",
   "third_party_inspection_required",
@@ -45,6 +44,10 @@
   "column_break_hivo",
   "description_of_job_to_be_executed",
   "reason_for_sub_contracting",
+  "accounting_dimensions_section",
+  "project",
+  "dimension_col_break",
+  "cost_center",
   "section_break_easg",
   "table_nmqr",
   "enclosures_tab",
@@ -393,6 +396,21 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Abbr"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -407,7 +425,7 @@
    "link_fieldname": "scr_id"
   }
  ],
- "modified": "2025-09-12 14:26:50.917760",
+ "modified": "2025-09-16 17:42:58.939224",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

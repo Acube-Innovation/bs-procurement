@@ -21,6 +21,10 @@
   "scm_details_section",
   "scr_request",
   "column_break_xjwx",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
   "section_break_obqv",
   "vendor_responses",
   "table_flub",
@@ -29,7 +33,8 @@
  "fields": [
   {
    "fieldname": "section_break_acxv",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
   },
   {
    "fetch_from": "tender_opening_reference.tender",
@@ -89,11 +94,13 @@
   {
    "fieldname": "table_flub",
    "fieldtype": "Table",
+   "label": "Particulars",
    "options": "Purchase Recommendation Detail"
   },
   {
    "fieldname": "table_tobk",
    "fieldtype": "Table",
+   "label": "Taxes and Charges",
    "options": "Vendor Taxes and Charges"
   },
   {
@@ -135,6 +142,27 @@
   {
    "fieldname": "column_break_xjwx",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -146,7 +174,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-09-09 12:43:41.102405",
+ "modified": "2025-09-16 17:44:48.932594",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",

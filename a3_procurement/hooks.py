@@ -9,6 +9,8 @@ app_license = "mit"
 # ------------------
 
 # required_apps = []
+required_apps = ["erpnext"]
+
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -258,7 +260,9 @@ fixtures = [
             'Purchase Recommendation Workflow',
             'Indent Workflow',
             'In-Principle Approval Workflow',
-            'Proprietory Article Certificate Work Flow'
+            'Proprietory Article Certificate Work Flow',
+            'Sub-Contract Request Workflow',
+            'SCR Workflow'
          ]]
     ]
 },
@@ -284,7 +288,9 @@ fixtures = [
             'HOD Approved & Forwarded to CFO',
             'HOD Approved & Forwarded to GM',
             'Indentor Approved & Forwarded to Senior Manager',
-            'Senior Manager Approved &  Forwarded to HOD'
+            'Senior Manager Approved &  Forwarded to HOD',
+            'HOD Approved & Forwarded to SCM',
+            'SCM Approved & Forwarded to GM'
          ]]
     ]
 },
@@ -300,8 +306,26 @@ fixtures = [
             'Managing Director',
             'Indenter',
             'CMM',
-            'Senior Manager'
+            'Senior Manager',
+            'SCM Manager'
          ]]
     ]
 }
+]
+
+
+accounting_dimension_doctypes = [
+	"Indent",
+    "Sub-Contract Request",
+    "SCR Review",
+    "Tender",
+    "Tender Opening",
+    "Tender Response",
+    "Comparative Statement",
+    "Purchase Recommendation",
+    "Purchase Approval",
+    "Purchase and Negotiation Committee",
+    "In-Principle Approval for CAPEX",
+    "Proprietory Article Certificate",
+    "Cost Estimate"
 ]

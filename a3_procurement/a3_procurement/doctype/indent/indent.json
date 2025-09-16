@@ -31,7 +31,6 @@
   "from_existing_customer_order",
   "reference_wo_id",
   "reference_wo_no",
-  "budget_approval_document",
   "column_break_nsyz",
   "is_single_party",
   "pac_reference",
@@ -40,6 +39,10 @@
   "from_existing_capex",
   "capex_requisition_number",
   "in_principle_request",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
   "bid_details_section",
   "type_of_bid",
   "column_break_ulov",
@@ -170,7 +173,7 @@
    "fieldname": "in_principle_request",
    "fieldtype": "Link",
    "label": "In-Principle Capex ID",
-   "mandatory_depends_on": "eval:doc.indent_type==\"Capital Purchase\"",
+   "mandatory_depends_on": "eval:doc.from_existing_capex",
    "options": "In-Principle Approval for CAPEX"
   },
   {
@@ -415,13 +418,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "As of Cost Center/Budget Updated from Accounts",
-   "fieldname": "budget_approval_document",
-   "fieldtype": "Link",
-   "label": "Budget Approval Document",
-   "options": "Cost Center"
-  },
-  {
    "fieldname": "departmentsection_details_section",
    "fieldtype": "Section Break",
    "label": "Department/Section Details"
@@ -660,6 +656,28 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Abbr"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "description": "As of Cost Center/Budget Updated from Accounts",
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Budget Approval Document",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -679,7 +697,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-09-11 11:45:57.389675",
+ "modified": "2025-09-16 17:43:16.257591",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

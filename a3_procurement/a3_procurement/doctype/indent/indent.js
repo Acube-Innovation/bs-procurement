@@ -201,3 +201,40 @@ frappe.ui.form.on('Indent', {
         }
     }
 });
+
+frappe.ui.form.on('Indent', {   // Change to your parent doctype
+    payment_terms_template: function(frm) {
+        if (frm.doc.payment_terms_template) {
+            frappe.call({
+                method: "frappe.client.get",
+                args: {
+                    doctype: "Payment Terms Template",
+                    name: frm.doc.payment_terms_template
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        // Clear existing rows in Payment Terms child table
+                        frm.clear_table("payment_terms");
+
+                        // Loop through template's terms and add to child table
+                        (r.message.terms || []).forEach(function(d) {
+                            let row = frm.add_child("payment_terms");
+                            row.payment_term = d.payment_term;
+                            row.description = d.description;
+                            row.due_date_based_on = d.due_date_based_on;
+                            row.invoice_portion = d.invoice_portion;
+                            row.credit_days = d.credit_days;
+                            row.credit_months = d.credit_months;
+                            row.due_date = d.due_date;
+                        });
+
+                        frm.refresh_field("payment_terms");
+                    }
+                }
+            });
+        } else {
+            frm.clear_table("payment_terms");
+            frm.refresh_field("payment_terms");
+        }
+    }
+});

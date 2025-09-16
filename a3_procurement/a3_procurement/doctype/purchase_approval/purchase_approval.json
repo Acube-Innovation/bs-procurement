@@ -8,20 +8,23 @@
  "field_order": [
   "purchaser_details_section",
   "purchase_recommendation",
-  "project",
   "reference_type",
+  "indentor",
   "column_break_lbtv",
   "case_file",
   "date",
-  "indentor",
   "cmm_details_section",
   "indent_reference",
   "column_break_ifbm",
   "department_cmm",
   "scm_details_section",
   "scr_reference",
-  "column_break_rsnk",
+  "column_break_vcrv",
   "department_scm",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
   "section_break_nm2b",
   "type_of_purchase",
   "item_description",
@@ -93,8 +96,6 @@
   {
    "fieldname": "project",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Project",
    "options": "Project"
   },
@@ -409,15 +410,30 @@
    "options": "Sub-Contract Request"
   },
   {
-   "fieldname": "column_break_rsnk",
-   "fieldtype": "Column Break"
-  },
-  {
    "fetch_from": "scr_reference.departmentsection",
    "fieldname": "department_scm",
    "fieldtype": "Link",
    "label": "Department",
    "options": "Department"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vcrv",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -429,7 +445,7 @@
    "link_fieldname": "custom_purchase_approval_reference"
   }
  ],
- "modified": "2025-09-10 14:11:53.751080",
+ "modified": "2025-09-16 17:51:10.339430",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval",

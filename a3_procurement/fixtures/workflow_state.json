@@ -160,5 +160,23 @@
   "name": "Indentor Approved & Forwarded to HOD",
   "style": "Primary",
   "workflow_state_name": "Indentor Approved & Forwarded to HOD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-09-15 12:12:04.847068",
+  "name": "HOD Approved & Forwarded to SCM",
+  "style": "Primary",
+  "workflow_state_name": "HOD Approved & Forwarded to SCM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-12 12:12:16.197650",
+  "name": "SCM Approved & Forwarded to GM",
+  "style": "",
+  "workflow_state_name": "SCM Approved & Forwarded to GM"
  }
 ]
