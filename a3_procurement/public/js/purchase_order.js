@@ -137,7 +137,7 @@ frappe.ui.form.on("Purchase Order", {
                         });
 
                         // Other fields
-                        item_row.qty = row.quantity;
+                        item_row.qty = row.qty;
                         item_row.rate = row.rate;
                         item_row.uom = row.uom;
                         item_row.schedule_date = row.required_date;
@@ -191,7 +191,7 @@ frappe.ui.form.on("Purchase Order", {
                         });
 
                         // Other fields
-                        item_row.qty = row.quantity;
+                        item_row.qty = row.qty;
                         item_row.rate = row.rate;
                         item_row.uom = row.uom;
                         item_row.schedule_date = row.required_date;
