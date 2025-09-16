@@ -143,6 +143,10 @@ frappe.ui.form.on("Purchase Order", {
                         item_row.schedule_date = row.required_date;
                         item_row.fg_item = row.finished_good;
                         item_row.custom_drawing_no = row.drawing_no;
+
+                        if (committee.project) {
+                            item_row.project = committee.project;
+                        }
                     });
 
                     frm.refresh_field("items");
@@ -197,6 +201,10 @@ frappe.ui.form.on("Purchase Order", {
                         item_row.schedule_date = row.required_date;
                         item_row.fg_item = row.finished_good;
                         item_row.custom_drawing_no = row.drawing_no;
+
+                        if (approval.project) {
+                            item_row.project = approval.project;
+                        }
                     });
 
                     frm.refresh_field("items");
