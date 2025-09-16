@@ -10,11 +10,15 @@
   "level",
   "purchase_recommendation_reference",
   "tender_opening_reference",
+  "amended_from",
   "column_break_kccx",
   "date",
   "reference_type",
   "comparative_statement",
-  "amended_from",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
   "cmm_details_section",
   "indent_reference",
   "column_break_eejd",
@@ -37,7 +41,6 @@
   "recommendation_of_the_pnc_section",
   "indentor",
   "column_break_vaxv",
-  "project",
   "section_break_qyyz",
   "table_zxij",
   "recommendation",
@@ -428,6 +431,21 @@
    "fieldtype": "Link",
    "label": "Department",
    "options": "Department"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -439,7 +457,7 @@
    "link_fieldname": "custom_purchase_and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-09-10 16:01:26.475860",
+ "modified": "2025-09-16 17:46:20.052074",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase and Negotiation Committee",

@@ -13,6 +13,10 @@
   "column_break_rwhw",
   "supplier",
   "supplier_reference_no",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
   "section_break_aguz",
   "purchase_estimate",
   "section_break_elgu",
@@ -135,12 +139,33 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 14:57:39.033292",
+ "modified": "2025-09-16 17:46:01.868952",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Cost Estimate",

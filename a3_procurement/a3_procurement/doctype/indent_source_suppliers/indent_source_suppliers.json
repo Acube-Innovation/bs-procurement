@@ -19,23 +19,27 @@
    "options": "Supplier"
   },
   {
+   "fetch_from": "supplier.supplier_primary_address",
    "fieldname": "supplier_address",
-   "fieldtype": "Small Text",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Supplier Address"
+   "label": "Supplier Address",
+   "options": "Address"
   },
   {
+   "fetch_from": "supplier.supplier_primary_contact",
    "fieldname": "supplier_contact",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Supplier Contact"
+   "label": "Supplier Contact",
+   "options": "Contact"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-15 15:28:20.007010",
+ "modified": "2025-09-15 12:31:14.257021",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent Source Suppliers",
