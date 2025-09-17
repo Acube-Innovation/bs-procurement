@@ -53,3 +53,27 @@ frappe.ui.form.on("Sub-Contract Request", {
         }
     }
 });
+
+frappe.ui.form.on('Sub-Contract Request', {
+    setup: function(frm) {
+        // Filter for scope_of_work field
+        frm.set_query("scope_of_work", "scm_particulars", function() {
+            return {
+                filters: {
+                    is_stock_item: 0  // only non-stock items
+                }
+            };
+        });
+
+        // Filter for name1 field
+        frm.set_query("name1", "scm_particulars", function() {
+            return {
+                filters: {
+                    is_stock_item: 1,   
+                    is_sub_contracted_item: 1, // only sub-contracted items
+                    default_bom: ["!=", ""]    // has a BOM
+                }
+            };
+        });
+    }
+});

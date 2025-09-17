@@ -2,9 +2,6 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Comparative Statement", {
-	// refresh(frm) {
-
-	// }
     payment_terms_template: function(frm) {
        frappe.call({
 				method: "erpnext.controllers.accounts_controller.get_payment_terms",
@@ -23,27 +20,6 @@ frappe.ui.form.on("Comparative Statement", {
     }
 });
 
-// frappe.ui.form.on('Comparative Statement  Details', {
-//     // Trigger the total calculation whenever qty or rate changes
-//     qty_no: function(frm, cdt, cdn) {
-//         let child = locals[cdt][cdn];  // Get the current child row data
-//         if (child.qty_no && child.rate) {
-//             child.amount = child.qty_no * child.rate;  // Calculate total
-//         } else {
-//             child.amount = 0;  // If no qty or rate, set total to 0
-//         }
-//         frm.refresh_field('table_qfpf');  // Refresh the child table to reflect the changes
-//     },
-//     rate: function(frm, cdt, cdn) {
-//         let child = locals[cdt][cdn];  // Get the current child row data
-//         if (child.qty_no && child.rate) {
-//             child.amount = child.qty_no * child.rate;  // Calculate total
-//         } else {
-//             child.amount = 0;  // If no qty or rate, set total to 0
-//         }
-//         frm.refresh_field('table_qfpf');  // Refresh the child table to reflect the changes
-//     }
-// });
 frappe.ui.form.on('Comparative Statement', {
   tender_opening_reference(frm) {
     if (!frm.doc.tender_opening_reference) return;
@@ -143,7 +119,11 @@ frappe.ui.form.on('Comparative Statement', {
 //         quantity: item.qty,
 //         rate: item.rate,
 //         total: item.amount,
-//         supplier: supplier
+//         supplier: supplier,
+//         uom: item.uom,
+//         required_date: item.expected_delivery_date,
+//         finished_good: item.custom_finished_good,
+//         drawing_no: item.custom_drawing_number
 //       });
 //     }
 //   }
@@ -178,7 +158,6 @@ frappe.ui.form.on('Comparative Statement', {
 //   frm.refresh_fields(['table_flub', 'table_tobk']);
 //   frappe.msgprint('Quotation items and vendor taxes fetched.');
 // }
-
 frappe.ui.form.on('Comparative Statement', {
   refresh(frm) {
     frm.add_custom_button(__('Fetch Quotation Items'), () => {
@@ -232,23 +211,35 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
     }
   }
 
-  // Group items by item and assign price_rank
+  // --- Grouping Logic ---
   const grouped = {};
-  all_items.forEach(row => {
-    if (!grouped[row.item]) grouped[row.item] = [];
-    grouped[row.item].push(row);
-  });
+  for (const row of all_items) {
+    let group_key;
 
-  for (const item_code in grouped) {
-    const group = grouped[item_code];
+    if (frm.doc.reference_type === "SCR") {
+      // group by item + finished_good
+      group_key = `${row.item || ""}::${row.finished_good || ""}`;
+    } else {
+      // group only by item (Indent case)
+      group_key = row.item || "";
+    }
+
+    if (!grouped[group_key]) grouped[group_key] = [];
+    grouped[group_key].push(row);
+  }
+
+  // --- Ranking by rate ---
+  for (const key in grouped) {
+    const group = grouped[key];
     group.sort((a, b) => a.rate - b.rate);
     group.forEach((row, idx) => {
       row.price_rank = `L${idx + 1}`;
     });
   }
 
+  // Flatten & sort for consistent display
   const sorted_rows = Object.values(grouped).flat().sort((a, b) =>
-    a.item.localeCompare(b.item)
+    (a.item || "").localeCompare(b.item || "")
   );
 
   for (const row_data of sorted_rows) {

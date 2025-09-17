@@ -363,7 +363,7 @@
    "options": "Purchase Approval Detail"
   },
   {
-   "fetch_from": "purchase_recommendation.reference",
+   "fetch_from": "purchase_recommendation.reference_type",
    "fieldname": "reference_type",
    "fieldtype": "Select",
    "in_list_view": 1,

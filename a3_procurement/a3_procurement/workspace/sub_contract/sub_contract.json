@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sub-Contracting</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"5GhGmFPoce\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"iT8JC4nEmx\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"vZI0nTAigX\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"rz3mvtAXpX\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Requests\",\"col\":4}},{\"id\":\"VjdJz74DDH\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Tracking\",\"col\":4}}]",
+ "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sub-Contracting</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"b6CGbpo_Tt\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":4}},{\"id\":\"5GhGmFPoce\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"iT8JC4nEmx\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"vZI0nTAigX\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"rz3mvtAXpX\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Requests\",\"col\":4}},{\"id\":\"VjdJz74DDH\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Tracking\",\"col\":4}}]",
  "creation": "2025-08-05 11:57:08.272489",
  "custom_blocks": [],
  "docstatus": 0,
@@ -385,9 +385,38 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Management",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project",
+   "link_count": 0,
+   "link_to": "Project",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Order",
+   "link_count": 0,
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-09-04 20:27:51.865420",
+ "modified": "2025-09-17 12:25:14.187101",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract",

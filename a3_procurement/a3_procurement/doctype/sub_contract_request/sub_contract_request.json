@@ -170,8 +170,9 @@
   },
   {
    "fieldname": "project",
-   "fieldtype": "Data",
-   "label": "Project"
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
   },
   {
    "fieldname": "column_break_hivo",
@@ -425,7 +426,7 @@
    "link_fieldname": "scr_id"
   }
  ],
- "modified": "2025-09-16 17:42:58.939224",
+ "modified": "2025-09-17 11:23:39.981518",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

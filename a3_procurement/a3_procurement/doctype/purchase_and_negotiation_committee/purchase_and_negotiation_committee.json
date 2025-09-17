@@ -378,7 +378,7 @@
    "label": "Months/Weeks"
   },
   {
-   "fetch_from": "purchase_recommendation_reference.reference",
+   "fetch_from": "purchase_recommendation_reference.reference_type",
    "fieldname": "reference_type",
    "fieldtype": "Select",
    "label": "Reference Type",
