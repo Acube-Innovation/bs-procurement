@@ -179,6 +179,9 @@ frappe.ui.form.on('Tender', {
                                             child.fim_rate = row.fim_rate;
                                             child.total_fim_cost = row.total_fim_cost;
                                             child.delivery_remarks = row.delivery_remarks;
+                                            child.scope_of_work = row.scope_of_work;
+                                            child.finished_good_quantity = row.finished_good_quantity;
+                                            child.uom = row.uom;
                                         });
 
                                         frm.refresh_field("table_zdft");
