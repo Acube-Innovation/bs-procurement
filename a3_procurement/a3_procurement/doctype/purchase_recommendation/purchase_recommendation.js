@@ -57,6 +57,7 @@ frappe.ui.form.on('Purchase Recommendation', {
               new_row.uom = row.uom;
               new_row.finished_good = row.finished_good;
               new_row.drawing_no = row.drawing_no;
+              new_row.finished_good_quantity = row.finished_good_quantity;
             }
           });
 

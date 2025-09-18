@@ -8,6 +8,7 @@
  "field_order": [
   "item",
   "finished_good",
+  "finished_good_quantity",
   "drawing_no",
   "quantity",
   "uom",
@@ -109,13 +110,18 @@
    "fieldname": "required_date",
    "fieldtype": "Date",
    "label": "Required Date"
+  },
+  {
+   "fieldname": "finished_good_quantity",
+   "fieldtype": "Float",
+   "label": "Finished Good Quantity"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-11 16:50:20.911228",
+ "modified": "2025-09-17 22:28:14.135410",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation Detail",

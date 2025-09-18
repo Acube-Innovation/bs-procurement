@@ -143,7 +143,8 @@ frappe.ui.form.on('Purchase and Negotiation Committee', {
         required_date: row.required_date,
         uom: row.uom,
         finished_good: row.finished_good,
-        drawing_no: row.drawing_no
+        drawing_no: row.drawing_no,
+        finished_good_quantity: row.finished_good_quantity
       });
 
       // 2. Add unique supplier + price_rank to table_doig (Source Details)
