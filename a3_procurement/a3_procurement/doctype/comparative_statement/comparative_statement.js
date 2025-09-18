@@ -206,7 +206,8 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
         uom: item.uom,
         required_date: item.expected_delivery_date,
         finished_good: item.custom_finished_good,
-        drawing_no: item.custom_drawing_number
+        drawing_no: item.custom_drawing_number,
+        finished_good_quantity: item.custom_finished_good_quantity
       });
     }
   }

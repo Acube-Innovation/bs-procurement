@@ -241,6 +241,7 @@ frappe.ui.form.on("Supplier Quotation", {
                         item_row.qty = row.quantity;
                         item_row.expected_delivery_date = row.delivery_date;
                         item_row.rate = row.fim_rate;
+                        item_row.custom_finished_good_quantity = row.finished_good_quantity;
                     });
                 }
 
