@@ -112,7 +112,8 @@
   {
    "fieldname": "finished_good_quantity",
    "fieldtype": "Float",
-   "label": "Finished Good Quantity"
+   "label": "Finished Good Quantity",
+   "reqd": 1
   },
   {
    "fetch_from": "scope_of_work.stock_uom",
@@ -127,7 +128,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-17 14:54:42.537909",
+ "modified": "2025-09-18 11:03:19.591703",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "SCM Particulars",
