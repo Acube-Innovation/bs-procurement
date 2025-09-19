@@ -10,11 +10,11 @@
   "date",
   "user",
   "employee",
+  "amended_from",
   "column_break_disq",
   "naming_series",
   "department",
   "employee_name",
-  "amended_from",
   "accounting_dimensions_section",
   "cost_center",
   "dimension_col_break",
@@ -45,6 +45,7 @@
    "search_index": 1
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -168,7 +169,7 @@
    "link_fieldname": "pac_reference"
   }
  ],
- "modified": "2025-09-16 17:45:01.045550",
+ "modified": "2025-09-18 13:42:35.450550",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Proprietory Article Certificate",

@@ -144,9 +144,11 @@
    "label": "Work Order Details"
   },
   {
+   "fetch_from": "project.sales_order",
    "fieldname": "work_order_no",
-   "fieldtype": "Data",
-   "label": "Work Order No"
+   "fieldtype": "Link",
+   "label": "Work Order No",
+   "options": "Sales Order"
   },
   {
    "fieldname": "customer",
@@ -155,11 +157,13 @@
    "options": "Customer"
   },
   {
+   "fetch_from": "work_order_no.po_no",
    "fieldname": "customer_po_no",
    "fieldtype": "Data",
    "label": "Customer PO No"
   },
   {
+   "fetch_from": "work_order_no.po_date",
    "fieldname": "customer_po_date",
    "fieldtype": "Date",
    "label": "Customer PO Date"
@@ -426,7 +430,7 @@
    "link_fieldname": "scr_id"
   }
  ],
- "modified": "2025-09-17 11:23:39.981518",
+ "modified": "2025-09-18 12:38:41.202726",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

@@ -283,52 +283,34 @@ frappe.ui.form.on('Tender Opening', {
   }
 });
 
-// Duplicate User Check (Tech + Comm)
+
 frappe.ui.form.on('Tender Opening', {
   validate: function(frm) {
-    let users = new Map();
     let duplicate_entries = [];
 
-    // Technical committees
+    // === Check duplicates between tender_opening_committee and table_laar ===
+    let tech_users = new Set();
     (frm.doc.tender_opening_committee || []).forEach(row => {
-      if (row.user) {
-        if (users.has(row.user)) {
-          duplicate_entries.push(row.user + " (" + row.name1 + ")");
-        } else {
-          users.set(row.user, row.name1);
-        }
-      }
+      if (row.user) tech_users.add(row.user + " (" + row.name1 + ")");
     });
     (frm.doc.table_laar || []).forEach(row => {
-      if (row.user) {
-        if (users.has(row.user)) {
-          duplicate_entries.push(row.user + " (" + row.name1 + ")");
-        } else {
-          users.set(row.user, row.name1);
-        }
+      if (row.user && tech_users.has(row.user + " (" + row.name1 + ")")) {
+        duplicate_entries.push(row.user + " (" + row.name1 + ")");
       }
     });
 
-    // Commercial committees
+    // === Check duplicates between table_xzop and table_cyyq ===
+    let comm_users = new Set();
     (frm.doc.table_xzop || []).forEach(row => {
-      if (row.user) {
-        if (users.has(row.user)) {
-          duplicate_entries.push(row.user + " (" + row.name1 + ")");
-        } else {
-          users.set(row.user, row.name1);
-        }
-      }
+      if (row.user) comm_users.add(row.user + " (" + row.name1 + ")");
     });
     (frm.doc.table_cyyq || []).forEach(row => {
-      if (row.user) {
-        if (users.has(row.user)) {
-          duplicate_entries.push(row.user + " (" + row.name1 + ")");
-        } else {
-          users.set(row.user, row.name1);
-        }
+      if (row.user && comm_users.has(row.user + " (" + row.name1 + ")")) {
+        duplicate_entries.push(row.user + " (" + row.name1 + ")");
       }
     });
 
+    // Throw error if duplicates found
     if (duplicate_entries.length > 0) {
       let list_html = "<ul>";
       duplicate_entries.forEach(d => list_html += `<li>${d}</li>`);
@@ -338,8 +320,9 @@ frappe.ui.form.on('Tender Opening', {
     }
   }
 });
-// code 1 
-// // TOC Verification (Tech + Comm)
+
+
+// // code 2
 // frappe.ui.form.on('Tender Opening', {
 //   refresh: function(frm) {
 //     const current_user = frappe.session.user;
@@ -355,7 +338,7 @@ frappe.ui.form.on('Tender Opening', {
 //       return null;
 //     }
 
-//     // -------- Technical Verification --------
+//     // -------------------- Technical Verification --------------------
 //     const tech_match1 = get_user_row_and_table("tender_opening_committee");
 //     const tech_match2 = get_user_row_and_table("table_laar");
 //     const tech_match = tech_match1 || tech_match2;
@@ -364,13 +347,11 @@ frappe.ui.form.on('Tender Opening', {
 //       frm.add_custom_button("Verify (Technical)", function () {
 //         frappe.model.set_value(tech_match.row.doctype, tech_match.row.name, "verified_and_signed", 1);
 //         frappe.model.set_value(tech_match.row.doctype, tech_match.row.name, "date", frappe.datetime.get_today());
-//         frm.save().then(() => {
-//           frm.reload_doc();
-//         });
+//         frm.save().then(() => frm.reload_doc());
 //       });
 //     }
 
-//     function check_technical_verifications() {
+//     function check_technical_verifications(frm) {
 //       let roles_verified = { Member: false, Convener: false, Chairman: false };
 //       const combined = (frm.doc.tender_opening_committee || []).concat(frm.doc.table_laar || []);
 //       combined.forEach(row => {
@@ -383,13 +364,19 @@ frappe.ui.form.on('Tender Opening', {
 
 //       if (roles_verified.Member && roles_verified.Convener && roles_verified.Chairman) {
 //         const selected_vendors = (frm.doc.table_aprq || []).filter(r => r.selected);
-//         frm.set_value("technical_evaluation_status", selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified");
-//         frm.save();
+//         let new_status = selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified";
+
+//         if (frm.doc.technical_evaluation_status !== new_status) {
+//           frm.set_value("technical_evaluation_status", new_status);
+//           frm.dirty();
+//           frm.save();
+//         }
 //       }
 //     }
-//     check_technical_verifications();
 
-//     // -------- Commercial Verification --------
+//     check_technical_verifications(frm);
+
+//     // -------------------- Commercial Verification --------------------
 //     const comm_match1 = get_user_row_and_table("table_xzop");
 //     const comm_match2 = get_user_row_and_table("table_cyyq");
 //     const comm_match = comm_match1 || comm_match2;
@@ -398,13 +385,11 @@ frappe.ui.form.on('Tender Opening', {
 //       frm.add_custom_button("Verify (Commercial)", function () {
 //         frappe.model.set_value(comm_match.row.doctype, comm_match.row.name, "verified_and_signed", 1);
 //         frappe.model.set_value(comm_match.row.doctype, comm_match.row.name, "date", frappe.datetime.get_today());
-//         frm.save().then(() => {
-//           frm.reload_doc();
-//         });
+//         frm.save().then(() => frm.reload_doc());
 //       });
 //     }
 
-//     function check_commercial_verifications() {
+//     function check_commercial_verifications(frm) {
 //       let roles_verified = { Member: false, Convener: false, Chairman: false };
 //       const combined = (frm.doc.table_xzop || []).concat(frm.doc.table_cyyq || []);
 //       combined.forEach(row => {
@@ -417,47 +402,240 @@ frappe.ui.form.on('Tender Opening', {
 
 //       if (roles_verified.Member && roles_verified.Convener && roles_verified.Chairman) {
 //         const selected_vendors = (frm.doc.table_mzil || []).filter(r => r.selected);
-//         frm.set_value("commercial_evaluation_status", selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified");
-//         frm.save();
+//         let new_status = selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified";
+
+//         if (frm.doc.commercial_evaluation_status !== new_status) {
+//           frm.set_value("commercial_evaluation_status", new_status);
+//           frm.dirty();
+//           frm.save();
+//         }
 //       }
 //     }
-//     check_commercial_verifications();
+
+//     check_commercial_verifications(frm);
+//   },
+
+//   // -------------------- Status Updater --------------------
+//   type_of_bid: function(frm) {
+//     update_status(frm);
+//   },
+//   technical_evaluation_status: function(frm) {
+//     update_status(frm);
+//   },
+//   commercial_evaluation_status: function(frm) {
+//     update_status(frm);
 //   }
 // });
 
+// // Shared function for status mapping
+// function update_status(frm) {
+//   if (frm.doc.type_of_bid === "Two") {
+//     frm.set_value("status", "Technical Review");
+//   } else if (frm.doc.type_of_bid === "Single") {
+//     frm.set_value("status", "Commercial Review");
+//   }
 
-// code 2
+//   if (frm.doc.technical_evaluation_status === "Verified") {
+//     frm.set_value("status", "Technical Qualified");
+//   } else if (frm.doc.technical_evaluation_status === "No Vendors Qualified") {
+//     frm.set_value("status", "Technical Not Qualified");
+//   }
+
+//   if (frm.doc.commercial_evaluation_status === "Verified") {
+//     frm.set_value("status", "Commercial Qualified");
+//   } else if (frm.doc.commercial_evaluation_status === "No Vendors Qualified") {
+//     frm.set_value("status", "Commercial Not Qualified");
+//   }
+// }
+
+// // code 3
+// frappe.ui.form.on('Tender Opening', {
+//   refresh: function(frm) {
+//     const current_user = frappe.session && frappe.session.user;
+
+//     // helper: find row in table where row.user === current_user
+//     const find_user_row = (table_name) => {
+//       return (frm.doc[table_name] || []).find(r => r.user === current_user || r.user === frappe.user.email);
+//     };
+
+//     // -------------------- Technical Verify button --------------------
+//     const tech_row = find_user_row('tender_opening_committee') || find_user_row('table_laar');
+//     if (tech_row && !tech_row.verified_and_signed) {
+//       frm.add_custom_button('Verify (Technical)', function () {
+//         // mark the child row as verified + set date, then save parent
+//         frappe.model.set_value(tech_row.doctype, tech_row.name, 'verified_and_signed', 1);
+//         frappe.model.set_value(tech_row.doctype, tech_row.name, 'date', frappe.datetime.get_today());
+
+//         frm.save().then(() => {
+//           // Immediately re-evaluate and update statuses (don't rely only on reload)
+//           check_technical_verifications(frm);
+//           // reload to reflect child changes from server
+//           frm.reload_doc();
+//         });
+//       });
+//     }
+
+//     // -------------------- Commercial Verify button --------------------
+//     const comm_row = find_user_row('table_xzop') || find_user_row('table_cyyq');
+//     if (comm_row && !comm_row.verified_and_signed) {
+//       frm.add_custom_button('Verify (Commercial)', function () {
+//         frappe.model.set_value(comm_row.doctype, comm_row.name, 'verified_and_signed', 1);
+//         frappe.model.set_value(comm_row.doctype, comm_row.name, 'date', frappe.datetime.get_today());
+
+//         frm.save().then(() => {
+//           check_commercial_verifications(frm);
+//           frm.reload_doc();
+//         });
+//       });
+//     }
+
+//     // ensure we recalc statuses on refresh as well
+//     check_technical_verifications(frm);
+//     check_commercial_verifications(frm);
+//   },
+
+//   // when these fields change, update combined status
+//   type_of_bid: function(frm) { update_status(frm); },
+//   technical_evaluation_status: function(frm) {
+//     update_status(frm);
+
+//     // also populate table_mzil when technical becomes Verified
+//     if (frm.doc.technical_evaluation_status === "Verified") {
+//       // Clear table_mzil first to avoid duplicates
+//       frm.clear_table("table_mzil");
+
+//       // Loop through table_aprq and add only selected vendors
+//       (frm.doc.table_aprq || []).forEach(row => {
+//         if (row.selected) {
+//           let child = frm.add_child("table_mzil");
+//           child.vendor = row.vendor;
+//         }
+//       });
+
+//       frm.refresh_field("table_mzil");
+//     }
+//   },
+//   commercial_evaluation_status: function(frm) { update_status(frm); }
+// });
+
+// // -------------------- Helper / Recalc functions --------------------
+// function check_technical_verifications(frm) {
+//   // combine both technical tables
+//   const combined = (frm.doc.tender_opening_committee || []).concat(frm.doc.table_laar || []);
+//   const roles_verified = { member: false, convener: false, chairman: false };
+
+//   combined.forEach(row => {
+//     if (row.verified_and_signed) {
+//       const pos = (row.position || '').toString().trim().toLowerCase();
+//       if (pos.indexOf('member') !== -1) roles_verified.member = true;
+//       if (pos.indexOf('convener') !== -1) roles_verified.convener = true;
+//       if (pos.indexOf('chair') !== -1 || pos.indexOf('chairman') !== -1) roles_verified.chairman = true;
+//     }
+//   });
+
+//   if (roles_verified.member && roles_verified.convener && roles_verified.chairman) {
+//     const selected_vendors = (frm.doc.table_aprq || []).filter(r => r.selected);
+//     const new_status = selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified";
+
+//     if (frm.doc.technical_evaluation_status !== new_status) {
+//       frm.set_value("technical_evaluation_status", new_status);
+//       // Save to persist status change; this will trigger the technical_evaluation_status handler above.
+//       frm.save();
+//     }
+//   }
+// }
+
+// function check_commercial_verifications(frm) {
+//   // combine both commercial tables
+//   const combined = (frm.doc.table_xzop || []).concat(frm.doc.table_cyyq || []);
+//   const roles_verified = { member: false, convener: false, chairman: false };
+
+//   combined.forEach(row => {
+//     if (row.verified_and_signed) {
+//       const pos = (row.position || '').toString().trim().toLowerCase();
+//       if (pos.indexOf('member') !== -1) roles_verified.member = true;
+//       if (pos.indexOf('convener') !== -1) roles_verified.convener = true;
+//       if (pos.indexOf('chair') !== -1 || pos.indexOf('chairman') !== -1) roles_verified.chairman = true;
+//     }
+//   });
+
+//   if (roles_verified.member && roles_verified.convener && roles_verified.chairman) {
+//     const selected_vendors = (frm.doc.table_mzil || []).filter(r => r.selected);
+//     const new_status = selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified";
+
+//     if (frm.doc.commercial_evaluation_status !== new_status) {
+//       frm.set_value("commercial_evaluation_status", new_status);
+//       frm.save();
+//     }
+//   }
+// }
+
+// // existing shared status mapping (keeps your original logic)
+// function update_status(frm) {
+//   if (frm.doc.type_of_bid === "Two") {
+//     frm.set_value("status", "Technical Review");
+//   } else if (frm.doc.type_of_bid === "Single") {
+//     frm.set_value("status", "Commercial Review");
+//   }
+
+//   if (frm.doc.technical_evaluation_status === "Verified") {
+//     frm.set_value("status", "Technical Qualified");
+//   } else if (frm.doc.technical_evaluation_status === "No Vendors Qualified") {
+//     frm.set_value("status", "Technical Not Qualified");
+//   }
+
+//   if (frm.doc.commercial_evaluation_status === "Verified") {
+//     frm.set_value("status", "Commercial Qualified");
+//   } else if (frm.doc.commercial_evaluation_status === "No Vendors Qualified") {
+//     frm.set_value("status", "Commercial Not Qualified");
+//   }
+// }
+
 frappe.ui.form.on('Tender Opening', {
   refresh: function(frm) {
     const current_user = frappe.session.user;
 
-    // Utility: check if user is in table
-    function get_user_row_and_table(table_name) {
-      const table = frm.doc[table_name] || [];
-      for (let row of table) {
-        if (row.user === current_user || row.user === frappe.user.email) {
-          return { row, table_name };
+    // -------------------- Utility: find user row --------------------
+    function get_user_row(tables) {
+      for (let table of tables) {
+        const rows = frm.doc[table] || [];
+        for (let row of rows) {
+          if (row.user === current_user || row.user === frappe.user.email) {
+            return { row, table };
+          }
         }
       }
       return null;
     }
 
-    // -------------------- Technical Verification --------------------
-    const tech_match1 = get_user_row_and_table("tender_opening_committee");
-    const tech_match2 = get_user_row_and_table("table_laar");
-    const tech_match = tech_match1 || tech_match2;
+function add_verify_button(label, tables, status_field, vendor_table) {
+  const match = get_user_row(tables);
 
-    if (tech_match && !tech_match.row.verified_and_signed) {
-      frm.add_custom_button("Verify (Technical)", function () {
-        frappe.model.set_value(tech_match.row.doctype, tech_match.row.name, "verified_and_signed", 1);
-        frappe.model.set_value(tech_match.row.doctype, tech_match.row.name, "date", frappe.datetime.get_today());
+  if (match && !match.row.verified_and_signed) {
+    frm.add_custom_button(label, function () {
+      frappe.model.set_value(match.row.doctype, match.row.name, "verified_and_signed", 1);
+      frappe.model.set_value(match.row.doctype, match.row.name, "date", frappe.datetime.get_today());
+
+      // Ensure form is marked dirty
+      frm.dirty();
+
+      // Run verification check after update
+      frappe.after_ajax(() => {
+        check_verifications(frm, tables, status_field, vendor_table);
+
+        // Always save because parent status may change
         frm.save().then(() => frm.reload_doc());
       });
-    }
+    });
+  }
+}
 
-    function check_technical_verifications(frm) {
-      let roles_verified = { Member: false, Convener: false, Chairman: false };
-      const combined = (frm.doc.tender_opening_committee || []).concat(frm.doc.table_laar || []);
+
+    // -------------------- Generic Verification Checker --------------------
+    function check_verifications(frm, tables, status_field, vendor_table) {
+      const combined = tables.flatMap(t => frm.doc[t] || []);
+      const roles_verified = { Member: false, Convener: false, Chairman: false };
+
       combined.forEach(row => {
         if (row.verified_and_signed) {
           if (row.position === "Member") roles_verified.Member = true;
@@ -467,56 +645,22 @@ frappe.ui.form.on('Tender Opening', {
       });
 
       if (roles_verified.Member && roles_verified.Convener && roles_verified.Chairman) {
-        const selected_vendors = (frm.doc.table_aprq || []).filter(r => r.selected);
-        let new_status = selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified";
+        const selected_vendors = (frm.doc[vendor_table] || []).filter(r => r.selected);
+        const new_status = selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified";
 
-        if (frm.doc.technical_evaluation_status !== new_status) {
-          frm.set_value("technical_evaluation_status", new_status);
-          frm.dirty();
-          frm.save();
+        if (frm.doc[status_field] !== new_status) {
+          frm.set_value(status_field, new_status);
         }
       }
     }
 
-    check_technical_verifications(frm);
+    // -------------------- Setup Buttons --------------------
+    add_verify_button("Verify (Technical)", ["tender_opening_committee", "table_laar"], "technical_evaluation_status", "table_aprq");
+    add_verify_button("Verify (Commercial)", ["table_xzop", "table_cyyq"], "commercial_evaluation_status", "table_mzil");
 
-    // -------------------- Commercial Verification --------------------
-    const comm_match1 = get_user_row_and_table("table_xzop");
-    const comm_match2 = get_user_row_and_table("table_cyyq");
-    const comm_match = comm_match1 || comm_match2;
-
-    if (comm_match && !comm_match.row.verified_and_signed) {
-      frm.add_custom_button("Verify (Commercial)", function () {
-        frappe.model.set_value(comm_match.row.doctype, comm_match.row.name, "verified_and_signed", 1);
-        frappe.model.set_value(comm_match.row.doctype, comm_match.row.name, "date", frappe.datetime.get_today());
-        frm.save().then(() => frm.reload_doc());
-      });
-    }
-
-    function check_commercial_verifications(frm) {
-      let roles_verified = { Member: false, Convener: false, Chairman: false };
-      const combined = (frm.doc.table_xzop || []).concat(frm.doc.table_cyyq || []);
-      combined.forEach(row => {
-        if (row.verified_and_signed) {
-          if (row.position === "Member") roles_verified.Member = true;
-          if (row.position === "Convener") roles_verified.Convener = true;
-          if (row.position === "Chairman") roles_verified.Chairman = true;
-        }
-      });
-
-      if (roles_verified.Member && roles_verified.Convener && roles_verified.Chairman) {
-        const selected_vendors = (frm.doc.table_mzil || []).filter(r => r.selected);
-        let new_status = selected_vendors.length > 0 ? "Verified" : "No Vendors Qualified";
-
-        if (frm.doc.commercial_evaluation_status !== new_status) {
-          frm.set_value("commercial_evaluation_status", new_status);
-          frm.dirty();
-          frm.save();
-        }
-      }
-    }
-
-    check_commercial_verifications(frm);
+    // -------------------- Initial Checks --------------------
+    check_verifications(frm, ["tender_opening_committee", "table_laar"], "technical_evaluation_status", "table_aprq");
+    check_verifications(frm, ["table_xzop", "table_cyyq"], "commercial_evaluation_status", "table_mzil");
   },
 
   // -------------------- Status Updater --------------------
@@ -525,13 +669,23 @@ frappe.ui.form.on('Tender Opening', {
   },
   technical_evaluation_status: function(frm) {
     update_status(frm);
+
+    if (frm.doc.technical_evaluation_status === "Verified") {
+      frm.clear_table("table_mzil");
+      (frm.doc.table_aprq || []).forEach(row => {
+        if (row.selected) {
+          frm.add_child("table_mzil", { vendor: row.vendor });
+        }
+      });
+      frm.refresh_field("table_mzil");
+    }
   },
   commercial_evaluation_status: function(frm) {
     update_status(frm);
   }
 });
 
-// Shared function for status mapping
+// -------------------- Shared Status Logic --------------------
 function update_status(frm) {
   if (frm.doc.type_of_bid === "Two") {
     frm.set_value("status", "Technical Review");
@@ -551,52 +705,6 @@ function update_status(frm) {
     frm.set_value("status", "Commercial Not Qualified");
   }
 }
-
-// // code 3
-// frappe.ui.form.on('Tender Opening', {
-//   refresh: function(frm) {
-//     const current_user = frappe.session.user;
-
-//     // Utility: check if user exists in child table
-//     function get_user_row_and_table(table_name) {
-//       const table = frm.doc[table_name] || [];
-//       for (let row of table) {
-//         if (row.user === current_user || row.user === frappe.user.email) {
-//           return { row, table_name };
-//         }
-//       }
-//       return null;
-//     }
-
-//     // -------- Technical Verification --------
-//     const tech_match1 = get_user_row_and_table("tender_opening_committee");
-//     const tech_match2 = get_user_row_and_table("table_laar");
-//     const tech_match = tech_match1 || tech_match2;
-
-//     if (tech_match && !tech_match.row.verified_and_signed) {
-//       frm.add_custom_button("Verify (Technical)", function () {
-//         frappe.model.set_value(tech_match.row.doctype, tech_match.row.name, "verified_and_signed", 1);
-//         frappe.model.set_value(tech_match.row.doctype, tech_match.row.name, "date", frappe.datetime.get_today());
-//         frm.save();  // Python handles evaluation + status update
-//       });
-//     }
-
-//     // -------- Commercial Verification --------
-//     const comm_match1 = get_user_row_and_table("table_xzop");
-//     const comm_match2 = get_user_row_and_table("table_cyyq");
-//     const comm_match = comm_match1 || comm_match2;
-
-//     if (comm_match && !comm_match.row.verified_and_signed) {
-//       frm.add_custom_button("Verify (Commercial)", function () {
-//         frappe.model.set_value(comm_match.row.doctype, comm_match.row.name, "verified_and_signed", 1);
-//         frappe.model.set_value(comm_match.row.doctype, comm_match.row.name, "date", frappe.datetime.get_today());
-//         frm.save();  // Python handles evaluation + status update
-//       });
-//     }
-//   }
-// });
-
-
 
 // Populate Selected Vendors into table_mzil on status change
 frappe.ui.form.on('Tender Opening', {

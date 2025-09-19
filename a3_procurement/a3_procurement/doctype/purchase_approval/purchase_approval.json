@@ -13,6 +13,8 @@
   "column_break_lbtv",
   "case_file",
   "date",
+  "tender_enquiry_id",
+  "amended_from",
   "cmm_details_section",
   "indent_reference",
   "column_break_ifbm",
@@ -71,8 +73,7 @@
   "column_break_pihs",
   "status4",
   "column_break_rywy",
-  "approved_from_md",
-  "amended_from"
+  "approved_from_md"
  ],
  "fields": [
   {
@@ -106,11 +107,12 @@
    "options": "Purchase Approval Items"
   },
   {
+   "fetch_from": "tender_enquiry_id.tender_type",
    "fieldname": "type_of_purchase",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Type of Purchase",
-   "options": "\nPublic Tender\nLimited Tender\nST\nOthers"
+   "options": "\nLimited Tender\nPublic Tender\nPAC\nSingle Party"
   },
   {
    "fieldname": "no_of_parties_contactedquoted",
@@ -137,6 +139,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -344,7 +347,7 @@
   {
    "fieldname": "purchase_recommendation",
    "fieldtype": "Link",
-   "label": "Purchase Recommendation",
+   "label": "Purchase Recommendation ID",
    "options": "Purchase Recommendation"
   },
   {
@@ -435,6 +438,13 @@
   {
    "fieldname": "column_break_vcrv",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "purchase_recommendation.enquiry_no",
+   "fieldname": "tender_enquiry_id",
+   "fieldtype": "Link",
+   "label": "Tender Enquiry ID",
+   "options": "Tender"
   }
  ],
  "grid_page_length": 50,
@@ -446,7 +456,7 @@
    "link_fieldname": "custom_purchase_approval_reference"
   }
  ],
- "modified": "2025-09-17 22:32:45.693702",
+ "modified": "2025-09-18 17:23:07.213097",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval",

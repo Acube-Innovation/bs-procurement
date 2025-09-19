@@ -164,6 +164,11 @@ frappe.ui.form.on('Tender', {
                                     if (r2.message) {
                                         let scr_doc = r2.message;
 
+                                        // 🔹 Fetch type_of_scr -> tender_type
+                                        if (scr_doc.type_of_scr) {
+                                            frm.set_value("tender_type", scr_doc.type_of_scr);
+                                        }
+
                                         // Fetch SCM Particulars
                                         (scr_doc.scm_particulars || []).forEach(row => {
                                             let child = frm.add_child("table_zdft");
@@ -203,6 +208,75 @@ frappe.ui.form.on('Tender', {
         }
     }
 });
+
+//     scr_reference: function(frm) {
+//         if (frm.doc.scr_reference && frm.doc.reference === "SCR") {
+//             // Clear existing scm particulars & vendors
+//             frm.clear_table("table_zdft");
+//             frm.clear_table("invited_vendors");
+
+//             // Step 1: Get SCR Review document
+//             frappe.call({
+//                 method: "frappe.client.get",
+//                 args: {
+//                     doctype: "SCR Review",
+//                     name: frm.doc.scr_reference
+//                 },
+//                 callback: function(r) {
+//                     if (r.message) {
+//                         let scr_review_doc = r.message;
+
+//                         // Step 2: Get the linked Sub-Contract Request
+//                         if (scr_review_doc.scr_no) {
+//                             frappe.call({
+//                                 method: "frappe.client.get",
+//                                 args: {
+//                                     doctype: "Sub-Contract Request",
+//                                     name: scr_review_doc.scr_no
+//                                 },
+//                                 callback: function(r2) {
+//                                     if (r2.message) {
+//                                         let scr_doc = r2.message;
+
+//                                         // Fetch SCM Particulars
+//                                         (scr_doc.scm_particulars || []).forEach(row => {
+//                                             let child = frm.add_child("table_zdft");
+//                                             child.drawing_no = row.drawing_no;
+//                                             child.rev = row.rev;
+//                                             child.idn_no = row.idn_no;
+//                                             child.raw_material_sizespecification = row.raw_material_sizespecification;
+//                                             child.sizespecification = row.sizespecification;
+//                                             child.name1 = row.name1;
+//                                             child.item_description = row.item_description;
+//                                             child.delivery_date = row.delivery_date;
+//                                             child.quantity = row.quantity;
+//                                             child.fim_rate = row.fim_rate;
+//                                             child.total_fim_cost = row.total_fim_cost;
+//                                             child.delivery_remarks = row.delivery_remarks;
+//                                             child.scope_of_work = row.scope_of_work;
+//                                             child.finished_good_quantity = row.finished_good_quantity;
+//                                             child.uom = row.uom;
+//                                         });
+
+//                                         frm.refresh_field("table_zdft");
+//                                     }
+//                                 }
+//                             });
+//                         }
+
+//                         // Fetch Vendors from SCR Vendors
+//                         (scr_review_doc.recommended_vendorsgm || []).forEach(row => {
+//                             let vendor_child = frm.add_child("invited_vendors");
+//                             vendor_child.vendor_name = row.vendor;
+//                         });
+
+//                         frm.refresh_field("invited_vendors");
+//                     }
+//                 }
+//             });
+//         }
+//     }
+// });
 
 
 
