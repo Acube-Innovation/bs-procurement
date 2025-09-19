@@ -143,6 +143,8 @@
   {
    "fieldname": "tender",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Tender ID",
    "options": "Tender",
    "reqd": 1
@@ -208,7 +210,7 @@
    "label": "Tender Responses"
   },
   {
-   "depends_on": "eval:doc.type_of_bid==\"Two\"|doc.reference==\"SCR\"\n",
+   "depends_on": "eval:doc.type_of_bid==\"Two\"",
    "fieldname": "technical_committee_tab",
    "fieldtype": "Tab Break",
    "label": "Technical Committee",
@@ -221,6 +223,7 @@
    "options": "Pending\nVerified\nNo Vendors Qualified"
   },
   {
+   "depends_on": "eval:doc.technical_evaluation_status==\"Verified\"|doc.type_of_bid==\"Single\"",
    "fieldname": "commercial_committee_tab",
    "fieldtype": "Tab Break",
    "label": "Commercial Committee"
@@ -330,9 +333,11 @@
   {
    "fetch_from": "tender.reference",
    "fieldname": "reference",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Reference"
+   "in_standard_filter": 1,
+   "label": "Reference",
+   "options": "\nSCR\nIndent"
   },
   {
    "depends_on": "eval:doc.reference==\"SCR\"",
@@ -410,6 +415,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "\nTechnical Review\nTechnical Qualified\nTechnical Not Qualified\nCommercial Review\nCommercial Not Qualified\nCommercial Qualified\nRe-Tender\nTender Opened"
   },
@@ -447,7 +453,7 @@
    "link_fieldname": "tender_opening_reference"
   }
  ],
- "modified": "2025-09-16 17:44:28.436569",
+ "modified": "2025-09-18 15:54:26.205982",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender Opening",

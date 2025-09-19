@@ -28,7 +28,7 @@
   "section_break_obqv",
   "vendor_responses",
   "table_flub",
-  "table_tobk"
+  "taxes_and_charges"
  ],
  "fields": [
   {
@@ -39,9 +39,10 @@
   {
    "fetch_from": "tender_opening_reference.tender",
    "fieldname": "enquiry_no",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Enquiry No"
+   "label": "Enquiry No",
+   "options": "Tender"
   },
   {
    "fieldname": "due_on",
@@ -96,12 +97,6 @@
    "fieldtype": "Table",
    "label": "Particulars",
    "options": "Purchase Recommendation Detail"
-  },
-  {
-   "fieldname": "table_tobk",
-   "fieldtype": "Table",
-   "label": "Taxes and Charges",
-   "options": "Vendor Taxes and Charges"
   },
   {
    "depends_on": "eval:doc.reference_type==\"Indent\"",
@@ -163,6 +158,12 @@
    "fieldname": "reference_type",
    "fieldtype": "Data",
    "label": "Reference"
+  },
+  {
+   "fieldname": "taxes_and_charges",
+   "fieldtype": "Table",
+   "label": "Taxes and Charges",
+   "options": "Taxes and Charges"
   }
  ],
  "grid_page_length": 50,
@@ -174,7 +175,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-09-17 15:22:27.102805",
+ "modified": "2025-09-18 17:09:57.655421",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",

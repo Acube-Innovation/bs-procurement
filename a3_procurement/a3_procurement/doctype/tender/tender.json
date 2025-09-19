@@ -70,7 +70,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Tender Type",
-   "options": "\nLimited Tender\nPublic Tender\nPAC"
+   "options": "\nLimited Tender\nPublic Tender\nPAC\nSingle Party"
   },
   {
    "fieldname": "due_date",
@@ -78,6 +78,7 @@
    "label": "Tender Due Date"
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -137,13 +138,13 @@
    "depends_on": "eval:doc.purchase_indent_reference",
    "fieldname": "purchase_particulars_tab",
    "fieldtype": "Tab Break",
-   "label": "Purchase Tender Particulars"
+   "label": "Purchase Particulars"
   },
   {
    "depends_on": "eval:doc.scr_reference",
    "fieldname": "scm_particulars_tab",
    "fieldtype": "Tab Break",
-   "label": "SCM Tender Particulars"
+   "label": "Sub-Contract Particulars"
   },
   {
    "depends_on": "eval:doc.reference==\"Indent\"",
@@ -170,7 +171,7 @@
   {
    "fieldname": "tender_enquiry_details_cmm_section",
    "fieldtype": "Section Break",
-   "label": "Tender Enquiry Details (CMM)"
+   "label": "Tender Enquiry Details"
   },
   {
    "fieldname": "column_break_cbty",
@@ -208,7 +209,6 @@
    "options": "\nEnquiry Sent\nDate Extended\nPNC\nPAF\nOpened\nEnquiry Closed"
   },
   {
-   "depends_on": "eval:frappe.datetime.get_today() > doc.due_date",
    "fieldname": "tender_extension_tab",
    "fieldtype": "Tab Break",
    "label": "Tender Extension"
@@ -358,8 +358,9 @@
    "depends_on": "eval:doc.reference==\"SCR\"",
    "fetch_from": "scr_reference.scr_no",
    "fieldname": "scr_id",
-   "fieldtype": "Data",
-   "label": "SCR ID"
+   "fieldtype": "Link",
+   "label": "SCR ID",
+   "options": "Sub-Contract Request"
   },
   {
    "fieldname": "items_1",
@@ -410,7 +411,7 @@
    "link_fieldname": "tender_reference"
   }
  ],
- "modified": "2025-09-16 17:43:56.580423",
+ "modified": "2025-09-18 16:26:16.673038",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",

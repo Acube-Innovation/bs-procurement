@@ -158,6 +158,104 @@ frappe.ui.form.on('Comparative Statement', {
 //   frm.refresh_fields(['table_flub', 'table_tobk']);
 //   frappe.msgprint('Quotation items and vendor taxes fetched.');
 // }
+// frappe.ui.form.on('Comparative Statement', {
+//   refresh(frm) {
+//     frm.add_custom_button(__('Fetch Quotation Items'), () => {
+//       fetch_supplier_quotation_items_and_taxes(frm);
+//     });
+//   }
+// });
+
+// async function fetch_supplier_quotation_items_and_taxes(frm) {
+//   frm.clear_table('table_flub');
+//   frm.clear_table('table_tobk');
+
+//   let all_items = [];
+//   let all_taxes = [];
+
+//   for (const party of frm.doc.vendor_responses || []) {
+//     const quotation_name = party.tender_response;
+//     if (!quotation_name) continue;
+
+//     const res = await frappe.call({
+//       method: 'frappe.client.get',
+//       args: {
+//         doctype: 'Supplier Quotation',
+//         name: quotation_name
+//       }
+//     });
+
+//     const sq = res.message;
+//     const supplier = sq.supplier;
+//     const taxes = sq.total_taxes_and_charges;
+
+//     // Save tax row
+//     all_taxes.push({
+//       vendor: supplier,
+//       taxes_and_charges: taxes
+//     });
+
+//     for (const item of sq.items || []) {
+//       all_items.push({
+//         item: item.item_code,
+//         description: item.description,
+//         quantity: item.qty,
+//         rate: item.rate,
+//         total: item.amount,
+//         supplier: supplier,
+//         uom: item.uom,
+//         required_date: item.expected_delivery_date,
+//         finished_good: item.custom_finished_good,
+//         drawing_no: item.custom_drawing_number,
+//         finished_good_quantity: item.custom_finished_good_quantity
+//       });
+//     }
+//   }
+
+//   // --- Grouping Logic ---
+//   const grouped = {};
+//   for (const row of all_items) {
+//     let group_key;
+
+//     if (frm.doc.reference_type === "SCR") {
+//       // group by item + finished_good
+//       group_key = `${row.item || ""}::${row.finished_good || ""}`;
+//     } else {
+//       // group only by item (Indent case)
+//       group_key = row.item || "";
+//     }
+
+//     if (!grouped[group_key]) grouped[group_key] = [];
+//     grouped[group_key].push(row);
+//   }
+
+//   // --- Ranking by rate ---
+//   for (const key in grouped) {
+//     const group = grouped[key];
+//     group.sort((a, b) => a.rate - b.rate);
+//     group.forEach((row, idx) => {
+//       row.price_rank = `L${idx + 1}`;
+//     });
+//   }
+
+//   // Flatten & sort for consistent display
+//   const sorted_rows = Object.values(grouped).flat().sort((a, b) =>
+//     (a.item || "").localeCompare(b.item || "")
+//   );
+
+//   for (const row_data of sorted_rows) {
+//     frm.add_child('table_flub', row_data);
+//   }
+
+//   for (const tax_row of all_taxes) {
+//     frm.add_child('table_tobk', tax_row);
+//   }
+
+//   frm.refresh_fields(['table_flub', 'table_tobk']);
+//   frappe.msgprint('Quotation items and vendor taxes fetched.');
+// }
+
+
 frappe.ui.form.on('Comparative Statement', {
   refresh(frm) {
     frm.add_custom_button(__('Fetch Quotation Items'), () => {
@@ -168,7 +266,7 @@ frappe.ui.form.on('Comparative Statement', {
 
 async function fetch_supplier_quotation_items_and_taxes(frm) {
   frm.clear_table('table_flub');
-  frm.clear_table('table_tobk');
+  frm.clear_table('taxes_and_charges');
 
   let all_items = [];
   let all_taxes = [];
@@ -187,14 +285,8 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
 
     const sq = res.message;
     const supplier = sq.supplier;
-    const taxes = sq.total_taxes_and_charges;
 
-    // Save tax row
-    all_taxes.push({
-      vendor: supplier,
-      taxes_and_charges: taxes
-    });
-
+    // ---- Fetch Quotation Items ----
     for (const item of sq.items || []) {
       all_items.push({
         item: item.item_code,
@@ -210,9 +302,19 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
         finished_good_quantity: item.custom_finished_good_quantity
       });
     }
+
+    // ---- Fetch Taxes & Charges (child table) ----
+    for (const tax of sq.taxes || []) {
+      all_taxes.push({
+        supplier: supplier,
+        chargesaccount_head: tax.account_head,
+        rate: tax.rate,
+        amount: tax.tax_amount
+      });
+    }
   }
 
-  // --- Grouping Logic ---
+  // --- Grouping Logic for Items ---
   const grouped = {};
   for (const row of all_items) {
     let group_key;
@@ -243,17 +345,32 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
     (a.item || "").localeCompare(b.item || "")
   );
 
+  // --- Add Items to Comparative Statement ---
   for (const row_data of sorted_rows) {
     frm.add_child('table_flub', row_data);
   }
 
-  for (const tax_row of all_taxes) {
-    frm.add_child('table_tobk', tax_row);
+  // --- Group Taxes by Supplier & Account Head ---
+  const tax_group = {};
+  for (const tax of all_taxes) {
+    const key = `${tax.supplier}::${tax.chargesaccount_head}`;
+    if (!tax_group[key]) {
+      tax_group[key] = {
+        supplier: tax.supplier,
+        chargesaccount_head: tax.chargesaccount_head,
+        rate: tax.rate,
+        amount: 0
+      };
+    }
+    tax_group[key].amount += tax.amount;
   }
 
-  frm.refresh_fields(['table_flub', 'table_tobk']);
-  frappe.msgprint('Quotation items and vendor taxes fetched.');
+  // --- Add Taxes to Comparative Statement ---
+  for (const tax_row of Object.values(tax_group)) {
+    frm.add_child('taxes_and_charges', tax_row);
+  }
+
+  frm.refresh_fields(['table_flub', 'taxes_and_charges']);
+  frappe.msgprint('Quotation items and taxes fetched.');
 }
-
-
 

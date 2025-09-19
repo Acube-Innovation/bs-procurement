@@ -34,28 +34,10 @@ class Indent(Document):
                 "qty": row.qty,
                 "uom": row.unit,
                 "schedule_date": row.required_date,
-                "rate": price or 0
+                "rate": price or 0,
+                "project": self.project  
             })
 
         # Save & submit
         mr.insert(ignore_permissions=True)
         mr.submit()
-
-
-
-
-# def get_dashboard_data():
-#     return {
-#         "fieldname": "indent_reference",   # default field in linked doctypes
-#         "non_standard_fieldnames": {
-#             "Tender": "purchase_indent_reference",
-#             "Material Request": "custom_indent_reference",
-#             "Cost Estimate": "indent_reference"
-#         },
-#         "transactions": [
-#             {
-#                 "label": "Linked Documents",
-#                 "items": ["Tender", "Material Request", "Cost Estimate"]
-#             }
-#         ]
-#     }

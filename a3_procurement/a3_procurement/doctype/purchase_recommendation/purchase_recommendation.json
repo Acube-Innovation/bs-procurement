@@ -73,6 +73,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -126,6 +127,8 @@
   {
    "fieldname": "comparative_statement",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Comparative Statement",
    "options": "Comparative Statement",
    "reqd": 1
@@ -133,8 +136,10 @@
   {
    "fetch_from": "comparative_statement.enquiry_no",
    "fieldname": "enquiry_no",
-   "fieldtype": "Data",
-   "label": "Enquiry No"
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Enquiry No",
+   "options": "Tender"
   },
   {
    "fieldname": "approved_by",
@@ -180,6 +185,7 @@
    "fetch_from": "comparative_statement.tender_opening_reference",
    "fieldname": "tender_opening_reference",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Tender Opening Reference",
    "options": "Tender Opening"
   },
@@ -243,7 +249,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-09-17 15:43:35.266807",
+ "modified": "2025-09-18 16:37:10.417160",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",

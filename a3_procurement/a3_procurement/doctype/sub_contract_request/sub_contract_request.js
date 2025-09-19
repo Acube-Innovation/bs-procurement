@@ -77,3 +77,28 @@ frappe.ui.form.on('Sub-Contract Request', {
         });
     }
 });
+
+frappe.ui.form.on('Sub-Contract Request', {
+    onload: function(frm) {
+        if (frm.is_new()) {
+            //Set the current logged in user to indentor
+            frm.set_value("indentor_id", frappe.session.user);
+
+            // fetch department and designation from Employee linked to the current user
+            frappe.call({
+                method: "frappe.client.get_list",
+                args: {
+                    doctype: "Employee",
+                    filters: { user_id: frappe.session.user },
+                    fields: ["name", "department"]
+                },
+                callback: function(r) {
+                    if (r.message && r.message.length > 0) {
+                        let emp = r.message[0];
+                        frm.set_value("departmentsection", emp.department);
+                    }
+                }
+            });
+        }
+    }
+});
