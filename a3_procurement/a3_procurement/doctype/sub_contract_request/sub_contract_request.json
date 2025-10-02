@@ -15,7 +15,7 @@
   "type_of_bid",
   "column_break_jvbj",
   "materials_issuance",
-  "scr_scope_of_work",
+  "document_status",
   "section_break_fjuh",
   "repeat_order",
   "section_break_xadx",
@@ -390,12 +390,6 @@
    "options": "Cost Estimate"
   },
   {
-   "fieldname": "scr_scope_of_work",
-   "fieldtype": "Link",
-   "label": "SCR Scope of Work",
-   "options": "SCR Scope"
-  },
-  {
    "fetch_from": "departmentsection.custom_abbr",
    "fieldname": "abbr",
    "fieldtype": "Data",
@@ -416,6 +410,12 @@
   {
    "fieldname": "dimension_col_break",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_status",
+   "fieldtype": "Select",
+   "label": "Document Status",
+   "options": "\nPending\nBudget Available\nBudget Exceeded\nTender Enquiry\nTender Extended\nTechnical Review\nTechnical Qualified\nTechnical Not Qualified\nCommercial Review\nCommercial Not Qualified\nCommercial Qualified\nRe-Tender\nTender Opened\nComparative Statement\nPurchase Recommendation\nPAF\nPNC\nPO"
   }
  ],
  "grid_page_length": 50,
@@ -424,13 +424,9 @@
   {
    "link_doctype": "SCR Review",
    "link_fieldname": "scr_no"
-  },
-  {
-   "link_doctype": "SCR Scope",
-   "link_fieldname": "scr_id"
   }
  ],
- "modified": "2025-09-18 12:38:41.202726",
+ "modified": "2025-09-30 11:03:02.966319",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",

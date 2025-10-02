@@ -389,7 +389,7 @@
    "depends_on": "eval:doc.reference_type==\"Indent\"",
    "fieldname": "cmm_details_section",
    "fieldtype": "Section Break",
-   "label": "CMM Details"
+   "label": "Purchase Details"
   },
   {
    "fetch_from": "purchase_recommendation_reference.indent_reference",
@@ -413,7 +413,7 @@
    "depends_on": "eval:doc.reference_type==\"SCR\"",
    "fieldname": "scm_details_section",
    "fieldtype": "Section Break",
-   "label": "SCM Details"
+   "label": "Sub-Contract Details"
   },
   {
    "fetch_from": "purchase_recommendation_reference.scr_reference",
@@ -458,7 +458,7 @@
    "link_fieldname": "custom_purchase_and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-09-18 13:41:07.058966",
+ "modified": "2025-09-23 11:14:28.042219",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase and Negotiation Committee",

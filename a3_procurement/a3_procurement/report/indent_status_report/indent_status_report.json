@@ -1,0 +1,51 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-09-30 12:08:48.842879",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[],\"fields\":[[\"name\",\"Indent\"],[\"docstatus\",\"Indent\"],[\"indent_date\",\"Indent\"],[\"departmentsection\",\"Indent\"],[\"cost_range\",\"Indent\"],[\"indent_type\",\"Indent\"],[\"document_status\",\"Indent\"],[\"date_of_requisition\",\"Indent\"],[\"department_requisition_number\",\"Indent\"],[\"indentor_designation\",\"Indent\"],[\"full_name\",\"Indent\"],[\"type_of_bid\",\"Indent\"],[\"modified_by\",\"Indent\"]],\"order_by\":\"`tabIndent`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":120,\"docstatus\":120,\"indent_date\":120,\"departmentsection\":120,\"cost_range\":120,\"indent_type\":120,\"document_status\":120,\"date_of_requisition\":120,\"department_requisition_number\":120,\"indentor_designation\":120,\"full_name\":120,\"type_of_bid\":120,\"modified_by\":120},\"group_by\":null}",
+ "letter_head": "BATL",
+ "letterhead": null,
+ "modified": "2025-09-30 12:15:10.304469",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Indent Status Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Indent",
+ "report_name": "Indent Status Report",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Indenter"
+  },
+  {
+   "role": "Head of Department"
+  },
+  {
+   "role": "CMM"
+  },
+  {
+   "role": "Company Secretary"
+  },
+  {
+   "role": "General Manager"
+  },
+  {
+   "role": "Managing Director"
+  },
+  {
+   "role": "Chief Finance Officer"
+  }
+ ],
+ "timeout": 0
+}

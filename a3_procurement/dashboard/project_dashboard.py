@@ -37,5 +37,6 @@ def get_data(data=None):
             ]},
             {"label": _("Purchase"), "items": ["Purchase Order", "Purchase Receipt", "Purchase Invoice","Purchase Approval","Purchase Recommendation","Purchase and Negotiation Committee"]},
             {"label": _("Payment"), "items": ["Payment Entry"]},
+            {"label": _("Finance"), "items": ["Budget"]}
         ],
     }

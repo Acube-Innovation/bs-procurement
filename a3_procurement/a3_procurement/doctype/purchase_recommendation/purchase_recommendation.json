@@ -151,7 +151,7 @@
    "depends_on": "eval:doc.reference_type==\"Indent\"",
    "fieldname": "cmm_details_section",
    "fieldtype": "Section Break",
-   "label": "CMM Details"
+   "label": "Purchase Details"
   },
   {
    "fetch_from": "comparative_statement.indent_id",
@@ -168,7 +168,7 @@
    "depends_on": "eval:doc.reference_type==\"SCR\"",
    "fieldname": "scm_details_section",
    "fieldtype": "Section Break",
-   "label": "SCM Details"
+   "label": "Sub-contract Details"
   },
   {
    "fetch_from": "comparative_statement.scr_request",
@@ -249,7 +249,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-09-18 16:37:10.417160",
+ "modified": "2025-09-23 11:13:26.028995",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",

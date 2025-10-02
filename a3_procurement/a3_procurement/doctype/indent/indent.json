@@ -536,7 +536,7 @@
    "fieldname": "document_status",
    "fieldtype": "Select",
    "label": "Document Status",
-   "options": "\nPending\nBudget Available\nBudget Exceeded\nTender Enquiry\nTender Extended\nTender Opening\nComparative Statement\nPurchase Recommendation\nPAF\nPNC\nPO"
+   "options": "\nPending\nBudget Available\nBudget Exceeded\nTender Enquiry\nTender Extended\nTechnical Review\nTechnical Qualified\nTechnical Not Qualified\nCommercial Review\nCommercial Not Qualified\nCommercial Qualified\nRe-Tender\nTender Opened\nComparative Statement\nPurchase Recommendation\nPAF\nPNC\nPO"
   },
   {
    "fieldname": "table_wqma",
@@ -697,7 +697,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-09-18 16:23:30.323146",
+ "modified": "2025-09-30 11:00:22.128098",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

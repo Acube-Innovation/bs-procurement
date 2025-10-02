@@ -48,7 +48,9 @@ required_apps = ["erpnext"]
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 doctype_js = {
     "Supplier Quotation": "public/js/supplier_quotation.js",
-    "Purchase Order": "public/js/purchase_order.js"
+    "Purchase Order": "public/js/purchase_order.js",
+    "Purchase Receipt": "public/js/purchase_receipt.js",
+    "Subcontracting Receipt": "public/js/subcontracting_receipt.js",
 }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -144,7 +146,13 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
+    "Purchase Invoice":{
+        "validate":[
+            "a3_procurement.doc_events.purchase_invoice.validate_purchase_invoice",
+        ]
+    }
+}
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
@@ -327,5 +335,8 @@ accounting_dimension_doctypes = [
     "Purchase and Negotiation Committee",
     "In-Principle Approval for CAPEX",
     "Proprietory Article Certificate",
-    "Cost Estimate"
+    "Cost Estimate",
+    "QA Request",
+    "QA Clearance",
+    "QA Items"
 ]
