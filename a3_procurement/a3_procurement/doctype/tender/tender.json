@@ -409,9 +409,13 @@
   {
    "link_doctype": "Tender Response",
    "link_fieldname": "tender_reference"
+  },
+  {
+   "link_doctype": "Event",
+   "link_fieldname": "custom_tender_enquiry"
   }
  ],
- "modified": "2025-09-18 16:26:16.673038",
+ "modified": "2025-09-26 14:26:27.663857",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",
