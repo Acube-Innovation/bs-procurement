@@ -1,0 +1,30 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-10-05 19:44:37.013870",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[],\"fields\":[[\"name\",\"Sub-Contract Request\"],[\"scr_date\",\"Sub-Contract Request\"],[\"type_of_scr\",\"Sub-Contract Request\"],[\"materials_issuance\",\"Sub-Contract Request\"],[\"work_order_no\",\"Sub-Contract Request\"],[\"project\",\"Sub-Contract Request\"],[\"document_status\",\"Sub-Contract Request\"],[\"customer\",\"Sub-Contract Request\"],[\"departmentsection\",\"Sub-Contract Request\"],[\"indentor_name\",\"Sub-Contract Request\"],[\"type_of_bid\",\"Sub-Contract Request\"]],\"order_by\":\"`tabSub-Contract Request`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":120,\"scr_date\":120,\"type_of_scr\":120,\"materials_issuance\":120,\"work_order_no\":120,\"project\":120,\"document_status\":120,\"customer\":120,\"departmentsection\":120,\"indentor_name\":120,\"type_of_bid\":120},\"group_by\":null}",
+ "letter_head": "BATL",
+ "letterhead": null,
+ "modified": "2025-10-05 19:50:38.590189",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "SCR Status Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Sub-Contract Request",
+ "report_name": "SCR Status Report",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

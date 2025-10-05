@@ -419,10 +419,21 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Reports",
-   "link_count": 3,
+   "link_count": 8,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SCR Status Report",
+   "link_count": 0,
+   "link_to": "SCR Status Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Sub-Contract Request",
+   "type": "Link"
   },
   {
    "hidden": 0,
@@ -453,9 +464,50 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Material Transferred to Supplier",
+   "link_count": 0,
+   "link_to": "Material Transferred to Supplier",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Stock Entry",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Ledger",
+   "link_count": 0,
+   "link_to": "Stock Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Balance",
+   "link_count": 0,
+   "link_to": "Stock Balance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "General Ledger",
+   "link_count": 0,
+   "link_to": "General Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-09-30 12:29:22.273142",
+ "modified": "2025-10-05 20:59:56.265317",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract",

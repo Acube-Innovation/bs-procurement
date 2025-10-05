@@ -438,7 +438,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Reports",
-   "link_count": 6,
+   "link_count": 10,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -503,9 +503,49 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Requested Items to Order and Receive",
+   "link_count": 0,
+   "link_to": "Requested Items to Order and Receive",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Received Items To Be Billed",
+   "link_count": 0,
+   "link_to": "Received Items To Be Billed",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Item Balance",
+   "link_count": 0,
+   "link_to": "Item Balance (Simple)",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Balance",
+   "link_count": 0,
+   "link_to": "Stock Balance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-09-30 12:30:58.902422",
+ "modified": "2025-10-05 21:00:17.721420",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Procurement",
