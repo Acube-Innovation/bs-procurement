@@ -68,7 +68,8 @@
   "column_break_vvxs",
   "gst",
   "column_break_gwzd",
-  "net_total"
+  "net_total",
+  "amended_from"
  ],
  "fields": [
   {
@@ -416,17 +417,28 @@
    "fieldtype": "Select",
    "label": "Document Status",
    "options": "\nPending\nBudget Available\nBudget Exceeded\nTender Enquiry\nTender Extended\nTechnical Review\nTechnical Qualified\nTechnical Not Qualified\nCommercial Review\nCommercial Not Qualified\nCommercial Qualified\nRe-Tender\nTender Opened\nComparative Statement\nPurchase Recommendation\nPAF\nPNC\nPO"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sub-Contract Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [
   {
    "link_doctype": "SCR Review",
    "link_fieldname": "scr_no"
   }
  ],
- "modified": "2025-09-30 11:03:02.966319",
+ "modified": "2025-10-06 12:31:37.063678",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract Request",
