@@ -533,6 +533,7 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "document_status",
    "fieldtype": "Select",
    "label": "Document Status",
@@ -622,6 +623,7 @@
    "fieldname": "cost_estimate",
    "fieldtype": "Link",
    "label": "Cost Estimate",
+   "link_filters": "[[\"Cost Estimate\",\"type\",\"=\",\"Purchase\"]]",
    "options": "Cost Estimate"
   },
   {
@@ -697,7 +699,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-09-30 11:00:22.128098",
+ "modified": "2025-10-17 13:14:08.770738",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",
