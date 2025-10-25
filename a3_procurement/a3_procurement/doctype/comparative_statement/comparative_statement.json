@@ -28,7 +28,8 @@
   "section_break_obqv",
   "vendor_responses",
   "table_flub",
-  "taxes_and_charges"
+  "taxes_and_charges",
+  "totals"
  ],
  "fields": [
   {
@@ -164,6 +165,12 @@
    "fieldtype": "Table",
    "label": "Taxes and Charges",
    "options": "Taxes and Charges"
+  },
+  {
+   "fieldname": "totals",
+   "fieldtype": "Table",
+   "label": "Totals",
+   "options": "CST Totals"
   }
  ],
  "grid_page_length": 50,
@@ -175,7 +182,7 @@
    "link_fieldname": "comparative_statement"
   }
  ],
- "modified": "2025-09-23 11:12:58.561335",
+ "modified": "2025-10-10 14:02:36.143227",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Comparative Statement",

@@ -1,15 +1,14 @@
 // Copyright (c) 2025, Acube and contributors
 // For license information, please see license.txt
 
-
 frappe.ui.form.on('Comparative Statement', {
-  tender_opening_reference(frm) {
+  async tender_opening_reference(frm) {
     if (!frm.doc.tender_opening_reference) return;
 
     frm.clear_table('vendor_responses');
 
-    // Fetch Supplier Quotations
-    frappe.call({
+    // Fetch Supplier Quotations linked to Tender Opening
+    const quotations_res = await frappe.call({
       method: 'frappe.client.get_list',
       args: {
         doctype: 'Supplier Quotation',
@@ -17,61 +16,52 @@ frappe.ui.form.on('Comparative Statement', {
           custom_tender_opening_reference: frm.doc.tender_opening_reference
         },
         fields: ['name']
-      },
-      callback: function (res) {
-        const quotations = res.message || [];
-
-        quotations.forEach(quotation => {
-          const row = frm.add_child('vendor_responses');
-          row.tender_response = quotation.name;
-        });
-
-        frm.refresh_field('vendor_responses');
-        frappe.msgprint(`${quotations.length} Supplier Quotation(s) added.`);
       }
     });
 
-    // Fetch Tender Opening Details and update counts
-    frappe.call({
+    const quotations = quotations_res.message || [];
+
+    quotations.forEach(quotation => {
+      const row = frm.add_child('vendor_responses');
+      row.tender_response = quotation.name;
+    });
+
+    frm.refresh_field('vendor_responses');
+    frappe.msgprint(`${quotations.length} Supplier Quotation(s) added.`);
+
+    // Fetch Tender Opening Details (for counts)
+    const tender_res = await frappe.call({
       method: 'frappe.client.get',
       args: {
         doctype: 'Tender Opening',
         name: frm.doc.tender_opening_reference
-      },
-      callback: function(r) {
-        if (r.message && r.message.table_bcra) {
-          const details = r.message.table_bcra;
-
-          const total_parties = details.length;
-          const quotations_received = details.filter(row => row.status === 'Received').length;
-
-          frm.set_value('no_of_parties_contacted', total_parties);
-          frm.set_value('no_of_quotation_received', quotations_received);
-
-          // frappe.msgprint(__('Fetched Tender Opening stats: ') +
-          //   `Parties Contacted: ${total_parties}, Quotations Received: ${quotations_received}`);
-        }
       }
     });
+
+    if (tender_res.message && tender_res.message.table_bcra) {
+      const details = tender_res.message.table_bcra;
+      const total_parties = details.length;
+      const quotations_received = details.filter(row => row.status === 'Received').length;
+
+      frm.set_value('no_of_parties_contacted', total_parties);
+      frm.set_value('no_of_quotation_received', quotations_received);
+    }
+
+    // Automatically fetch quotation items, taxes & totals
+    await fetch_supplier_quotation_items_and_taxes(frm);
   }
 });
 
-
-
-frappe.ui.form.on('Comparative Statement', {
-  refresh(frm) {
-    frm.add_custom_button(__('Fetch Quotation Items'), () => {
-      fetch_supplier_quotation_items_and_taxes(frm);
-    });
-  }
-});
+// -------------------- Fetch Supplier Quotation Data --------------------
 
 async function fetch_supplier_quotation_items_and_taxes(frm) {
   frm.clear_table('table_flub');
   frm.clear_table('taxes_and_charges');
+  frm.clear_table('totals');
 
   let all_items = [];
   let all_taxes = [];
+  let totals_list = [];
 
   for (const party of frm.doc.vendor_responses || []) {
     const quotation_name = party.tender_response;
@@ -105,7 +95,7 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
       });
     }
 
-    // ---- Fetch Taxes & Charges (child table) ----
+    // ---- Fetch Taxes & Charges ----
     for (const tax of sq.taxes || []) {
       all_taxes.push({
         supplier: supplier,
@@ -114,6 +104,41 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
         amount: tax.tax_amount
       });
     }
+
+    // ---- Compute Totals (Based on New CST Totals Doctype) ----
+    let unit_price = sq.total || 0;
+    let unit_tax = 0;
+    let other_charges = 0;
+    let other_charges_tax = 0;
+    let grand_total = sq.rounded_total || 0;
+
+    // Calculate unit_tax from items (sum of all tax fields)
+    for (const item of sq.items || []) {
+      unit_tax +=
+        (item.igst_amount || 0) +
+        (item.cgst_amount || 0) +
+        (item.sgst_amount || 0) +
+        (item.cess_amount || 0) +
+        (item.cess_non_advol_amount || 0);
+    }
+
+    // Calculate other charges and other charges tax from taxes table
+    for (const tax of sq.taxes || []) {
+      if (tax.custom_charges_type === "Charges") {
+        other_charges += tax.tax_amount || 0;
+      } else if (tax.custom_charges_type === "Tax") {
+        other_charges_tax += tax.tax_amount || 0;
+      }
+    }
+
+    totals_list.push({
+      supplier: supplier,
+      unit_price: unit_price,
+      unit_tax: unit_tax,
+      other_charges: other_charges,
+      other_charges_tax: other_charges_tax,
+      grand_total: grand_total
+    });
   }
 
   // --- Grouping Logic for Items ---
@@ -122,10 +147,8 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
     let group_key;
 
     if (frm.doc.reference_type === "SCR") {
-      // group by item + finished_good
       group_key = `${row.item || ""}::${row.finished_good || ""}`;
     } else {
-      // group only by item (Indent case)
       group_key = row.item || "";
     }
 
@@ -172,7 +195,11 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
     frm.add_child('taxes_and_charges', tax_row);
   }
 
-  frm.refresh_fields(['table_flub', 'taxes_and_charges']);
-  frappe.msgprint('Quotation items and taxes fetched.');
-}
+  // --- Add Totals to Comparative Statement (CST Totals) ---
+  for (const total_row of totals_list) {
+    frm.add_child('totals', total_row);
+  }
 
+  frm.refresh_fields(['table_flub', 'taxes_and_charges', 'totals']);
+  frappe.msgprint('Quotation items, taxes, and totals fetched automatically.');
+}
