@@ -246,10 +246,10 @@
   },
   {
    "link_doctype": "Purchase and Negotiation Committee",
-   "link_fieldname": "comparative_statement"
+   "link_fieldname": "purchase_recommendation_reference"
   }
  ],
- "modified": "2025-09-23 11:13:26.028995",
+ "modified": "2025-10-28 15:24:59.163264",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Recommendation",
