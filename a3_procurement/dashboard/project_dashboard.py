@@ -16,7 +16,13 @@ def get_data(data=None):
 
             {"label": _("Procurement"), "items": [
                 "In-Principle Approval for CAPEX",
+                "Proprietory Article Certificate",]},
+            
+
+            {"label": _("Procurement"), "items": [
+                "In-Principle Approval for CAPEX",
                 "Proprietory Article Certificate",
+                "Indent",
                 "Indent",
                 "Cost Estimate",
                 

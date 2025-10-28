@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{BATL}-{advice_no}-{#####}",
+ "creation": "2025-10-28 11:38:42.108831",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ofvl",
+  "advice_no",
+  "advice_date",
+  "customer",
+  "column_break_rcia",
+  "work_order",
+  "po_number",
+  "po_date",
+  "amended_from",
+  "section_break_jxfw",
+  "table_umqr"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ofvl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Despatch Advice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "advice_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Advice No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "advice_date",
+   "fieldtype": "Date",
+   "label": "Advice Date"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_rcia",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Work Order",
+   "options": "Project"
+  },
+  {
+   "fieldname": "po_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "PO Number",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "PO Date"
+  },
+  {
+   "fieldname": "section_break_jxfw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_umqr",
+   "fieldtype": "Table",
+   "options": "Despatch Advice Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-10-28 11:47:30.374668",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Despatch Advice",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
