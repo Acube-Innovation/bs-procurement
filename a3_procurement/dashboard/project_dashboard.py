@@ -18,7 +18,6 @@ def get_data(data=None):
                 "In-Principle Approval for CAPEX",
                 "Proprietory Article Certificate",
                 "Indent",
-                "Indent",
                 "Cost Estimate",
                 
             ]},
