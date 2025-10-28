@@ -7,9 +7,9 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "buying",
+ "icon": "color-rank",
  "idx": 1,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
  "label": "Sub-Contract",
  "links": [
@@ -556,17 +556,17 @@
    "type": "Link"
   }
  ],
- "modified": "2025-10-21 16:48:10.222870",
+ "modified": "2025-10-28 11:48:23.232267",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract",
  "number_cards": [],
  "owner": "Administrator",
- "parent_page": "",
+ "parent_page": "Buying",
  "public": 1,
  "quick_lists": [],
  "roles": [],
- "sequence_id": 8.1,
+ "sequence_id": 8.0,
  "shortcuts": [],
  "title": "Sub-Contract"
 }

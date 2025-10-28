@@ -203,6 +203,7 @@
    "label": "Terms and Conditions"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Document Status",
@@ -415,7 +416,7 @@
    "link_fieldname": "custom_tender_enquiry"
   }
  ],
- "modified": "2025-09-26 14:26:27.663857",
+ "modified": "2025-10-28 10:51:57.426498",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Tender",
