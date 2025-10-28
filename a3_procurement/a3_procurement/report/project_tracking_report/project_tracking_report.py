@@ -113,7 +113,6 @@ def get_linked_docs(reference_name, is_scr=False):
     linked_data = {}
 
     if is_scr:
-        # Sub-Contract Request-based link fields
         mappings = {
             "Tender": ("scr_id", ["name", "status"]),
             "Tender Response": ("scr_reference", ["name", "status"]),
@@ -126,7 +125,6 @@ def get_linked_docs(reference_name, is_scr=False):
             "Purchase Order": ("custom_scr_reference", ["name", "status"]),
         }
     else:
-        # Indent-based link fields
         mappings = {
             "Tender": ("purchase_indent_reference", ["name", "status"]),
             "Tender Response": ("indent_reference", ["name", "status"]),
@@ -139,11 +137,31 @@ def get_linked_docs(reference_name, is_scr=False):
             "Purchase Order": ("custom_indent_reference", ["name", "status"]),
         }
 
+    # Custom key overrides to match report columns
+    key_overrides = {
+        "Tender": "tender_id",
+        "Tender Response": "tender_response",
+        "Tender Opening": "tender_opening",
+        "Supplier Quotation": "supplier_quotation",
+        "Comparative Statement": "comparative_statement",
+        "Purchase Recommendation": "purchase_recommendation",
+        "Purchase Approval": "purchase_approval",
+        "Purchase and Negotiation Committee": "pnc",
+        "Purchase Order": "purchase_order",
+    }
+
     for doctype, (field, fields_to_fetch) in mappings.items():
         record = frappe.db.get_value(doctype, {field: reference_name}, fields_to_fetch, as_dict=True)
         if record:
-            fieldname_prefix = doctype.lower().replace(" ", "_")
-            linked_data[f"{fieldname_prefix}"] = record.name
-            linked_data[f"{fieldname_prefix}_status"] = record.get("status") or record.get("workflow_state")
+            key_prefix = key_overrides.get(doctype, doctype.lower().replace(" ", "_"))
+
+            # main id field
+            linked_data[f"{key_prefix}"] = record.name
+
+            # status field — use correct suffix
+            if doctype == "Tender":
+                linked_data["tender_status"] = record.get("status") or record.get("workflow_state")
+            else:
+                linked_data[f"{key_prefix}_status"] = record.get("status") or record.get("workflow_state")
 
     return linked_data
