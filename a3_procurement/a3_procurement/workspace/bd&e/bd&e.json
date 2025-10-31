@@ -5,7 +5,7 @@
    "label": "Sales Order Trends"
   }
  ],
- "content": "[{\"id\":\"yMEfRBifrU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">BD&amp;E</span>\",\"col\":12}},{\"id\":\"jT0jYLAPKV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sales Order Trends\",\"col\":12}},{\"id\":\"QSH8LzUDjx\",\"type\":\"card\",\"data\":{\"card_name\":\"Customer Management\",\"col\":4}},{\"id\":\"iT6ut6rXSo\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory Management\",\"col\":4}},{\"id\":\"tHR6dyS4E3\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Management\",\"col\":4}},{\"id\":\"eFGjzM_st5\",\"type\":\"card\",\"data\":{\"card_name\":\"Others\",\"col\":4}}]",
+ "content": "[{\"id\":\"yMEfRBifrU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">BD&amp;E</span>\",\"col\":12}},{\"id\":\"qJLLHiG8kW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Customers\",\"col\":3}},{\"id\":\"GcfOl3_wpX\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Opportunity\",\"col\":3}},{\"id\":\"7Ku8l2bC1q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Orders to Bill\",\"col\":3}},{\"id\":\"86xE8e4fgt\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Orders to Deliver\",\"col\":3}},{\"id\":\"jT0jYLAPKV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sales Order Trends\",\"col\":12}},{\"id\":\"QSH8LzUDjx\",\"type\":\"card\",\"data\":{\"card_name\":\"Customer Management\",\"col\":4}},{\"id\":\"iT6ut6rXSo\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory Management\",\"col\":4}},{\"id\":\"tHR6dyS4E3\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Management\",\"col\":4}},{\"id\":\"eFGjzM_st5\",\"type\":\"card\",\"data\":{\"card_name\":\"Others\",\"col\":4}}]",
  "creation": "2025-10-28 12:09:44.054181",
  "custom_blocks": [],
  "docstatus": 0,
@@ -195,11 +195,28 @@
    "type": "Link"
   }
  ],
- "modified": "2025-10-28 12:26:26.654779",
+ "modified": "2025-10-29 11:15:21.826583",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "BD&E",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Active Customers",
+   "number_card_name": "Active Customers"
+  },
+  {
+   "label": "Open Opportunity",
+   "number_card_name": "Open Opportunity"
+  },
+  {
+   "label": "Sales Orders to Deliver",
+   "number_card_name": "Sales Orders to Deliver"
+  },
+  {
+   "label": "Sales Orders to Bill",
+   "number_card_name": "Sales Orders to Bill"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "CRM",
  "public": 1,

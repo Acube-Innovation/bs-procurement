@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"5QQ_ceaky6\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":4}},{\"id\":\"vaiZ6L4Mxx\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"4BfGPxGl-p\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"ehqmygURxy\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"UZ322P-eiw\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":4}},{\"id\":\"RoOJFe6Ouz\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Management\",\"col\":4}},{\"id\":\"xhIEP2yAub\",\"type\":\"card\",\"data\":{\"card_name\":\"Procurement Management\",\"col\":4}},{\"id\":\"aIiUuWOc5H\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"rQNFif2Ija\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"crENSMJQsj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Indent Count\",\"col\":3}},{\"id\":\"qFbqNv8rP9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Indent\",\"col\":3}},{\"id\":\"2t1loWWJ7X\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchase Orders to Receive\",\"col\":3}},{\"id\":\"gd-6yMPFtD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchase Orders to Bill\",\"col\":3}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"5QQ_ceaky6\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":4}},{\"id\":\"vaiZ6L4Mxx\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"4BfGPxGl-p\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"ehqmygURxy\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"UZ322P-eiw\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":4}},{\"id\":\"RoOJFe6Ouz\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Management\",\"col\":4}},{\"id\":\"xhIEP2yAub\",\"type\":\"card\",\"data\":{\"card_name\":\"Procurement Management\",\"col\":4}},{\"id\":\"aIiUuWOc5H\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"rQNFif2Ija\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
  "creation": "2025-06-23 12:47:13.561858",
  "custom_blocks": [],
  "docstatus": 0,
@@ -614,11 +614,28 @@
    "type": "Link"
   }
  ],
- "modified": "2025-10-28 12:25:41.070792",
+ "modified": "2025-10-29 12:11:35.724326",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Procurement",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Approved Indent",
+   "number_card_name": "Approved Indent"
+  },
+  {
+   "label": "Indent Count",
+   "number_card_name": "Indent Count"
+  },
+  {
+   "label": "Purchase Orders to Receive",
+   "number_card_name": "Purchase Orders to Receive"
+  },
+  {
+   "label": "Purchase Orders to Bill",
+   "number_card_name": "Purchase Orders to Bill"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "Buying",
  "public": 1,
