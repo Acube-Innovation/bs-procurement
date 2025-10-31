@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sub-Contracting</span>\",\"col\":12}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"b6CGbpo_Tt\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":4}},{\"id\":\"5GhGmFPoce\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"iT8JC4nEmx\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"t2SsxuxJsq\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":4}},{\"id\":\"vZI0nTAigX\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"Vi_EolgNW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Management\",\"col\":4}},{\"id\":\"rz3mvtAXpX\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Requests\",\"col\":4}},{\"id\":\"VjdJz74DDH\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sub-Contracting</span>\",\"col\":12}},{\"id\":\"GeI261zfyS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total SCR\",\"col\":3}},{\"id\":\"Q4qUfxSs0k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open SCR\",\"col\":3}},{\"id\":\"obbB-yMfl7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Ongoing SCR\",\"col\":3}},{\"id\":\"NIKUmKFfxi\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved SCR\",\"col\":3}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"b6CGbpo_Tt\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":4}},{\"id\":\"5GhGmFPoce\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"iT8JC4nEmx\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"t2SsxuxJsq\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":4}},{\"id\":\"vZI0nTAigX\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"Vi_EolgNW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Management\",\"col\":4}},{\"id\":\"rz3mvtAXpX\",\"type\":\"card\",\"data\":{\"card_name\":\"Subcontract Requests\",\"col\":4}},{\"id\":\"VjdJz74DDH\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2025-08-05 11:57:08.272489",
  "custom_blocks": [],
  "docstatus": 0,
@@ -556,11 +556,28 @@
    "type": "Link"
   }
  ],
- "modified": "2025-10-28 12:11:45.280262",
+ "modified": "2025-10-29 11:58:39.015298",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Sub-Contract",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Open SCR",
+   "number_card_name": "Open SCR"
+  },
+  {
+   "label": "Approved SCR",
+   "number_card_name": "Approved SCR"
+  },
+  {
+   "label": "Total SCR",
+   "number_card_name": "SCR Count"
+  },
+  {
+   "label": "Ongoing SCR",
+   "number_card_name": "Ongoing SCR"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "Buying",
  "public": 1,
