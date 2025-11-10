@@ -1138,27 +1138,11 @@
   "doctype": "Workflow",
   "document_type": "Proprietory Article Certificate",
   "is_active": 1,
-  "modified": "2025-07-24 14:57:58.715381",
+  "modified": "2025-11-06 11:27:19.673461",
   "name": "Proprietory Article Certificate Work Flow",
   "override_status": 0,
   "send_email_alert": 0,
   "states": [
-   {
-    "allow_edit": "Senior Manager",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "parent": "Proprietory Article Certificate Work Flow",
-    "parentfield": "states",
-    "parenttype": "Workflow",
-    "send_email": 1,
-    "state": "Indentor Approved & Forwarded to Senior Manager",
-    "update_field": null,
-    "update_value": null,
-    "workflow_builder_id": null
-   },
    {
     "allow_edit": "Head of Department",
     "avoid_status_override": 0,
@@ -1170,7 +1154,7 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "send_email": 1,
-    "state": "Senior Manager Approved &  Forwarded to HOD",
+    "state": "Indentor Approved & Forwarded to HOD",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -1244,19 +1228,6 @@
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "Senior Manager",
-    "condition": null,
-    "next_state": "Senior Manager Approved &  Forwarded to HOD",
-    "parent": "Proprietory Article Certificate Work Flow",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "send_email_to_creator": 0,
-    "state": "Indentor Approved & Forwarded to Senior Manager",
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Approve",
-    "allow_self_approval": 1,
     "allowed": "Head of Department",
     "condition": null,
     "next_state": "HOD Approved & Forwarded to GM",
@@ -1264,7 +1235,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Senior Manager Approved &  Forwarded to HOD",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {
@@ -1303,20 +1274,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "send_email_to_creator": 0,
-    "state": "Indentor Approved & Forwarded to Senior Manager",
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Reject",
-    "allow_self_approval": 1,
-    "allowed": "Head of Department",
-    "condition": null,
-    "next_state": "Rejected",
-    "parent": "Proprietory Article Certificate Work Flow",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "send_email_to_creator": 0,
-    "state": "Senior Manager Approved &  Forwarded to HOD",
+    "state": "Indentor Approved & Forwarded to HOD",
     "workflow_builder_id": null
    },
    {

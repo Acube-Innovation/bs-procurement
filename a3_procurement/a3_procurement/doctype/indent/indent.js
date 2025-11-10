@@ -179,15 +179,18 @@ frappe.ui.form.on('Indent', {
 frappe.ui.form.on('Indent', {
     onload: function(frm) {
         if (frm.is_new()) {
-            //Set the current logged in user to indentor
-            frm.set_value("indentor", frappe.session.user);
+            const user = frappe.session.user;
 
-            // fetch department and designation from Employee linked to the current user
+            // Set current user in both Indentor and Indenter fields
+            frm.set_value("indentor", user);
+            frm.set_value("indenter", user);
+
+            // Fetch department and designation from Employee linked to current user
             frappe.call({
                 method: "frappe.client.get_list",
                 args: {
                     doctype: "Employee",
-                    filters: { user_id: frappe.session.user },
+                    filters: { user_id: user },
                     fields: ["name", "department", "designation"]
                 },
                 callback: function(r) {
@@ -201,3 +204,4 @@ frappe.ui.form.on('Indent', {
         }
     }
 });
+
