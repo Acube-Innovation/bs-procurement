@@ -84,15 +84,19 @@
   "special_instructions_check",
   "column_break_eddg",
   "cost_estimate_in_sealed_envelope",
+  "section_break_djok",
+  "indenter",
+  "name9",
+  "signature",
+  "column_break_qdtl",
+  "recommended_by",
+  "name8",
+  "column_break_kpsp",
+  "reviewed_by",
+  "name6",
   "indent_review_information_tab",
   "to_be_filled_by_cmm_section",
-  "indentor_specification",
-  "column_break_cqz1",
-  "stock_position_in_stores",
-  "date_of_last_procurement",
-  "column_break_qaty",
-  "last_procurement_rate",
-  "current_procurement_rate",
+  "table_bvpd",
   "probable_suppliers_section",
   "table_pson",
   "approvals_tab",
@@ -357,43 +361,10 @@
    "label": "Cost Estimate in sealed envelope"
   },
   {
-   "depends_on": "eval:doc.workflow_state==\"HOD Approved & Forwarded to CMM\"",
+   "depends_on": "eval:doc.workflow_state!=\"Indentor Approved & Forwarded to HOD\" && doc.workflow_state!=\"HOD Approved & Forwarded to CMM\"",
    "fieldname": "indent_review_information_tab",
    "fieldtype": "Tab Break",
    "label": "Indent Review Information"
-  },
-  {
-   "fieldname": "indentor_specification",
-   "fieldtype": "Small Text",
-   "label": "Indentor specification"
-  },
-  {
-   "fieldname": "stock_position_in_stores",
-   "fieldtype": "Data",
-   "label": "Stock position in stores"
-  },
-  {
-   "fieldname": "column_break_cqz1",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "date_of_last_procurement",
-   "fieldtype": "Date",
-   "label": "Date of last procurement"
-  },
-  {
-   "fieldname": "last_procurement_rate",
-   "fieldtype": "Currency",
-   "label": "Last procurement rate"
-  },
-  {
-   "fieldname": "column_break_qaty",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "current_procurement_rate",
-   "fieldtype": "Currency",
-   "label": "Current procurement rate"
   },
   {
    "fieldname": "probable_suppliers_section",
@@ -550,7 +521,7 @@
    "options": "History Card"
   },
   {
-   "depends_on": "eval:!doc.__islocal",
+   "depends_on": "eval:doc.workflow_state==\"Indentor Approved & Forwarded to HOD\"",
    "fieldname": "estimate_tab",
    "fieldtype": "Tab Break",
    "label": "Estimate"
@@ -680,6 +651,64 @@
    "fieldname": "terms_and_conditions",
    "fieldtype": "Text Editor",
    "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "table_bvpd",
+   "fieldtype": "Table",
+   "options": "Review Information"
+  },
+  {
+   "fieldname": "section_break_djok",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "indenter",
+   "fieldtype": "Link",
+   "label": "Indenter",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_qdtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recommended_by",
+   "fieldtype": "Link",
+   "label": "Recommended By User",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_kpsp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By User",
+   "options": "User"
+  },
+  {
+   "fetch_from": "indenter.full_name",
+   "fieldname": "name9",
+   "fieldtype": "Data",
+   "label": "Indenter Name"
+  },
+  {
+   "fetch_from": "recommended_by.full_name",
+   "fieldname": "name8",
+   "fieldtype": "Data",
+   "label": " Recommended By"
+  },
+  {
+   "fetch_from": "reviewed_by.full_name",
+   "fieldname": "name6",
+   "fieldtype": "Data",
+   "label": "Reviewed By"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Attach",
+   "label": "Signature"
   }
  ],
  "grid_page_length": 50,
@@ -699,7 +728,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-10-17 13:14:08.770738",
+ "modified": "2025-11-06 18:45:27.695105",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

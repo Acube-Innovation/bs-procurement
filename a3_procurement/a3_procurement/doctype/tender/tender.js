@@ -122,7 +122,7 @@ frappe.ui.form.on('Tender', {
                         });
 
                         // Fetch Vendors from Indent Source Suppliers
-                        (indent_doc.table_ophz || []).forEach(row => {
+                        (indent_doc.table_pson || []).forEach(row => {
                             let vendor_child = frm.add_child("invited_vendors");
                             vendor_child.vendor_name = row.supplier;
                         });

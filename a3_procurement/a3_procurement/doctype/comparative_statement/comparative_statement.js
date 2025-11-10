@@ -203,3 +203,25 @@ async function fetch_supplier_quotation_items_and_taxes(frm) {
   frm.refresh_fields(['table_flub', 'taxes_and_charges', 'totals']);
   frappe.msgprint('Quotation items, taxes, and totals fetched automatically.');
 }
+
+// frappe.ui.form.on('table_flub', {
+//   item: function (frm, cdt, cdn) {
+//     let row = locals[cdt][cdn];
+//     let child_table = frm.doc.table_flub || [];
+
+//     // Get all rows that have the same item
+//     let matching_rows = child_table.filter(r => r.item === row.item);
+
+//     // If this is the first occurrence of the item
+//     if (matching_rows.length === 1 && row.item) {
+//       frappe.db.get_value('Item', row.item, 'item_name', (r) => {
+//         if (r && r.item_name) {
+//           frappe.model.set_value(cdt, cdn, 'item_name', r.item_name);
+//         }
+//       });
+//     } else {
+//       // For duplicates, clear the item_name
+//       frappe.model.set_value(cdt, cdn, 'item_name', '');
+//     }
+//   }
+// });
