@@ -87,7 +87,6 @@
   "section_break_djok",
   "indenter",
   "name9",
-  "signature",
   "column_break_qdtl",
   "recommended_by",
   "name8",
@@ -704,11 +703,6 @@
    "fieldname": "name6",
    "fieldtype": "Data",
    "label": "Reviewed By"
-  },
-  {
-   "fieldname": "signature",
-   "fieldtype": "Attach",
-   "label": "Signature"
   }
  ],
  "grid_page_length": 50,
@@ -728,7 +722,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-11-06 18:45:27.695105",
+ "modified": "2025-11-11 11:42:31.765762",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",
