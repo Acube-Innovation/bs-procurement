@@ -23,7 +23,9 @@ frappe.ui.form.on('Purchase and Negotiation Committee', {
             r.message.committee.forEach(function(d) {
               let row = frm.add_child("table_lilx", {
                 members: d.members,
-                invitees: d.invitees
+                invitees: d.invitees,
+                user_name: d.user_name
+
               });
             });
             frm.refresh_field("table_lilx");
@@ -210,3 +212,115 @@ function calculate_ab(frm) {
   const act = flt(frm.doc.actual_costb);
   frm.set_value('ab', est - act);
 }
+
+
+frappe.ui.form.on("Purchase and Negotiation Committee", {
+  refresh: function(frm) {
+    frm.remove_custom_button("Verify");
+
+    const current_user = frappe.session.user;
+    let can_verify = false;
+
+    // Find if current user has any pending verification
+    (frm.doc.table_lilx || []).forEach(row => {
+      if (
+        (row.user_name === current_user && !row.verified_and_signed) ||
+        (row.invitees === current_user && !row.verified_and_signed_1)
+      ) {
+        can_verify = true;
+      }
+    });
+
+    // Show Verify button only if user has pending verification
+    if (can_verify) {
+      frm.add_custom_button("Verify", async function() {
+        let updated = false;
+
+        for (let row of frm.doc.table_lilx || []) {
+          if (row.user_name === current_user && !row.verified_and_signed) {
+            frappe.model.set_value(row.doctype, row.name, "verified_and_signed", 1);
+            updated = true;
+          }
+          if (row.invitees === current_user && !row.verified_and_signed_1) {
+            frappe.model.set_value(row.doctype, row.name, "verified_and_signed_1", 1);
+            updated = true;
+          }
+        }
+
+        if (updated) {
+          await frm.save_or_update();
+          frappe.show_alert({ message: __("Verification marked successfully."), indicator: "green" });
+        } else {
+          frappe.show_alert({ message: __("You have already verified or no verification required."), indicator: "orange" });
+        }
+      }).addClass("btn-primary");
+    }
+  },
+
+  after_save: function(frm) {
+    frm.trigger("refresh");
+  }
+});
+
+frappe.ui.form.on("Purchase and Negotiation Committee", {
+    reference_type: function(frm) {
+        // Trigger when reference_type changes
+        frm.trigger("fetch_reference_details");
+    },
+
+    scr_reference: function(frm) {
+        // Trigger when SCR reference is changed
+        if (frm.doc.reference_type === "SCR") {
+            frm.trigger("fetch_reference_details");
+        }
+    },
+
+    indent_reference: function(frm) {
+        // Trigger when Indent reference is changed
+        if (frm.doc.reference_type === "Indent") {
+            frm.trigger("fetch_reference_details");
+        }
+    },
+
+    fetch_reference_details: function(frm) {
+        if (!frm.doc.reference_type) return;
+
+        if (frm.doc.reference_type === "SCR" && frm.doc.scr_reference) {
+            // ---- Fetch from Sub-Contract Request ----
+            frappe.call({
+                method: "frappe.client.get",
+                args: {
+                    doctype: "Sub-Contract Request",
+                    name: frm.doc.scr_reference
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        let scr = r.message;
+                        // Set Indenting Officer and Department Section
+                        frm.set_value("indenting_officer", scr.indentor_id);
+                        frm.set_value("indenting_dept", scr.departmentsection);
+                    }
+                }
+            });
+        }
+
+        if (frm.doc.reference_type === "Indent" && frm.doc.indent_reference) {
+            // ---- Fetch from Indent ----
+            frappe.call({
+                method: "frappe.client.get",
+                args: {
+                    doctype: "Indent",
+                    name: frm.doc.indent_reference
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        let indent = r.message;
+                        // Set Indenting Officer and Department Section
+                        frm.set_value("indenting_officer", indent.indentor);
+                        frm.set_value("indenting_dept", indent.departmentsection);
+                    }
+                }
+            });
+        }
+    }
+});

@@ -3,24 +3,6 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-17 12:18:27.706293",
-  "name": "HOD Approved & Forwarded to CS",
-  "style": "Primary",
-  "workflow_state_name": "HOD Approved & Forwarded to CS"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-07-17 13:02:59.043663",
-  "name": "HOD Approved & Forwarded to CMM",
-  "style": "Primary",
-  "workflow_state_name": "HOD Approved & Forwarded to CMM"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2025-07-17 12:15:21.075634",
   "name": "CS Approved & Forwarded to CFO",
   "style": "Primary",
@@ -93,28 +75,10 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-17 13:10:21.142077",
-  "name": "CMM Approved & Forwarded to GM",
-  "style": "Primary",
-  "workflow_state_name": "CMM Approved & Forwarded to GM"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2025-06-23 14:28:39.099937",
   "name": "Pending GM Approval",
   "style": "",
   "workflow_state_name": "Pending GM Approval"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-07-18 01:17:08.338483",
-  "name": "HOD Approved & Forwarded to CFO",
-  "style": "Primary",
-  "workflow_state_name": "HOD Approved & Forwarded to CFO"
  },
  {
   "docstatus": 0,
@@ -138,10 +102,28 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-17 12:21:17.563326",
-  "name": "CFO Approved & Forwarded to GM",
+  "modified": "2025-07-17 12:18:27.706293",
+  "name": "HOD Approved & Forwarded to CS",
   "style": "Primary",
-  "workflow_state_name": "CFO Approved & Forwarded to GM"
+  "workflow_state_name": "HOD Approved & Forwarded to CS"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-18 01:17:08.338483",
+  "name": "HOD Approved & Forwarded to CFO",
+  "style": "Primary",
+  "workflow_state_name": "HOD Approved & Forwarded to CFO"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-17 13:02:59.043663",
+  "name": "HOD Approved & Forwarded to CMM",
+  "style": "Primary",
+  "workflow_state_name": "HOD Approved & Forwarded to CMM"
  },
  {
   "docstatus": 0,
@@ -165,10 +147,19 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-17 13:53:57.459813",
-  "name": "Indentor Approved & Forwarded to HOD",
+  "modified": "2025-07-17 13:10:21.142077",
+  "name": "CMM Approved & Forwarded to GM",
   "style": "Primary",
-  "workflow_state_name": "Indentor Approved & Forwarded to HOD"
+  "workflow_state_name": "CMM Approved & Forwarded to GM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-17 12:21:17.563326",
+  "name": "CFO Approved & Forwarded to GM",
+  "style": "Primary",
+  "workflow_state_name": "CFO Approved & Forwarded to GM"
  },
  {
   "docstatus": 0,
@@ -178,5 +169,14 @@
   "name": "HOD Approved & Forwarded to GM",
   "style": "",
   "workflow_state_name": "HOD Approved & Forwarded to GM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-17 13:53:57.459813",
+  "name": "Indentor Approved & Forwarded to HOD",
+  "style": "Primary",
+  "workflow_state_name": "Indentor Approved & Forwarded to HOD"
  }
 ]

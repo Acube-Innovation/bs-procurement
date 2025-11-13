@@ -19,11 +19,11 @@
   "cmm_details_section",
   "indent_reference",
   "column_break_ifbm",
-  "department_cmm",
+  "department_pi",
   "scm_details_section",
   "scr_reference",
   "column_break_vcrv",
-  "department_scm",
+  "department_scr",
   "accounting_dimensions_section",
   "cost_center",
   "dimension_col_break",
@@ -393,15 +393,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "indent_reference.departmentsection",
-   "fieldname": "department_cmm",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Department",
-   "options": "Department"
-  },
-  {
    "depends_on": "eval:doc.reference_type==\"SCR\"",
    "fieldname": "scm_details_section",
    "fieldtype": "Section Break",
@@ -413,13 +404,6 @@
    "fieldtype": "Link",
    "label": "SCR Reference",
    "options": "Sub-Contract Request"
-  },
-  {
-   "fetch_from": "scr_reference.departmentsection",
-   "fieldname": "department_scm",
-   "fieldtype": "Link",
-   "label": "Department",
-   "options": "Department"
   },
   {
    "fieldname": "accounting_dimensions_section",
@@ -452,6 +436,22 @@
    "fieldname": "indenter_name",
    "fieldtype": "Data",
    "label": "Indenter Name"
+  },
+  {
+   "fetch_from": "indent_reference.departmentsection",
+   "fieldname": "department_pi",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fetch_from": "scr_reference.departmentsection",
+   "fieldname": "department_scr",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
   }
  ],
  "grid_page_length": 50,
@@ -463,7 +463,7 @@
    "link_fieldname": "custom_purchase_approval_reference"
   }
  ],
- "modified": "2025-11-07 15:06:25.680555",
+ "modified": "2025-11-12 00:12:20.184378",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase Approval",
