@@ -1,0 +1,224 @@
+{
+ "actions": [],
+ "autoname": "format:{BATL}-{GP}-{YY}-{#####}",
+ "creation": "2025-11-13 14:34:25.395085",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gijl",
+  "entryexit",
+  "date",
+  "column_break_jbrc",
+  "type",
+  "posting_time",
+  "amended_from",
+  "reference_section",
+  "reference_doctype",
+  "document",
+  "column_break_aigo",
+  "supplier",
+  "customer",
+  "other_reference",
+  "transporter_section",
+  "column_break_fftr",
+  "driver",
+  "driver_name",
+  "address",
+  "column_break_sngp",
+  "vehicle_no",
+  "mode_of_transport",
+  "particulars_section",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gijl",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "description": "Indicates the original record from which this entry was amended.",
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gate Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "description": "Specifies whether this log is for vehicle/material entry or exit.",
+   "fieldname": "entryexit",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Entry/Exit",
+   "options": "Entry\nExit",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "description": "Date on which the gate entry or exit took place.",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.reference_doctype==\"Purchase Order\" || doc.reference_doctype==\"Subcontracting Order\"",
+   "description": "Supplier associated with the referenced document.",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "description": "Any additional external reference number, document, or remark relevant to this gate entry.",
+   "fieldname": "other_reference",
+   "fieldtype": "Data",
+   "label": "Other Reference"
+  },
+  {
+   "fieldname": "column_break_jbrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Specifies whether the materials or items are returnable or non-returnable.",
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Returnable\nNon-Returnable"
+  },
+  {
+   "default": "Now",
+   "description": "Time at which the gate entry or exit was recorded.",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Posting Time",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.reference_doctype==\"Sales Order\" || doc.reference_doctype==\"Material Request\"",
+   "description": "Customer associated with the referenced document.",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "transporter_section",
+   "fieldtype": "Section Break",
+   "label": "Transporter"
+  },
+  {
+   "description": "Registration number of the vehicle entering or exiting through the gate.",
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No."
+  },
+  {
+   "description": "Specifies the mode of transportation used for material movement.",
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Select",
+   "label": "Mode of Transport",
+   "options": "Road\nAir\nRail\nShip"
+  },
+  {
+   "fieldname": "column_break_fftr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Linked driver responsible for the transport vehicle.",
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "description": "Full name of the vehicle driver (auto-filled if linked).",
+   "fetch_from": "driver.full_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "description": "Address or location details relevant to the transporter or delivery point.",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_sngp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "particulars_section",
+   "fieldtype": "Section Break",
+   "label": "Particulars"
+  },
+  {
+   "description": "Table capturing item details like description, quantity, and unit for this gate entry.",
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Gate Pass Detail"
+  },
+  {
+   "description": "Document type that this gate entry log is linked to (e.g., Purchase Order, Sales Order, etc.).",
+   "fieldname": "reference_doctype",
+   "fieldtype": "Select",
+   "label": "Reference Doctype",
+   "options": "\nPurchase Order\nSales Order\nSubcontracting Order\nMaterial Request"
+  },
+  {
+   "description": "Select the specific document record based on the chosen reference doctype.",
+   "fieldname": "document",
+   "fieldtype": "Dynamic Link",
+   "label": "Document",
+   "options": "reference_doctype"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "column_break_aigo",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-14 11:27:50.706366",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Gate Entry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
