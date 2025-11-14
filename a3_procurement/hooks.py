@@ -201,7 +201,13 @@ doc_events = {
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 override_doctype_dashboards = {
-	"Project": "a3_procurement.dashboard.project_dashboard.get_data"
+	"Project": "a3_procurement.dashboard.project_dashboard.get_data",
+    "Purchase Receipt": "a3_procurement.dashboard.purchase_receipt.get_data",
+    "Subcontracting Receipt": "a3_procurement.dashboard.subcontracting_receipt.get_data",
+    "Purchase Order": "a3_procurement.dashboard.purchase_order.get_data",
+    "Sales Order": "a3_procurement.dashboard.sales_order.get_data",
+    "Material Request": "a3_procurement.dashboard.material_request.get_data",
+    "Subcontracting Order": "a3_procurement.dashboard.subcontracting_order.get_data",
 }
 
 # exempt linked doctypes from being automatically cancelled
