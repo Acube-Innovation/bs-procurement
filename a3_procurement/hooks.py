@@ -151,6 +151,10 @@ doc_events = {
         "validate":[
             "a3_procurement.doc_events.purchase_invoice.validate_purchase_invoice",
         ]
+    },
+    "Item": {
+        "before_save": 
+            "a3_procurement.doc_events.item.update_disabled_on_approval"
     }
 }
 # 	"*": {

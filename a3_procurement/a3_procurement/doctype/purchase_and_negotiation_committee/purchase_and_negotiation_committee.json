@@ -9,6 +9,7 @@
   "section_break_4zyg",
   "level",
   "reference_type",
+  "tender_enquiry",
   "amended_from",
   "column_break_kccx",
   "date",
@@ -504,6 +505,13 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fetch_from": "purchase_recommendation_reference.enquiry_no",
+   "fieldname": "tender_enquiry",
+   "fieldtype": "Link",
+   "label": "Tender Enquiry",
+   "options": "Tender"
   }
  ],
  "grid_page_length": 50,
@@ -515,7 +523,7 @@
    "link_fieldname": "custom_purchase_and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-11-13 01:34:03.640573",
+ "modified": "2025-11-13 23:01:38.191644",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase and Negotiation Committee",
