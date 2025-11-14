@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"crENSMJQsj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Indent Count\",\"col\":3}},{\"id\":\"qFbqNv8rP9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Indent\",\"col\":3}},{\"id\":\"2t1loWWJ7X\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchase Orders to Receive\",\"col\":3}},{\"id\":\"gd-6yMPFtD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchase Orders to Bill\",\"col\":3}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":4}},{\"id\":\"5QQ_ceaky6\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":4}},{\"id\":\"vaiZ6L4Mxx\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":4}},{\"id\":\"4BfGPxGl-p\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":4}},{\"id\":\"ehqmygURxy\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":4}},{\"id\":\"UZ322P-eiw\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":4}},{\"id\":\"xhIEP2yAub\",\"type\":\"card\",\"data\":{\"card_name\":\"Procurement Management\",\"col\":4}},{\"id\":\"RoOJFe6Ouz\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Management\",\"col\":4}},{\"id\":\"aIiUuWOc5H\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"rQNFif2Ija\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"_ELOn8mIyA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"crENSMJQsj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Indent Count\",\"col\":3}},{\"id\":\"qFbqNv8rP9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Indent\",\"col\":3}},{\"id\":\"2t1loWWJ7X\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchase Orders to Receive\",\"col\":3}},{\"id\":\"gd-6yMPFtD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Purchase Orders to Bill\",\"col\":3}},{\"id\":\"UNU_-HuaUl\",\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":3}},{\"id\":\"LFN28oAnxp\",\"type\":\"card\",\"data\":{\"card_name\":\"Item Management\",\"col\":3}},{\"id\":\"5QQ_ceaky6\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":3}},{\"id\":\"vaiZ6L4Mxx\",\"type\":\"card\",\"data\":{\"card_name\":\"Indent Management\",\"col\":3}},{\"id\":\"4BfGPxGl-p\",\"type\":\"card\",\"data\":{\"card_name\":\"Tender Management\",\"col\":3}},{\"id\":\"ehqmygURxy\",\"type\":\"card\",\"data\":{\"card_name\":\"Order Management\",\"col\":3}},{\"id\":\"UZ322P-eiw\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchase Management\",\"col\":3}},{\"id\":\"xhIEP2yAub\",\"type\":\"card\",\"data\":{\"card_name\":\"Procurement Management\",\"col\":3}},{\"id\":\"RoOJFe6Ouz\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Management\",\"col\":3}},{\"id\":\"aIiUuWOc5H\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"rQNFif2Ija\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":5}}]",
  "creation": "2025-06-23 12:47:13.561858",
  "custom_blocks": [],
  "docstatus": 0,
@@ -280,45 +280,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Procurement Management",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Receipt",
-   "link_count": 0,
-   "link_to": "Purchase Receipt",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Invoice",
-   "link_count": 0,
-   "link_to": "Purchase Invoice",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Payment Entry",
-   "link_count": 0,
-   "link_to": "Payment Entry",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Tender Management",
    "link_count": 7,
    "link_type": "DocType",
@@ -577,8 +538,57 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Procurement Management",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gate Pass Register",
+   "link_count": 0,
+   "link_to": "Gate Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Receipt",
+   "link_count": 0,
+   "link_to": "Purchase Receipt",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Invoice",
+   "link_count": 0,
+   "link_to": "Purchase Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Entry",
+   "link_count": 0,
+   "link_to": "Payment Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Quality Management",
-   "link_count": 5,
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -616,16 +626,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Gate Entry",
-   "link_count": 0,
-   "link_to": "Gate Entry",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Warehouse",
    "link_count": 0,
    "link_to": "Warehouse",
@@ -634,7 +634,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-11-14 11:29:07.017590",
+ "modified": "2025-11-15 00:26:24.689748",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Procurement",

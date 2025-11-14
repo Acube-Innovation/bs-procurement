@@ -7,11 +7,13 @@
  "field_order": [
   "section_break_gijl",
   "entryexit",
-  "date",
+  "amended_from",
   "column_break_jbrc",
   "type",
+  "column_break_dzej",
+  "date",
+  "column_break_kffm",
   "posting_time",
-  "amended_from",
   "reference_section",
   "reference_doctype",
   "document",
@@ -19,22 +21,29 @@
   "supplier",
   "customer",
   "other_reference",
-  "transporter_section",
-  "column_break_fftr",
+  "column_break_urcv",
+  "mode_of_transport",
+  "vehicle_no",
+  "column_break_zaay",
   "driver",
   "driver_name",
   "address",
-  "column_break_sngp",
-  "vehicle_no",
-  "mode_of_transport",
   "particulars_section",
-  "items"
+  "items",
+  "section_break_ddvk",
+  "column_break_qlcr",
+  "purchase_order",
+  "column_break_bglg",
+  "sales_order",
+  "column_break_omzz",
+  "subcontracting_order",
+  "column_break_stgd",
+  "material_request"
  ],
  "fields": [
   {
    "fieldname": "section_break_gijl",
-   "fieldtype": "Section Break",
-   "label": "Basic Details"
+   "fieldtype": "Section Break"
   },
   {
    "description": "Indicates the original record from which this entry was amended.",
@@ -52,6 +61,7 @@
    "fieldname": "entryexit",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Entry/Exit",
    "options": "Entry\nExit",
    "reqd": 1
@@ -62,6 +72,7 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Date",
    "reqd": 1
   },
@@ -87,6 +98,7 @@
    "description": "Specifies whether the materials or items are returnable or non-returnable.",
    "fieldname": "type",
    "fieldtype": "Select",
+   "in_standard_filter": 1,
    "label": "Type",
    "options": "Returnable\nNon-Returnable"
   },
@@ -108,11 +120,6 @@
    "options": "Customer"
   },
   {
-   "fieldname": "transporter_section",
-   "fieldtype": "Section Break",
-   "label": "Transporter"
-  },
-  {
    "description": "Registration number of the vehicle entering or exiting through the gate.",
    "fieldname": "vehicle_no",
    "fieldtype": "Data",
@@ -126,18 +133,15 @@
    "options": "Road\nAir\nRail\nShip"
   },
   {
-   "fieldname": "column_break_fftr",
-   "fieldtype": "Column Break"
-  },
-  {
    "description": "Linked driver responsible for the transport vehicle.",
    "fieldname": "driver",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Driver",
    "options": "Driver"
   },
   {
-   "description": "Full name of the vehicle driver (auto-filled if linked).",
+   "description": "Full name of the vehicle driver.",
    "fetch_from": "driver.full_name",
    "fieldname": "driver_name",
    "fieldtype": "Data",
@@ -150,13 +154,9 @@
    "label": "Address"
   },
   {
-   "fieldname": "column_break_sngp",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "particulars_section",
    "fieldtype": "Section Break",
-   "label": "Particulars"
+   "label": "Item Particulars"
   },
   {
    "description": "Table capturing item details like description, quantity, and unit for this gate entry.",
@@ -182,18 +182,83 @@
   {
    "fieldname": "reference_section",
    "fieldtype": "Section Break",
-   "label": "Reference"
+   "label": "Document Reference"
   },
   {
    "fieldname": "column_break_aigo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dzej",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kffm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_urcv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zaay",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ddvk",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "column_break_bglg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "column_break_omzz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subcontracting_order",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Subcontracting Order",
+   "options": "Subcontracting Order"
+  },
+  {
+   "fieldname": "column_break_stgd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_request",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Material Request",
+   "options": "Material Request"
+  },
+  {
+   "fieldname": "column_break_qlcr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Purchase Order",
+   "options": "Purchase Order"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-14 11:27:50.706366",
+ "modified": "2025-11-15 01:31:24.537505",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Gate Entry",
