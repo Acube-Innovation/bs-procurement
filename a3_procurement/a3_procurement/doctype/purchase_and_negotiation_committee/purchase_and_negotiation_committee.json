@@ -10,10 +10,10 @@
   "level",
   "reference_type",
   "tender_enquiry",
-  "amended_from",
   "column_break_kccx",
   "date",
   "tender_opening_reference",
+  "amended_from",
   "column_break_wmgt",
   "purchase_recommendation_reference",
   "comparative_statement",
@@ -78,10 +78,10 @@
   "to_negotiate_in_personvideo_conferencing",
   "to_hold_for_monthsweeks",
   "monthsweeks",
-  "section_break_hmim",
-  "sub_negotiation_committee_recommendation_snc",
   "section_break_qqjn",
-  "remarks"
+  "remarks",
+  "section_break_hmim",
+  "sub_negotiation_committee_recommendation_snc"
  ],
  "fields": [
   {
@@ -523,7 +523,7 @@
    "link_fieldname": "custom_purchase_and_negotiation_committee_reference"
   }
  ],
- "modified": "2025-11-13 23:01:38.191644",
+ "modified": "2025-11-14 16:55:40.960964",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Purchase and Negotiation Committee",
