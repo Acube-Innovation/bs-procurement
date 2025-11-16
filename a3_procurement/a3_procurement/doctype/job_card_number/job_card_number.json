@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:job_card_number",
+ "creation": "2025-11-17 00:19:30.356114",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_card_section",
+  "job_card_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_card_section",
+   "fieldtype": "Section Break",
+   "label": "Job Card"
+  },
+  {
+   "fieldname": "job_card_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Job Card Number",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-17 00:25:23.086647",
+ "modified_by": "Administrator",
+ "module": "A3 Procurement",
+ "name": "Job Card Number",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
