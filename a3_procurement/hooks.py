@@ -328,6 +328,12 @@ fixtures = [
             'SCM Manager'
          ]]
     ]
+},
+{
+    "dt": "Accounting Dimension",
+    "filters": [
+        ["name", "in", ["Job Card Number"]]
+    ]
 }
 ]
 

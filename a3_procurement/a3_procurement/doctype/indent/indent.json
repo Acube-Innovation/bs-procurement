@@ -232,7 +232,7 @@
   {
    "fieldname": "cost_estimate_section",
    "fieldtype": "Section Break",
-   "label": "Cost Estimate"
+   "label": "Purchase Details"
   },
   {
    "default": "0",
@@ -360,7 +360,7 @@
    "label": "Cost Estimate in sealed envelope"
   },
   {
-   "depends_on": "eval:doc.workflow_state!=\"Indentor Approved & Forwarded to HOD\" && doc.workflow_state!=\"HOD Approved & Forwarded to CMM\"",
+   "depends_on": "eval:doc.workflow_state!=\"Indentor Approved & Forwarded to HOD\"",
    "fieldname": "indent_review_information_tab",
    "fieldtype": "Tab Break",
    "label": "Indent Review Information"
@@ -523,7 +523,7 @@
    "depends_on": "eval:doc.workflow_state==\"Indentor Approved & Forwarded to HOD\"",
    "fieldname": "estimate_tab",
    "fieldtype": "Tab Break",
-   "label": "Estimate"
+   "label": "Cost Estimate"
   },
   {
    "fieldname": "table_ckhr",
@@ -722,7 +722,7 @@
    "link_fieldname": "indent_reference"
   }
  ],
- "modified": "2025-11-14 11:27:42.153749",
+ "modified": "2025-11-17 01:33:19.757950",
  "modified_by": "Administrator",
  "module": "A3 Procurement",
  "name": "Indent",

@@ -1,0 +1,13 @@
+[
+ {
+  "dimension_defaults": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Accounting Dimension",
+  "document_type": "Job Card Number",
+  "fieldname": "job_card_number",
+  "label": "Job Card Number",
+  "modified": "2025-11-17 00:54:38.233675",
+  "name": "Job Card Number"
+ }
+]
