@@ -50,7 +50,9 @@ doctype_js = {
     "Supplier Quotation": "public/js/supplier_quotation.js",
     "Purchase Order": "public/js/purchase_order.js",
     "Purchase Receipt": "public/js/purchase_receipt.js",
-    "Subcontracting Receipt": "public/js/subcontracting_receipt.js",
+    "Subcontracting Receipt": "public/js/subcontracting_receipt.js"
+    
+
 }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -155,7 +157,13 @@ doc_events = {
     "Item": {
         "before_save": 
             "a3_procurement.doc_events.item.update_disabled_on_approval"
+    },
+  
+    "Sales Invoice": {
+        "before_validate": "a3_procurement.doc_events.sales_invoice.apply_ic_patches"
     }
+
+
 }
 # 	"*": {
 # 		"on_update": "method",
