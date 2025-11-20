@@ -1,65 +1,66 @@
 import frappe
 
-def apply_ic_patches(doc, method=None):
+def patch_india_compliance_tax(doc, method=None):
     """
-    Apply all India-Compliance patches:
-    - Disable throws inside validate_item_wise_tax_detail()
-    - Disable throws inside ItemGSTDetails.validate_item_gst_details()
+    Patch BOTH India Compliance functions:
+    - validate_item_wise_tax_detail (ACTUAL tax throw)
+    - validate_item_gst_details (GST mismatch throw)
     """
 
-    # Avoid double patching per request
-    if getattr(frappe.local, "_patched_india_compliance", False):
+    if getattr(frappe.local, "_patched_ic_actual", False):
         return
-    frappe.local._patched_india_compliance = True
+    frappe.local._patched_ic_actual = True
 
-    patch_validate_item_wise_tax_detail()
-    patch_validate_item_gst_details()
+    patch_ic_validate_item_wise_tax_detail()
+    patch_ic_validate_item_gst_details()
 
 
-# --------------------------------------------------------------------------
-# 1️⃣ Patch: validate_item_wise_tax_detail (Actual tax throw #1 & #2)
-# --------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# 1️⃣ Patch the ACTUAL tax throw inside:
+#    india_compliance/gst_india/overrides/transaction.py → validate_item_wise_tax_detail
+# ------------------------------------------------------------------------------
 
-def patch_validate_item_wise_tax_detail():
+def patch_ic_validate_item_wise_tax_detail():
     try:
-        import erpnext.regional.india.sales_invoice as ic
+        import india_compliance.gst_india.overrides.transaction as ic_trx
     except Exception:
         return
 
-    # backup original function
-    if not hasattr(ic, "_orig_item_tax_detail"):
-        ic._orig_item_tax_detail = ic.validate_item_wise_tax_detail
+    if not hasattr(ic_trx, "_orig_validate_item_wise_tax_detail"):
+        ic_trx._orig_validate_item_wise_tax_detail = ic_trx.validate_item_wise_tax_detail
 
-    original = ic._orig_item_tax_detail
+    original = ic_trx._orig_validate_item_wise_tax_detail
 
     def patched(doc):
         try:
             return original(doc)
+
         except Exception as e:
             msg = str(e)
 
-            # Throw 1: "would not compute item taxes"
+            # 🔥 ACTUAL TAX THROW #1
             if "would not compute item taxes" in msg:
-                frappe.msgprint("⚠ Actual tax allowed: skipped per-item tax computation.")
+                frappe.msgprint("⚠ Allowed Actual tax: item-wise computation skipped.")
                 return
 
-            # Throw 2: mismatch in item-wise actual tax
+            # 🔥 ACTUAL TAX THROW #2 (mismatch)
             if "Tax Amount" in msg and "incorrect" in msg:
-                frappe.msgprint("⚠ Actual tax allowed: mismatch ignored.")
+                frappe.msgprint("⚠ Allowed Actual tax: mismatch ignored.")
                 return
 
-            # Other exceptions should continue
+            # Otherwise, re-raise
             raise e
 
-    ic.validate_item_wise_tax_detail = patched
+    ic_trx.validate_item_wise_tax_detail = patched
 
 
 
-# --------------------------------------------------------------------------
-# 2️⃣ Patch: ItemGSTDetails.validate_item_gst_details (Actual tax mismatch)
-# --------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# 2️⃣ Patch GST amount mismatch inside:
+#    india_compliance/gst_india/overrides/transaction.py → ItemGSTDetails.validate_item_gst_details
+# ------------------------------------------------------------------------------
 
-def patch_validate_item_gst_details():
+def patch_ic_validate_item_gst_details():
     try:
         from india_compliance.gst_india.overrides.transaction import ItemGSTDetails
     except Exception:
@@ -70,18 +71,18 @@ def patch_validate_item_gst_details():
 
     original = ItemGSTDetails._orig_validate_item_gst_details
 
-    def patched_validate_item_gst_details(self):
+    def patched(self):
         try:
             return original(self)
+
         except Exception as e:
             msg = str(e)
 
-            # Throw: "GST amounts do not match... IGST amount mismatch"
+            # 🔥 THROW #3 — GST mismatch
             if "GST amounts do not match" in msg or "amount mismatch" in msg:
-                frappe.msgprint("⚠ Actual GST tax mismatch ignored (override applied).")
+                frappe.msgprint("⚠ Allowed Actual GST mismatch (ignored).")
                 return
 
-            # Other errors must pass through
             raise e
 
-    ItemGSTDetails.validate_item_gst_details = patched_validate_item_gst_details
+    ItemGSTDetails.validate_item_gst_details = patched
