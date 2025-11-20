@@ -51,6 +51,7 @@ doctype_js = {
     "Purchase Order": "public/js/purchase_order.js",
     "Purchase Receipt": "public/js/purchase_receipt.js",
     "Subcontracting Receipt": "public/js/subcontracting_receipt.js"
+    #  "Sales Invoice": "public/js/sales_invoice.js",
     
 
 }
@@ -160,8 +161,12 @@ doc_events = {
     },
   
     "Sales Invoice": {
-        "before_validate": "a3_procurement.doc_events.sales_invoice.apply_ic_patches"
+        "before_validate": "a3_procurement.doc_events.sales_invoice.patch_india_compliance_tax"
+    },
+      "Bill of Entry": {
+        "before_validate": "a3_procurement.doc_events.bill_of_entry.override_bill_of_entry_tax_validation"
     }
+
 
 
 }
