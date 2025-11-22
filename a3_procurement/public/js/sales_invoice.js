@@ -1,4 +1,17 @@
-// Fully disable India Compliance JS throw for Actual tax type
+frappe.ui.form.on("Sales Invoice Item", {
+    custom_assessible_value(frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn);
+
+        // update ERPNext taxable_value field
+        row.taxable_value = row.custom_assessible_value;
+
+        frm.refresh_field("items");
+
+        // trigger ERPNext's native tax engine
+        frm.trigger("calculate_taxes_and_totals");
+    }
+});
+
 
 frappe.ui.form.on("Sales Invoice", {
     refresh(frm) {

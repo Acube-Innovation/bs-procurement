@@ -1,5 +1,43 @@
 import frappe
 
+import frappe
+
+def custom_set_item_wise_taxable_value(doc, method=None):
+  
+    for tax in doc.taxes:
+        tax.dont_recompute_tax = 0
+        tax.item_wise_tax_detail = None  
+
+    for item in doc.items:
+        if item.custom_fim_value:
+            item.custom_assessible_value = item.custom_fim_value + item.amount
+            
+
+     
+        if item.custom_assessible_value and item.custom_assessible_value > 0:
+            custom_value = item.custom_assessible_value
+        else:
+            custom_value = item.base_net_amount
+
+        item.net_amount = custom_value
+        item.amount = custom_value
+        item.base_net_amount = custom_value
+
+     
+        item.amount = custom_value
+        item.base_amount = custom_value
+
+   
+        item.taxable_value = custom_value
+
+  
+    doc.calculate_taxes_and_totals()
+
+    frappe.logger().debug("✅ GST recalculated successfully using custom assessible value")
+
+  
+   
+
 def patch_india_compliance_tax(doc, method=None):
     """
     Patch BOTH India Compliance functions:
