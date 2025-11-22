@@ -50,8 +50,8 @@ doctype_js = {
     "Supplier Quotation": "public/js/supplier_quotation.js",
     "Purchase Order": "public/js/purchase_order.js",
     "Purchase Receipt": "public/js/purchase_receipt.js",
-    "Subcontracting Receipt": "public/js/subcontracting_receipt.js"
-    #  "Sales Invoice": "public/js/sales_invoice.js",
+    "Subcontracting Receipt": "public/js/subcontracting_receipt.js",
+    "Sales Invoice": "public/js/sales_invoice.js",
     
 
 }
@@ -142,8 +142,10 @@ doctype_js = {
 # Override standard doctype classes
 
 # override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
+#      "Sales Invoice": "a3_procurement.overrides.custom_sales_invoice.CustomSalesInvoice"
+# 	# "ToDo": "custom_app.overrides.CustomToDo"
 # }
+
 
 # Document Events
 # ---------------
@@ -161,7 +163,8 @@ doc_events = {
     },
   
     "Sales Invoice": {
-        "before_validate": "a3_procurement.doc_events.sales_invoice.patch_india_compliance_tax"
+        "before_validate": "a3_procurement.doc_events.sales_invoice.patch_india_compliance_tax",
+        "validate": "a3_procurement.doc_events.sales_invoice.custom_set_item_wise_taxable_value"
     },
       "Bill of Entry": {
         "before_validate": "a3_procurement.doc_events.bill_of_entry.override_bill_of_entry_tax_validation"
@@ -222,6 +225,8 @@ override_doctype_dashboards = {
     "Material Request": "a3_procurement.dashboard.material_request.get_data",
     "Subcontracting Order": "a3_procurement.dashboard.subcontracting_order.get_data",
 }
+
+
 
 # exempt linked doctypes from being automatically cancelled
 #
